@@ -1,5 +1,11 @@
 {
   "dependencies": {
+    "com.crvm.twineryscenario": {
+      "version": "file:com.crvm.TwineryScenario",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "com.unity.collab-proxy": {
       "version": "2.3.1",
       "depth": 0,
@@ -96,7 +102,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.textmeshpro": {
-      "version": "3.0.6",
+      "version": "3.0.8",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -105,7 +111,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.timeline": {
-      "version": "1.7.5",
+      "version": "1.7.6",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -126,7 +132,7 @@
       }
     },
     "com.unity.visualscripting": {
-      "version": "1.9.0",
+      "version": "1.9.4",
       "depth": 0,
       "source": "registry",
       "dependencies": {
