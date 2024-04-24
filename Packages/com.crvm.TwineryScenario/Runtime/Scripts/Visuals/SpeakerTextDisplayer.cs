@@ -25,7 +25,6 @@ namespace Visuals
             for (int index = 0; index < texts.Length; ++index)
             {
                 string objName = texts[index].gameObject.name;
-                Debug.Log(objName);
                 // The object's name match the name of the speaker name container
                 if (objName == speakerNameContainer)
                 {
@@ -38,8 +37,6 @@ namespace Visuals
                 }
                 
             }
-            Debug.Log("Index Speaker Name : " + indexSpeakerName);
-            Debug.Log("Index Text Content : " + indexText);
 
             // Verifies if the structure is correct and the speaker name and dialog content texts have been found
             if (indexSpeakerName == -1 || indexText == -1)

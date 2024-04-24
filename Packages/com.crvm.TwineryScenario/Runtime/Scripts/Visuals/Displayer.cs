@@ -18,11 +18,18 @@ namespace Visuals
 
         public void Clear()
         {
-            foreach (GameObject obj in m_GameObjects)
+            while (m_GameObjects.Count > 0)
+            {
+                GameObject tmp = m_GameObjects[^1];
+                m_GameObjects.Remove(tmp);
+                Destroy(tmp);
+                Debug.Log(m_GameObjects.Count);
+            }
+            /*foreach (GameObject obj in m_GameObjects)
             {
                 m_GameObjects.Remove(obj);
                 Destroy(obj);
-            }
+            }*/
         }
         
     }

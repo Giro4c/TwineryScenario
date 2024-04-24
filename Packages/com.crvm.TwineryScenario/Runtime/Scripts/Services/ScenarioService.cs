@@ -53,7 +53,7 @@ namespace Services
             }
 
             currentNode = scenario.startNode;
-            propsState = currentNode.props;
+            propsState = NodeProps.CreateNodeProps(currentNode.props.emotion, currentNode.props.speaker);
 
             ShowCurrentNode();
             
@@ -74,22 +74,30 @@ namespace Services
 
         public void GoToNode(ScenarioNode newCurrentNode)
         {
+            // Update the current scenario node
             currentNode = newCurrentNode;
+            Debug.Log(currentNode.name);
             // Change the emotion only if it is precised
             if (currentNode.props.emotion != Emotion.None)
             {
                 propsState.emotion = currentNode.props.emotion;
             }
+            Debug.Log(propsState.emotion);
             // Always change the speaker to match the current in the new Node
             propsState.speaker = currentNode.props.speaker;
+            Debug.Log(propsState.speaker);
         }
 
         public void TriggerLink(string linkName, ScenarioNode targetNode)
         {
             // First show the name of the selected link as a speak bubble to keep track of the conversation
+            Debug.Log("Displayed player choice");
             displayService.ShowSpeakerText(playerName, linkName);
             // Change the current node to the one the link points to
+            Debug.Log("Change to Node : " + targetNode.name);
             GoToNode(targetNode);
+            Debug.Log("Display new Node.");
+            ShowCurrentNode();
         }
 
         public void ShowCurrentNode()
