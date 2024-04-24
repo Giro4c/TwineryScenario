@@ -18,18 +18,21 @@ namespace Visuals
 
         public void Clear()
         {
+            // int i = 0;
             while (m_GameObjects.Count > 0)
             {
+                // Retrieve the object to keep the reference for the different method calls
                 GameObject tmp = m_GameObjects[^1];
+                // remove the object from the list
                 m_GameObjects.Remove(tmp);
+                // Destroy the object to remove it from the scene
                 Destroy(tmp);
-                Debug.Log(m_GameObjects.Count);
+                
+                // Debug.Log(m_GameObjects.Count);
+                // ++i;
+                // if (i > 5) break;
             }
-            /*foreach (GameObject obj in m_GameObjects)
-            {
-                m_GameObjects.Remove(obj);
-                Destroy(obj);
-            }*/
+            
         }
         
     }

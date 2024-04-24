@@ -43,18 +43,22 @@ namespace Services
                 }
                 
             }
+            Debug.Log(scenarioDataAccess);
         }
 
         public void LaunchScenario(string name)
         {
             if (scenario == null)
             {
+                Debug.Log("No scenario, starting research");
                 RetrieveNewScenario(name);
             }
 
+            // Init player progress
             currentNode = scenario.startNode;
             propsState = NodeProps.CreateNodeProps(currentNode.props.emotion, currentNode.props.speaker);
 
+            // Display the current scenario node : start node
             ShowCurrentNode();
             
         }

@@ -1,5 +1,8 @@
+using System;
+
 namespace Data.ReadModels
 {
+    [Serializable]
     public class ScenarioReadModel
     {
         public string name;

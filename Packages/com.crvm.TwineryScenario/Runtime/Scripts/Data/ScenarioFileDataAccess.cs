@@ -12,33 +12,104 @@ namespace Data
     {
 
         public string filePath = "";
+
+        public void DebugAll()
+        {
+            DebugJSONScenario();
+            DebugJSONScenarioNode();
+            DebugJSONLink();
+            DebugJSONPerson();
+            DebugJSONNodeProps();
+        }
         
+        public void DebugJSONScenario()
+        {
+            Debug.Log("Debug Scenario -------------------");
+            // Get String JSON content from file
+            TextAsset textAsset = Resources.Load<TextAsset>("twinery-example");
+            
+            // Create a Scenario read model from the JSON string. Will later be converted into a Scenario object
+            ScenarioReadModel readModel = JsonUtility.FromJson<ScenarioReadModel>(textAsset.text);
+            Debug.Log(readModel);
+            Debug.Log("Name : " + readModel.name);
+            Debug.Log("Start Node : " + readModel.startnode);
+            Debug.Log("Passages : " + readModel.passages);
+            Debug.Log("Creator : " + readModel.creator);
+            Debug.Log("IFID : " + readModel.ifid);
+            Debug.Log("Creator Version : " + readModel.creatorversion);
+        }
+        public void DebugJSONScenarioNode()
+        {
+            Debug.Log("Debug ScenarioNode -------------------");
+            // Get String JSON content from file
+            TextAsset textAsset = Resources.Load<TextAsset>("node-example");
+            
+            // Create a ScenarioNode read model from the JSON string.
+            ScenarioNodeReadModel readModel = JsonUtility.FromJson<ScenarioNodeReadModel>(textAsset.text);
+            Debug.Log(readModel);
+            Debug.Log("PID : " + readModel.pid);
+            Debug.Log("Name : " + readModel.name);
+            Debug.Log("Text : " + readModel.text);
+            Debug.Log("Position : " + readModel.position);
+            Debug.Log("Position X : " + readModel.position.x);
+            Debug.Log("Position Y : " + readModel.position.y);
+            Debug.Log("Props : " + readModel.props);
+            Debug.Log("Props Emotion : " + readModel.props.emotion);
+            Debug.Log("Props Speaker : " + readModel.props.speaker);
+            Debug.Log("Links : " + readModel.links);
+            Debug.Log("Links Length : " + readModel.links.Length);
+        }
+        public void DebugJSONPerson()
+        {
+            Debug.Log("Debug Person -------------------");
+            // Get String JSON content from file
+            TextAsset textAsset = Resources.Load<TextAsset>("person-example");
+            
+            // Create a Person read model from the JSON string.
+            PersonReadModel readModel = JsonUtility.FromJson<PersonReadModel>(textAsset.text);
+            Debug.Log(readModel);
+            Debug.Log("ID : " + readModel.id);
+            Debug.Log("Name : " + readModel.name);
+        }
+        public void DebugJSONNodeProps()
+        {
+            Debug.Log("Debug NodeProps -------------------");
+            // Get String JSON content from file
+            TextAsset textAsset = Resources.Load<TextAsset>("props-example");
+            
+            // Create a NodeProps read model from the JSON string.
+            NodePropsReadModel readModel = JsonUtility.FromJson<NodePropsReadModel>(textAsset.text);
+            Debug.Log(readModel);
+            Debug.Log("Emotion : " + readModel.emotion);
+            Debug.Log("Speaker : " + readModel.speaker);
+            Debug.Log("Speaker ID : " + readModel.speaker.id);
+            Debug.Log("Speaker Name : " + readModel.speaker.name);
+        }
+        public void DebugJSONLink()
+        {
+            Debug.Log("Debug Link -------------------");
+            // Get String JSON content from file
+            TextAsset textAsset = Resources.Load<TextAsset>("link-example");
+            
+            // Create a Link read model from the JSON string.
+            LinkReadModel readModel = JsonUtility.FromJson<LinkReadModel>(textAsset.text);
+            Debug.Log(readModel);
+            Debug.Log("Name : " + readModel.name);
+            Debug.Log("Node Name : " + readModel.link);
+            Debug.Log("Node PID : " + readModel.pid);
+        }
         
         public Scenario GetScenario(string fileName, Emotions emotions, ref Persons persons)
         {
+            // DebugAll();
+            
             // Get String JSON content from file
             TextAsset scenarioTextAsset = Resources.Load<TextAsset>(filePath + fileName);
+            
             // Create a Scenario read model from the JSON string. Will later be converted into a Scenario object
             ScenarioReadModel scenarioReadModel = JsonUtility.FromJson<ScenarioReadModel>(scenarioTextAsset.text);
-
-            // Scenario Nodes : passages
-                // Initialized with no reference to other nodes in the links
-            ScenarioNode[] nodes = ConvertToNodesNoLinks(scenarioReadModel.passages, emotions, ref persons);
-                // Fill the links with the associated reference to a ScenarioNode
-            FillLinks(ref nodes);
             
-            // Find the starting node
-            ScenarioNode startNode = ScenarioNode.FindInArray(int.Parse(scenarioReadModel.startnode), nodes);
-            
-            // Create the scenario
-            Scenario scenario = Scenario.CreateScenario(
-                scenarioReadModel.name, 
-                startNode, 
-                scenarioReadModel.creator, 
-                scenarioReadModel.ifid, 
-                nodes
-            );
-            return scenario;
+            return ConvertReadModel(scenarioReadModel, emotions, ref persons);
         }
 
         private ScenarioNode[] ConvertToNodesNoLinks(ScenarioNodeReadModel[] nodesReadModels, Emotions emotions, ref Persons persons)
@@ -46,7 +117,6 @@ namespace Data
             List<ScenarioNode> nodes = new List<ScenarioNode>();
             foreach (ScenarioNodeReadModel nodeReadModel in nodesReadModels)
             {
-                
                 NodePropsReadModel tmpProps = nodeReadModel.props;
                 
                 // Verify that the person in the props exists.
@@ -86,19 +156,22 @@ namespace Data
         private Link[] ConvertToLinksNoNodes(LinkReadModel[] linksReadModels)
         {
             List<Link> links = new List<Link>();
-            foreach (LinkReadModel linkReadModel in linksReadModels)
+            if (linksReadModels != null)
             {
-                // Create the link
-                Link link = Link.CreateLink(
-                    linkReadModel.name,
-                    int.Parse(linkReadModel.link),
-                    null
-                );
+                foreach (LinkReadModel linkReadModel in linksReadModels)
+                {
+                    // Create the link
+                    Link link = Link.CreateLink(
+                        linkReadModel.name,
+                        int.Parse(linkReadModel.pid),
+                        null
+                    );
                 
-                // Add the new link to the list
-                links.Add(link);
+                    // Add the new link to the list
+                    links.Add(link);
+                }
             }
-
+            
             return links.ToArray();
         }
 
@@ -119,6 +192,28 @@ namespace Data
             {
                 FillLinks(ref node.links, nodes);
             }
+        }
+
+        public Scenario ConvertReadModel(ScenarioReadModel readModel, Emotions emotions, ref Persons persons)
+        {
+            // Scenario Nodes : passages
+            // Initialized with no reference to other nodes in the links
+            ScenarioNode[] nodes = ConvertToNodesNoLinks(readModel.passages, emotions, ref persons);
+            // Fill the links with the associated reference to a ScenarioNode
+            FillLinks(ref nodes);
+            
+            // Find the starting node
+            ScenarioNode startNode = ScenarioNode.FindInArray(int.Parse(readModel.startnode), nodes);
+            
+            // Create the scenario
+            Scenario scenario = Scenario.CreateScenario(
+                readModel.name, 
+                startNode, 
+                readModel.creator, 
+                readModel.ifid, 
+                nodes
+            );
+            return scenario;
         }
         
     }
