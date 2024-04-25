@@ -101,8 +101,6 @@ namespace Data
         
         public Scenario GetScenario(string fileName, Emotions emotions, ref Persons persons)
         {
-            // DebugAll();
-            
             // Get String JSON content from file
             TextAsset scenarioTextAsset = Resources.Load<TextAsset>(filePath + fileName);
             
