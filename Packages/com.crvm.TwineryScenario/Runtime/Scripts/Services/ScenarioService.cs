@@ -11,22 +11,50 @@ namespace Services
     public class ScenarioService : MonoBehaviour
     {
 
+        /// <summary>
+        /// The object that allows to retrieve the data of a Scenario
+        /// </summary>
         public IScenarioDataAccess scenarioDataAccess;
+        
+        /// <summary>
+        /// The current scenario that is managed
+        /// </summary>
         public Scenario scenario;
+        
+        /// <summary>
+        /// A NodeProps used to keep track of the progress in the scenario and the value of persistent variables
+        /// such as the current emotion for example
+        /// </summary>
         public NodeProps propsState;
+        
+        /// <summary>
+        /// The current node of the scenario. Is an indicator of the progression in a scenario.
+        /// </summary>
         public ScenarioNode currentNode;
+        
+        /// <summary>
+        /// The list of available emotions for the current scenario
+        /// </summary>
         public Emotions emotions;
+        
+        /// <summary>
+        /// The list of persons that intervene in the scenario
+        /// </summary>
         public Persons persons;
 
         private void Awake()
         {
+            // In case the data access object is not initialized in the class, search the scene for a IScenarioDataAccess object
             if (scenarioDataAccess == null)
             {
                 scenarioDataAccess = ObjectFinder.FindObjectInScene<IScenarioDataAccess>(SceneManager.GetActiveScene());
             }
-            Debug.Log(scenarioDataAccess);
         }
 
+        /// <summary>
+        /// Initialize the managed scenario (nodes, links, name, etc...) with the content of the file whose name is given
+        /// </summary>
+        /// <param name="fileName">The name of the file that contains the data of a scenario. Warning : Do not give the file extension (.txt, .json, etc...)</param>
         public void InitScenario(string fileName)
         {
             persons.persons.Clear();

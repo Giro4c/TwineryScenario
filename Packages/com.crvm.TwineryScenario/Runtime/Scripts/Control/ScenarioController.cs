@@ -1,6 +1,9 @@
+using System;
 using Core;
 using Services;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using Utilities;
 using Visuals;
 
 namespace Control
@@ -15,6 +18,19 @@ namespace Control
 
         public string scenarioFileName = "twinery-example";
         public string playerName = "Player";
+
+        private void Start()
+        {
+            // scenarioService = ObjectFinder.FindObjectInScene<ScenarioService>(SceneManager.GetActiveScene());
+        }
+
+        private void Awake()
+        {
+            // if (scenarioService == null)
+            // {
+            //     scenarioService = ObjectFinder.FindObjectInScene<ScenarioService>(SceneManager.GetActiveScene());
+            // }
+        }
 
         public void LaunchScenario()
         {
