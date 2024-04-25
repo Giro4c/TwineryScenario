@@ -11,7 +11,7 @@ namespace Control
     public class ScenarioController : MonoBehaviour
     {
 
-        public ScenarioService scenarioService;
+        public IScenarioService scenarioService;
         
         public SpeakerTextDisplayer speakerTextDisplayer;
         public OptionDisplayer optionDisplayer;
@@ -21,15 +21,15 @@ namespace Control
 
         private void Start()
         {
-            // scenarioService = ObjectFinder.FindObjectInScene<ScenarioService>(SceneManager.GetActiveScene());
+            scenarioService = ObjectFinder.FindObjectInScene<IScenarioService>(SceneManager.GetActiveScene());
         }
 
         private void Awake()
         {
-            // if (scenarioService == null)
-            // {
-            //     scenarioService = ObjectFinder.FindObjectInScene<ScenarioService>(SceneManager.GetActiveScene());
-            // }
+            if (scenarioService == null)
+            {
+                scenarioService = ObjectFinder.FindObjectInScene<IScenarioService>(SceneManager.GetActiveScene());
+            }
         }
 
         public void LaunchScenario()
@@ -54,7 +54,7 @@ namespace Control
         public void GeneralLaunchScenarioAction()
         {
             // No scriptable object Scenario already in the service
-            if (scenarioService.scenario == null)
+            if (scenarioService.GetScenario() == null)
             {
                 Debug.Log("No scenario, starting research");
                 CreateAndLaunchScenario(scenarioFileName);
@@ -73,7 +73,7 @@ namespace Control
             ClearOptions();
             
             // For each option, show the option with its name and the action to do if its selected
-            foreach (Link link in scenarioService.currentNode.links)
+            foreach (Link link in scenarioService.GetCurrentNode().links)
             {
                 optionDisplayer.Create(link.name, () => TriggerLink(link.name, link.node));
             }
@@ -82,8 +82,8 @@ namespace Control
         public void ShowCurrentNode()
         {
             // Show the response to the previous speak bubble
-            string response = ProcessText(scenarioService.currentNode.text);
-            speakerTextDisplayer.Create(scenarioService.propsState.speaker.name, response, scenarioService.propsState.emotion.emotionName);
+            string response = ProcessText(scenarioService.GetCurrentNode().text);
+            speakerTextDisplayer.Create(scenarioService.GetPropsState().speaker.name, response, scenarioService.GetPropsState().emotion.emotionName);
             
             // Show the new options
             ShowOptions();

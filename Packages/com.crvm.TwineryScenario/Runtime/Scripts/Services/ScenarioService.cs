@@ -8,7 +8,7 @@ using Utilities;
 
 namespace Services
 {
-    public class ScenarioService : MonoBehaviour
+    public class ScenarioService : MonoBehaviour, IScenarioService
     {
 
         /// <summary>
@@ -42,6 +42,36 @@ namespace Services
         /// </summary>
         public Persons persons;
 
+        // ------------------------------------------------
+        //                    GETTERS
+        // ------------------------------------------------
+        
+        public Scenario GetScenario()
+        {
+            return scenario;
+        }
+
+        public ScenarioNode GetCurrentNode()
+        {
+            return currentNode;
+        }
+
+        public NodeProps GetPropsState()
+        {
+            return propsState;
+        }
+
+        public Persons GetPersonList()
+        {
+            return persons;
+        }
+
+        public Emotions GetEmotionList()
+        {
+            return emotions;
+        }
+        
+        
         private void Awake()
         {
             // In case the data access object is not initialized in the class, search the scene for a IScenarioDataAccess object
@@ -101,6 +131,7 @@ namespace Services
         {
             return currentNode.links == null || currentNode.links.Length == 0;
         }
+
         
     }
 }
