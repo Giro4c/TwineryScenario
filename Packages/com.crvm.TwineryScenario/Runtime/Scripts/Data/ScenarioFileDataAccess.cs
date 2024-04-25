@@ -103,7 +103,7 @@ namespace Data
         {
             // Get String JSON content from file
             TextAsset scenarioTextAsset = Resources.Load<TextAsset>(filePath + fileName);
-            
+
             // Create a Scenario read model from the JSON string. Will later be converted into a Scenario object
             ScenarioReadModel scenarioReadModel = JsonUtility.FromJson<ScenarioReadModel>(scenarioTextAsset.text);
             

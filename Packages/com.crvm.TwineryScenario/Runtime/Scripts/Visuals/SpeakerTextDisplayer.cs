@@ -11,7 +11,7 @@ namespace Visuals
         public string textContainer = "Text";
         
 
-        public void Create(string name, string text)
+        public void Create(string name, string text, string emotion)
         {
             // Instantiate the prefab
             GameObject obj = Instantiate(prefab);

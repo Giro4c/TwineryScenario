@@ -1,5 +1,7 @@
+using Core;
 using Services;
 using UnityEngine;
+using Visuals;
 
 namespace Control
 {
@@ -7,21 +9,121 @@ namespace Control
     {
 
         public ScenarioService scenarioService;
-        public DisplayService displayService;
+        
+        public SpeakerTextDisplayer speakerTextDisplayer;
+        public OptionDisplayer optionDisplayer;
 
-        public void LaunchScenario(string filePath)
+        public string scenarioFileName = "twinery-example";
+        public string playerName = "Player";
+
+        public void LaunchScenario()
         {
-            scenarioService.LaunchScenario(filePath);
+            // Trigger the initialisation of the player progress in the scenario
+            scenarioService.LaunchScenario();
+            // Display the current scenario node : start node
+            ShowCurrentNode();
+        }
+
+        public void NewScenario(string fileName)
+        {
+            scenarioService.InitScenario(fileName);
+        }
+
+        public void CreateAndLaunchScenario(string fileName)
+        {
+            NewScenario(fileName);
+            LaunchScenario();
+        }
+
+        public void GeneralLaunchScenarioAction()
+        {
+            // No scriptable object Scenario already in the service
+            if (scenarioService.scenario == null)
+            {
+                Debug.Log("No scenario, starting research");
+                CreateAndLaunchScenario(scenarioFileName);
+            }
+            // Start or Restart the current scenario
+            else
+            {
+                LaunchScenario();
+            }
+            
+        }
+        
+        public void ShowOptions()
+        {
+            // Clear the options from before
+            ClearOptions();
+            
+            // For each option, show the option with its name and the action to do if its selected
+            foreach (Link link in scenarioService.currentNode.links)
+            {
+                optionDisplayer.Create(link.name, () => TriggerLink(link.name, link.node));
+            }
+        }
+
+        public void ShowCurrentNode()
+        {
+            // Show the response to the previous speak bubble
+            string response = ProcessText(scenarioService.currentNode.text);
+            speakerTextDisplayer.Create(scenarioService.propsState.speaker.name, response, scenarioService.propsState.emotion.emotionName);
+            
+            // Show the new options
+            ShowOptions();
+        }
+
+        public void TriggerLink(string linkName, ScenarioNode targetNode)
+        {
+            // First show the name of the selected link as a speak bubble to keep track of the conversation
+            Debug.Log("Displayed player choice");
+            speakerTextDisplayer.Create(playerName, linkName, null);
+            
+            // Change the current node to the one the link points to
+            Debug.Log("Change to Node : " + targetNode.name);
+            scenarioService.GoToNode(targetNode);
+            Debug.Log("Display new Node.");
+            ShowCurrentNode();
+        }
+        
+        private string ProcessText(string rawText)
+        {
+            return rawText.Split("\n--\n")[0];
         }
 
         public void ClearSpeakBubbles()
         {
-            displayService.ClearSpeakerTexts();
+            speakerTextDisplayer.Clear();
+        }
+        
+        public void ClearOptions()
+        {
+            optionDisplayer.Clear();
         }
 
         public void ClearAll()
         {
-            displayService.ClearAll();
+            ClearSpeakBubbles();
+            ClearOptions();
+        }
+        
+        public void Clear(int option)
+        {
+            // Clear All
+            if (option == 0)
+            {
+                ClearAll();
+            }
+            // Clear Speak Bubbles
+            else if (option == 1)
+            {
+                ClearSpeakBubbles();
+            }
+            // Clear Options
+            else if (option == 2)
+            {
+                ClearOptions();
+            }
         }
 
     }
