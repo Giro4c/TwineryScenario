@@ -143,8 +143,12 @@ namespace Editor.Scripts.ScenarioJSONParser
                 NodePropsReadModel tmpProps = nodeReadModel.props;
                 
                 // Verify that the person in the props exists.
+                    // Search By ID
                 Person person = assets.persons.GetPerson(int.Parse(tmpProps.speaker.id));
-                    // If it does not exist in the list, creates a new person and adds it to the list
+                    // Search by name
+                // Person person = assets.persons.GetPerson(tmpProps.speaker.name);
+                
+                // If it does not exist in the list, creates a new person and adds it to the list
                 if (!person)
                 {
                     person = Person.CreatePerson(int.Parse(tmpProps.speaker.id), tmpProps.speaker.name);

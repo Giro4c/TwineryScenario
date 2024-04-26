@@ -118,7 +118,11 @@ namespace Data
                 NodePropsReadModel tmpProps = nodeReadModel.props;
                 
                 // Verify that the person in the props exists.
+                    // Search By ID
                 Person person = persons.GetPerson(int.Parse(tmpProps.speaker.id));
+                    // Search by name
+                // Person person = persons.GetPerson(tmpProps.speaker.name);
+
                     // If it does not exist in the list, creates a new person and adds it to the list
                 if (!person)
                 {

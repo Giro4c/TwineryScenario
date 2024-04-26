@@ -19,6 +19,16 @@ namespace Core
             return null;
         }
         
+        public Person GetPerson(string name)
+        {
+            foreach (Person person in persons)
+            {
+                if (person.name == name) return person;
+            }
+
+            return null;
+        }
+        
         public void Init(List<Person> persons)
         {
             this.persons = persons;
