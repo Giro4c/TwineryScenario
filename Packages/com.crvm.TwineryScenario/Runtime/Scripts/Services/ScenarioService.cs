@@ -118,7 +118,7 @@ namespace Services
             currentNode = newCurrentNode;
             
             // Change the emotion only if it is precised
-            if (currentNode.props.emotion != Emotion.None)
+            if (currentNode.props.emotion != null)
             {
                 propsState.emotion = currentNode.props.emotion;
             }
