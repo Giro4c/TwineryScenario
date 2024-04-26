@@ -1,4 +1,4 @@
-namespace Visuals
+namespace TwineryScenario.Runtime.Scripts.Visuals
 {
     /// <summary>
     /// The abstract class that defines the base method to display a speak bubble.

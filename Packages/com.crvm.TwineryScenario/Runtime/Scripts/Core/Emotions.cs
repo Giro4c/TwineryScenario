@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Core
+namespace TwineryScenario.Runtime.Scripts.Core
 {
     /// <summary>
     /// A class storing a list of Emotion scriptable objects

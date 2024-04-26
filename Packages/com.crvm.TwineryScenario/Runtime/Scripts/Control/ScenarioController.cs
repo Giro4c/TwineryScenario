@@ -1,12 +1,11 @@
-using System;
-using Core;
-using Services;
+using TwineryScenario.Runtime.Scripts.Core;
+using TwineryScenario.Runtime.Scripts.Services;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Utilities;
-using Visuals;
+using TwineryScenario.Runtime.Scripts.Utilities;
+using TwineryScenario.Runtime.Scripts.Visuals;
 
-namespace Control
+namespace TwineryScenario.Runtime.Scripts.Control
 {
     /// <summary>
     /// An example of a scenario controller with basic actions

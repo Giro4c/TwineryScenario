@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Core
+namespace TwineryScenario.Runtime.Scripts.Core
 {
     /// <summary>
     /// A class representing a node/possibility/event in a scenario

@@ -1,10 +1,10 @@
 using System.Collections.Generic;
-using Core;
-using Data.ReadModels;
-using Services;
+using TwineryScenario.Runtime.Scripts.Core;
+using TwineryScenario.Runtime.Scripts.Data.ReadModels;
+using TwineryScenario.Runtime.Scripts.Services;
 using UnityEngine;
 
-namespace Data
+namespace TwineryScenario.Runtime.Scripts.Data
 {
     /// <summary>
     /// A class that allows to access and process scenario data in files based on the JSON data format.

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Core
+namespace TwineryScenario.Runtime.Scripts.Core
 {
     /// <summary>
     /// A class that represents a link pointing to a scenario node. Most commonly, it is used as a representation of the different choices/actions

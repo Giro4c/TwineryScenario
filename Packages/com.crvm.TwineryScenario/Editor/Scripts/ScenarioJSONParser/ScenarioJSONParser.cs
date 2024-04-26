@@ -1,10 +1,10 @@
 using System.Collections.Generic;
-using Core;
-using Data.ReadModels;
+using TwineryScenario.Runtime.Scripts.Core;
+using TwineryScenario.Runtime.Scripts.Data.ReadModels;
 using UnityEditor;
 using UnityEngine;
 
-namespace Editor.Scripts.ScenarioJSONParser
+namespace TwineryScenario.Editor.Scripts.ScenarioJSONParser
 {
     public class ScenarioJSONParser : UnityEditor.Editor
     {

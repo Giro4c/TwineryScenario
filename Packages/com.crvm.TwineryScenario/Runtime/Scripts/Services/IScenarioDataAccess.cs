@@ -1,6 +1,6 @@
-using Core;
+using TwineryScenario.Runtime.Scripts.Core;
 
-namespace Services
+namespace TwineryScenario.Runtime.Scripts.Services
 {
     /// <summary>
     /// An interface determining the different interactions with a scenario data source.

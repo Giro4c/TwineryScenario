@@ -1,6 +1,6 @@
-using Core;
+using TwineryScenario.Runtime.Scripts.Core;
 
-namespace Services
+namespace TwineryScenario.Runtime.Scripts.Services
 {
     /// <summary>
     /// An interface that defines the uses case for managing a scenario

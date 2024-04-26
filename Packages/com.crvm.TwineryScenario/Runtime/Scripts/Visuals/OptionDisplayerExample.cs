@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-namespace Visuals
+namespace TwineryScenario.Runtime.Scripts.Visuals
 {
     /// <summary>
     /// An example implementation of an option displayer.

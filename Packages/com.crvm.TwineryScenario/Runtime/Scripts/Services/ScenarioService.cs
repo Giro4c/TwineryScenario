@@ -1,9 +1,9 @@
-using Core;
+using TwineryScenario.Runtime.Scripts.Core;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Utilities;
+using TwineryScenario.Runtime.Scripts.Utilities;
 
-namespace Services
+namespace TwineryScenario.Runtime.Scripts.Services
 {
     /// <summary>
     /// An example of Scenario Service that implements the necessary use cases for managing a scenario.

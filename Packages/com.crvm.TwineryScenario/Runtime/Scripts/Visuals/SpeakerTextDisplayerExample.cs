@@ -2,7 +2,7 @@ using System;
 using TMPro;
 using UnityEngine;
 
-namespace Visuals
+namespace TwineryScenario.Runtime.Scripts.Visuals
 {
     /// <summary>
     /// An example implementation of a speak bubble displayer.

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Core
+namespace TwineryScenario.Runtime.Scripts.Core
 {
     /// <summary>
     /// A class representing a person in a scenario with its ID and its name

@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Utilities
+namespace TwineryScenario.Runtime.Scripts.Utilities
 {
     /// <summary>
     /// A class to find objects in a scene

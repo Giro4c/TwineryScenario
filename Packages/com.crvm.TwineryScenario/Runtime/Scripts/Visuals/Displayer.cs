@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Visuals
+namespace TwineryScenario.Runtime.Scripts.Visuals
 {
     /// <summary>
     /// An abstract class that defines the basic behavior for any scenario-element related displays.
