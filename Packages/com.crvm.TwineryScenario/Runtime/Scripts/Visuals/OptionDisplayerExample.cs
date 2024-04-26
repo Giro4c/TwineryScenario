@@ -3,8 +3,11 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-namespace Visuals
+namespace TwineryScenario.Runtime.Scripts.Visuals
 {
+    /// <summary>
+    /// An example implementation of an option displayer.
+    /// </summary>
     public class OptionDisplayerExample : OptionDisplayer
     {
 
@@ -19,7 +22,6 @@ namespace Visuals
             btn.GetComponentInChildren<TextMeshProUGUI>().text = name;
             // Add an event listener for click event
             btn.onClick.AddListener(doOnClick);
-            
             
             // Add the gameObject to the container
             AddGameObject(obj.gameObject);

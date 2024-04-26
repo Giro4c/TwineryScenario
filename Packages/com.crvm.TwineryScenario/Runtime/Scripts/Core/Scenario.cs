@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Core
+namespace TwineryScenario.Runtime.Scripts.Core
 {
     /// <summary>
     /// A class representing a scenario with a name, a creator and a list of nodes representing events/choices in the scenario.

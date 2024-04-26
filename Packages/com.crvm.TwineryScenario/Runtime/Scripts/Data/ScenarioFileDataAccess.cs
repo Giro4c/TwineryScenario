@@ -1,19 +1,23 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using Core;
-using Data.ReadModels;
-using Services;
+using TwineryScenario.Runtime.Scripts.Core;
+using TwineryScenario.Runtime.Scripts.Data.ReadModels;
+using TwineryScenario.Runtime.Scripts.Services;
 using UnityEngine;
 
-namespace Data
+namespace TwineryScenario.Runtime.Scripts.Data
 {
+    /// <summary>
+    /// A class that allows to access and process scenario data in files based on the JSON data format.
+    /// </summary>
     public class ScenarioFileDataAccess : MonoBehaviour, IScenarioDataAccess
     {
 
+        /// <summary>
+        /// The relative path of the folder containing the files. The root of this path is the Resources folder.
+        /// </summary>
         public string filePath = "";
 
-        public void DebugAll()
+        private void DebugAll()
         {
             DebugJSONScenario();
             DebugJSONScenarioNode();
@@ -21,8 +25,7 @@ namespace Data
             DebugJSONPerson();
             DebugJSONNodeProps();
         }
-        
-        public void DebugJSONScenario()
+        private void DebugJSONScenario()
         {
             Debug.Log("Debug Scenario -------------------");
             // Get String JSON content from file
@@ -38,7 +41,7 @@ namespace Data
             Debug.Log("IFID : " + readModel.ifid);
             Debug.Log("Creator Version : " + readModel.creatorversion);
         }
-        public void DebugJSONScenarioNode()
+        private void DebugJSONScenarioNode()
         {
             Debug.Log("Debug ScenarioNode -------------------");
             // Get String JSON content from file
@@ -59,7 +62,7 @@ namespace Data
             Debug.Log("Links : " + readModel.links);
             Debug.Log("Links Length : " + readModel.links.Length);
         }
-        public void DebugJSONPerson()
+        private void DebugJSONPerson()
         {
             Debug.Log("Debug Person -------------------");
             // Get String JSON content from file
@@ -71,7 +74,7 @@ namespace Data
             Debug.Log("ID : " + readModel.id);
             Debug.Log("Name : " + readModel.name);
         }
-        public void DebugJSONNodeProps()
+        private void DebugJSONNodeProps()
         {
             Debug.Log("Debug NodeProps -------------------");
             // Get String JSON content from file
@@ -85,7 +88,7 @@ namespace Data
             Debug.Log("Speaker ID : " + readModel.speaker.id);
             Debug.Log("Speaker Name : " + readModel.speaker.name);
         }
-        public void DebugJSONLink()
+        private void DebugJSONLink()
         {
             Debug.Log("Debug Link -------------------");
             // Get String JSON content from file
@@ -99,6 +102,7 @@ namespace Data
             Debug.Log("Node PID : " + readModel.pid);
         }
         
+        
         public Scenario GetScenario(string fileName, Emotions emotions, ref Persons persons)
         {
             // Get String JSON content from file
@@ -110,6 +114,14 @@ namespace Data
             return ConvertReadModel(scenarioReadModel, emotions, ref persons);
         }
 
+        /// <summary>
+        /// Convert an array of scenario nodes read models into an array of scenario nodes though the links within the
+        /// nodes do not yet point toward other nodes.
+        /// </summary>
+        /// <param name="nodesReadModels">The array of nodes read models used for the conversion</param>
+        /// <param name="emotions">The list of available emotions</param>
+        /// <param name="persons">The list of the persons who spoke in at least on of the nodes in the list.</param>
+        /// <returns>An array of scenario nodes whose links don't point to other nodes yet.</returns>
         private ScenarioNode[] ConvertToNodesNoLinks(ScenarioNodeReadModel[] nodesReadModels, Emotions emotions, ref Persons persons)
         {
             List<ScenarioNode> nodes = new List<ScenarioNode>();
@@ -155,6 +167,11 @@ namespace Data
             return nodes.ToArray();
         }
 
+        /// <summary>
+        /// Converts an array of link read models into an array of links though the links do not yet point to any reference of a node.
+        /// </summary>
+        /// <param name="linksReadModels">The array of link read model used for the conversion.</param>
+        /// <returns>An array of links that don't point to any node reference yet.</returns>
         private Link[] ConvertToLinksNoNodes(LinkReadModel[] linksReadModels)
         {
             List<Link> links = new List<Link>();
@@ -177,7 +194,11 @@ namespace Data
             return links.ToArray();
         }
 
-
+        /// <summary>
+        /// Fill the node pointers of all the links in an array using an array of nodes that contains all the available node references.
+        /// </summary>
+        /// <param name="links">The array containing the links whose pointed nodes will be attributed.</param>
+        /// <param name="nodes">The array of nodes available for references.</param>
         private void FillLinks(ref Link[] links, ScenarioNode[] nodes)
         {
             if (links == null) return;
@@ -187,6 +208,10 @@ namespace Data
             }
         }
         
+        /// <summary>
+        /// For each node in the given array, fill the links' node pointers using said array as the list of reference nodes.
+        /// </summary>
+        /// <param name="nodes">The array of nodes whose links must be completed. Also used as a reference to complete said links.</param>
         private void FillLinks(ref ScenarioNode[] nodes)
         {
             if (nodes == null) return;
@@ -196,6 +221,13 @@ namespace Data
             }
         }
 
+        /// <summary>
+        /// Converts a scenario read model into a scenario and fills accordingly the list of persons and emotions available in this scenario.
+        /// </summary>
+        /// <param name="readModel">The scenario read model used for the conversion.</param>
+        /// <param name="emotions">The list of available emotions to be filled.</param>
+        /// <param name="persons">The list of persons to be filled.</param>
+        /// <returns>An initialized instance of a scenario created through this conversion.</returns>
         public Scenario ConvertReadModel(ScenarioReadModel readModel, Emotions emotions, ref Persons persons)
         {
             // Scenario Nodes : passages

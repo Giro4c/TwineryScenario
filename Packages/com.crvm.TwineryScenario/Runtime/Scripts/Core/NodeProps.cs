@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Core
+namespace TwineryScenario.Runtime.Scripts.Core
 {
     /// <summary>
     /// A class that represents all additional elements in a dialog based scenario which includes the person currently

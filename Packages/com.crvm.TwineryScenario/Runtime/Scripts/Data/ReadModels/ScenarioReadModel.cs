@@ -1,6 +1,6 @@
 using System;
 
-namespace Data.ReadModels
+namespace TwineryScenario.Runtime.Scripts.Data.ReadModels
 {
     [Serializable]
     public class ScenarioReadModel

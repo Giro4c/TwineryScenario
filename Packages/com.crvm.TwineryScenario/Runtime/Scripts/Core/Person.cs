@@ -1,9 +1,9 @@
 using UnityEngine;
 
-namespace Core
+namespace TwineryScenario.Runtime.Scripts.Core
 {
     /// <summary>
-    /// A class representing a person a in scenario with its ID and its name
+    /// A class representing a person in a scenario with its ID and its name
     /// </summary>
     [CreateAssetMenu(fileName = "Person", menuName = "ScriptableObjects/Scenarios/Person", order = 1)]
     public class Person : ScriptableObject
@@ -20,7 +20,7 @@ namespace Core
 
         /// <summary>
         /// Initialize the person's characteristics with the values in the parameters
-        /// </summary>
+        /// </summary
         /// <param name="id">The identifier that allows to recognize a person within a scenario</param>
         /// <param name="name">The full name of the person</param>
         public void Init(int id, string name)
