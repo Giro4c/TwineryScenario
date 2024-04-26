@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1eb33d61f4cb4c209df14a647d59623d, type: 3}
+  m_Name: PersonsList-ParserWindowTest
+  m_EditorClassIdentifier: 
+  persons:
+  - {fileID: 11400000, guid: 26e0bba8007c0e84595ab8483b7b65c5, type: 2}
+  - {fileID: 11400000, guid: 783b9727ab3f99341a097cc70dc7eb67, type: 2}
+  - {fileID: 11400000, guid: 3c6354cf6dda17e408992c2e60f2a6e0, type: 2}

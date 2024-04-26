@@ -1,0 +1,141 @@
+{
+  "passages": [
+    {
+      "text": "Hello world.",
+      "links": [
+        {
+          "name": "Say Hello",
+          "link": "Hello",
+          "pid": "5"
+        },
+        {
+          "name": "Say Hi",
+          "link": "Hi",
+          "pid": "6"
+        }
+      ],
+      "props": {
+        "emotion": "Sad",
+        "speaker": {
+          "id": "0",
+          "name": "Elliot"
+        }
+      },
+      "name": "Start",
+      "pid": "1",
+      "position": {
+        "x": "150",
+        "y": "250"
+      }
+    },
+    {
+      "text": "Fin 1",
+      "props": {
+        "emotion": "Happy",
+        "speaker": {
+          "id": "0",
+          "name": "Elliot"
+        }
+      },
+      "name": "End 1",
+      "pid": "2",
+      "position": {
+        "x": "600",
+        "y": "25"
+      }
+    },
+    {
+      "text": "Fin 2",
+      "props": {
+        "emotion": "Sad",
+        "speaker": {
+          "id": "0",
+          "name": "Elliot"
+        }
+      },
+      "name": "End 2",
+      "pid": "3",
+      "position": {
+        "x": "600",
+        "y": "450"
+      }
+    },
+    {
+      "text": "Fin commune",
+      "props": {
+        "emotion": "Happy",
+        "speaker": {
+          "id": "1",
+          "name": "Manon"
+        }
+      },
+      "name": "End 3",
+      "pid": "4",
+      "position": {
+        "x": "600",
+        "y": "250"
+      }
+    },
+    {
+      "text": "Hello",
+      "links": [
+        {
+          "name": "Go to End",
+          "link": "End 1",
+          "pid": "2"
+        },
+        {
+          "name": "Go somewhere",
+          "link": "End 3",
+          "pid": "4"
+        }
+      ],
+      "props": {
+        "emotion": "Happy",
+        "speaker": {
+          "id": "2",
+          "name": "Charles"
+        }
+      },
+      "name": "Hello",
+      "pid": "5",
+      "position": {
+        "x": "375",
+        "y": "100"
+      }
+    },
+    {
+      "text": "Hi ?",
+      "links": [
+        {
+          "name": "Go to End",
+          "link": "End 2",
+          "pid": "3"
+        },
+        {
+          "name": "Go somewhere",
+          "link": "End 3",
+          "pid": "4"
+        }
+      ],
+      "props": {
+        "emotion": "Happy",
+        "speaker": {
+          "id": "1",
+          "name": "Manon"
+        }
+      },
+      "name": "Hi",
+      "pid": "6",
+      "position": {
+        "x": "375",
+        "y": "350"
+      }
+    }
+  ],
+  "name": "ParserWindowTest",
+  "startnode": "1",
+  "creator": "Camille",
+  "creator-version": "2.8.1",
+  "ifid": "58A2A34B-4BC0-4937-8100-5694F2FA79B5"
+}

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e49a35012bac4c9f839bd55eda6ca63d, type: 3}
+  m_Name: End 1-2-ParserWindowTest
+  m_EditorClassIdentifier: 
+  pid: 2
+  name: End 1
+  position:
+    x: 600
+    y: 25
+  text: Fin 1
+  links: []
+  props: {fileID: 11400000, guid: 551c2a121ee2dfa4990b8649a927be64, type: 2}

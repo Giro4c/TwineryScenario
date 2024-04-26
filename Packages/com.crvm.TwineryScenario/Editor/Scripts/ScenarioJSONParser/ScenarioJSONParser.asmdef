@@ -1,0 +1,17 @@
+{
+    "name": "ScenarioJSONParser",
+    "rootNamespace": "",
+    "references": [
+        "GUID:98ff1a58259183443b53a1a234a0d34e",
+        "GUID:a2a9fd54ba8872046a5267dfe497b030"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

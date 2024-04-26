@@ -16,7 +16,24 @@ namespace Core
                 if (emotion.emotionName == emotionName) return emotion;
             }
 
-            return Emotion.None;
+            return null;
+        }
+
+        public void Init(List<Emotion> emotions)
+        {
+            this.emotions = emotions;
+        }
+
+        public static Emotions CreateEmotionsList(List<Emotion> emotions)
+        {
+            Emotions emotionsList = ScriptableObject.CreateInstance<Emotions>();
+            emotionsList.Init(emotions);
+            return emotionsList;
+        }
+        
+        public static Emotions CreateEmotionsList()
+        {
+            return CreateEmotionsList(new List<Emotion>());
         }
         
     }

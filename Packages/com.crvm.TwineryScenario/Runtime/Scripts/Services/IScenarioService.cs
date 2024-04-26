@@ -17,6 +17,9 @@ namespace Services
         public NodeProps GetPropsState();
         public Persons GetPersonList();
         public Emotions GetEmotionList();
+        
+        // Setters
+        // public void SetScenario(Scenario scenario);
 
     }
 }

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29c492975423d424eaf20c5307ce4bef, type: 3}
+  m_Name: Scenario-ParserWindowTest
+  m_EditorClassIdentifier: 
+  name: ParserWindowTest
+  startNode: {fileID: 11400000, guid: 5941caa438495124a8878cb67c9858d7, type: 2}
+  creator: Camille
+  ifid: 58A2A34B-4BC0-4937-8100-5694F2FA79B5
+  passages:
+  - {fileID: 11400000, guid: 5941caa438495124a8878cb67c9858d7, type: 2}
+  - {fileID: 11400000, guid: c375b44fa7ee54c439ad3a6cad1d31a5, type: 2}
+  - {fileID: 11400000, guid: d2276facf24affd428333f7998635004, type: 2}
+  - {fileID: 11400000, guid: 0b27e838a07a2484894dec285cca99cc, type: 2}
+  - {fileID: 11400000, guid: a5e5aae4ce8ccc14eb62e3d41204e52e, type: 2}
+  - {fileID: 11400000, guid: 72eca374d331e664c82844dba36ebe37, type: 2}

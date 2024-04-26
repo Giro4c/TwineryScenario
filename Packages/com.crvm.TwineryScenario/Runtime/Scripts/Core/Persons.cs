@@ -19,5 +19,22 @@ namespace Core
             return null;
         }
         
+        public void Init(List<Person> persons)
+        {
+            this.persons = persons;
+        }
+
+        public static Persons CreatePersonsList(List<Person> persons)
+        {
+            Persons emotionsList = ScriptableObject.CreateInstance<Persons>();
+            emotionsList.Init(persons);
+            return emotionsList;
+        }
+        
+        public static Persons CreatePersonsList()
+        {
+            return CreatePersonsList(new List<Person>());
+        }
+        
     }
 }

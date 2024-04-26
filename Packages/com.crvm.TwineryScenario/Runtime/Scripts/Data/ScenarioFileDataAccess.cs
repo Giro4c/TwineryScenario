@@ -119,7 +119,7 @@ namespace Data
                 
                 // Verify that the person in the props exists.
                 Person person = persons.GetPerson(int.Parse(tmpProps.speaker.id));
-                    // If it does not exist in th list, creates a new person and adds it to the list
+                    // If it does not exist in the list, creates a new person and adds it to the list
                 if (!person)
                 {
                     person = Person.CreatePerson(int.Parse(tmpProps.speaker.id), tmpProps.speaker.name);
