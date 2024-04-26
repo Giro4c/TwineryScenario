@@ -1,6 +1,6 @@
 {
     "name": "com.crvm.twineryscenario",
-    "version": "1.0.0",
+    "version": "1.1.1",
     "displayName": "Twinery Scenario",
     "description": "A package to parse, create and go through scenarios made with Twinery.",
     "unity": "2022.3",
