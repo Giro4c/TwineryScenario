@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using Core;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,6 +5,9 @@ using Utilities;
 
 namespace Services
 {
+    /// <summary>
+    /// An example of Scenario Service that implements the necessary use cases for managing a scenario.
+    /// </summary>
     public class ScenarioService : MonoBehaviour, IScenarioService
     {
 
@@ -81,10 +81,6 @@ namespace Services
             }
         }
 
-        /// <summary>
-        /// Initialize the managed scenario (nodes, links, name, etc...) with the content of the file whose name is given
-        /// </summary>
-        /// <param name="fileName">The name of the file that contains the data of a scenario. Warning : Do not give the file extension (.txt, .json, etc...)</param>
         public void InitScenario(string fileName)
         {
             persons.persons.Clear();
