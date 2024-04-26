@@ -85,8 +85,8 @@ namespace TwineryScenario.Runtime.Scripts.Data
             Debug.Log(readModel);
             Debug.Log("Emotion : " + readModel.emotion);
             Debug.Log("Speaker : " + readModel.speaker);
-            Debug.Log("Speaker ID : " + readModel.speaker.id);
-            Debug.Log("Speaker Name : " + readModel.speaker.name);
+            // Debug.Log("Speaker ID : " + readModel.speaker.id);
+            // Debug.Log("Speaker Name : " + readModel.speaker.name);
         }
         private void DebugJSONLink()
         {
@@ -131,14 +131,16 @@ namespace TwineryScenario.Runtime.Scripts.Data
                 
                 // Verify that the person in the props exists.
                     // Search By ID
-                Person person = persons.GetPerson(int.Parse(tmpProps.speaker.id));
+                // Person person = persons.GetPerson(int.Parse(tmpProps.speaker.id));
                     // Search by name
+                Person person = persons.GetPerson(tmpProps.speaker);
                 // Person person = persons.GetPerson(tmpProps.speaker.name);
 
                     // If it does not exist in the list, creates a new person and adds it to the list
                 if (!person)
                 {
-                    person = Person.CreatePerson(int.Parse(tmpProps.speaker.id), tmpProps.speaker.name);
+                    // person = Person.CreatePerson(int.Parse(tmpProps.speaker.id), tmpProps.speaker.name);
+                    person = Person.CreatePerson(persons.persons.Count, tmpProps.speaker);
                     persons.persons.Add(person);
                 }
                 

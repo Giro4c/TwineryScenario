@@ -6,6 +6,7 @@ namespace TwineryScenario.Runtime.Scripts.Data.ReadModels
     public class NodePropsReadModel
     {
         public string emotion;
-        public PersonReadModel speaker;
+        // public PersonReadModel speaker;
+        public string speaker;
     }
 }

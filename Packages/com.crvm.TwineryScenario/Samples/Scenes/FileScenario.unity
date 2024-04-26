@@ -581,6 +581,10 @@ PrefabInstance:
       propertyPath: container
       value: 
       objectReference: {fileID: 1524271213}
+    - target: {fileID: 4367535861974209943, guid: 25d267ce0e03ad345b1271feb46161fd, type: 3}
+      propertyPath: scenarioFileName
+      value: twinery-example2
+      objectReference: {fileID: 0}
     - target: {fileID: 6136174874753466355, guid: 25d267ce0e03ad345b1271feb46161fd, type: 3}
       propertyPath: scenario
       value: 
