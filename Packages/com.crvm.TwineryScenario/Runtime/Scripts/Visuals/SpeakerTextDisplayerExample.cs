@@ -4,10 +4,20 @@ using UnityEngine;
 
 namespace Visuals
 {
+    /// <summary>
+    /// An example implementation of a speak bubble displayer.
+    /// </summary>
     public class SpeakerTextDisplayerExample : SpeakerTextDisplayer
     {
 
+        /// <summary>
+        /// The name of the GameObject whose component will be changed based on the speaker's name.
+        /// </summary>
         public string speakerNameContainer = "Name";
+        
+        /// <summary>
+        /// The name of the GameObject whose component will be changed based on what the speaker said.
+        /// </summary>
         public string textContainer = "Text";
 
         public override void Create(string name, string text, string emotion)
