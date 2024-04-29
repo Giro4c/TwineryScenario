@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TwineryScenario.Runtime.Scripts.Core;
-using TwineryScenario.Runtime.Scripts.Data.ReadModels;
+using TwineryScenario.Runtime.Scripts.Core.ReadModels;
+using TwineryScenario.Runtime.Scripts.Services;
 using UnityEditor;
 using UnityEngine;
 
@@ -9,14 +10,14 @@ namespace TwineryScenario.Editor.Scripts.ScenarioJSONParser
     public class ScenarioJSONParser : UnityEditor.Editor
     {
 
-        // public static string baseDirectory = "ScriptableObjects/";
+        private static PropsFactory factory = new PropsFactory();
 
         private class ScenarioAssets
         {
             public Scenario scenario;
             public string directoryScenario;
             
-            public List<ScenarioNode> nodes;
+            public List<Node> nodes;
             public string directoryNodes;
 
             public List<BaseDialogProps> nodesProps;
@@ -48,7 +49,7 @@ namespace TwineryScenario.Editor.Scripts.ScenarioJSONParser
                 this.directoryEmotions = directoryEmotions;
                 
                 scenario = null;
-                nodes = new List<ScenarioNode>();
+                nodes = new List<Node>();
                 nodesProps = new List<BaseDialogProps>();
                 links = new List<Link>();
                 persons = Persons.CreatePersonsList();
@@ -62,12 +63,16 @@ namespace TwineryScenario.Editor.Scripts.ScenarioJSONParser
             string directoryEmotion, string directoryEmotions)
         {
             // Create a Scenario read model from the JSON string. Will later be converted into a Scenario object
-            ScenarioReadModel scenarioReadModel = JsonUtility.FromJson<ScenarioReadModel>(scenarioTextAsset.text);
+            ScenarioReadModel<GlobalPropsReadModel> scenarioReadModel = JsonUtility.FromJson<ScenarioReadModel<GlobalPropsReadModel>>(scenarioTextAsset.text);
             
             // Create the empty lists that contain all the different scriptable object.
             // Allow to avoid recreating scriptable objects that have the same information
             ScenarioAssets assets = new ScenarioAssets(directoryScenario, directoryNodes, directoryProps, 
                 directoryLinks, directoryPerson, directoryPersons, directoryEmotion, directoryEmotions);
+            
+            // Initialize the references in the props factory
+            factory.personsList = assets.persons;
+            factory.emotionsList = assets.emotions;
             
             // Convert the read model into a scenario
             Scenario scenario = ConvertReadModel(scenarioReadModel, assets);
@@ -89,8 +94,11 @@ namespace TwineryScenario.Editor.Scripts.ScenarioJSONParser
             }
             
             // Persons
-            assetName = "PersonsList-" + assets.scenario.name;
-            StoreInAssetDatabase(assets.persons, assets.directoryPersons, assetName);
+            if (assets.persons.persons.Count != 0)
+            {
+                assetName = "PersonsList-" + assets.scenario.name;
+                StoreInAssetDatabase(assets.persons, assets.directoryPersons, assetName);
+            }
             
             // Emotion
             foreach (Emotion emotion in assets.emotions.emotions)
@@ -100,13 +108,16 @@ namespace TwineryScenario.Editor.Scripts.ScenarioJSONParser
             }
             
             // Emotions
-            assetName = "EmotionsList-" + assets.scenario.name;
-            StoreInAssetDatabase(assets.emotions, assets.directoryEmotions, assetName);
+            if (assets.emotions.emotions.Count != 0)
+            {
+                assetName = "EmotionsList-" + assets.scenario.name;
+                StoreInAssetDatabase(assets.emotions, assets.directoryEmotions, assetName);
+            }
             
             // NodeProps
             for (int i = 0; i < assets.nodesProps.Count; ++i)
             {
-                assetName = "NodeProps-" + assets.scenario.name + "-" + i;
+                assetName = assets.nodesProps[i].GetType().Name + "-" + assets.scenario.name + "-" + i;
                 StoreInAssetDatabase(assets.nodesProps[i], assets.directoryProps, assetName);
             }
             
@@ -118,7 +129,7 @@ namespace TwineryScenario.Editor.Scripts.ScenarioJSONParser
             }
             
             // ScenarioNode
-            foreach (ScenarioNode node in assets.nodes)
+            foreach (Node node in assets.nodes)
             {
                 assetName = node.name + "-" + node.pid + "-" + assets.scenario.name;
                 StoreInAssetDatabase(node, assets.directoryNodes, assetName);
@@ -135,12 +146,12 @@ namespace TwineryScenario.Editor.Scripts.ScenarioJSONParser
             AssetDatabase.CreateAsset(asset,assetPath + "/" + assetName +".asset");
         }
 
-        private static ScenarioNode[] ConvertReadModels(ScenarioNodeReadModel[] nodesReadModels, ScenarioAssets assets)
+        private static Node[] ConvertReadModels(NodeReadModel<GlobalPropsReadModel>[] nodesReadModels, ScenarioAssets assets)
         {
-            List<ScenarioNode> nodes = new List<ScenarioNode>();
-            foreach (ScenarioNodeReadModel nodeReadModel in nodesReadModels)
+            List<Node> nodes = new List<Node>();
+            foreach (NodeReadModel<GlobalPropsReadModel> nodeReadModel in nodesReadModels)
             {
-                BaseDialogPropsReadModel tmpProps = nodeReadModel.props;
+                GlobalPropsReadModel tmpProps = nodeReadModel.props;
                 
                 // Verify that the person in the props exists.
                     // Search By ID
@@ -178,7 +189,7 @@ namespace TwineryScenario.Editor.Scripts.ScenarioJSONParser
                 Link[] links = ConvertReadModel(nodeReadModel.links, assets);
                 
                 // Create the node
-                ScenarioNode node = ScenarioNode.CreateScenarioNode(
+                Node node = Node.CreateNode(
                     int.Parse(nodeReadModel.pid),
                     nodeReadModel.name,
                     int.Parse(nodeReadModel.position.x),
@@ -217,19 +228,19 @@ namespace TwineryScenario.Editor.Scripts.ScenarioJSONParser
             return links.ToArray();
         }
 
-        private static void FillLinks(ref Link[] links, ScenarioNode[] nodes)
+        private static void FillLinks(ref Link[] links, Node[] nodes)
         {
             if (links == null) return;
             for (int index = 0; index < links.Length; ++index)
             {
-                links[index].node = ScenarioNode.FindInArray(links[index].pidNode, nodes);
+                links[index].node = Node.FindInArray(links[index].pidNode, nodes);
             }
         }
         
-        private static void FillLinks(ref ScenarioNode[] nodes, ScenarioAssets assets)
+        private static void FillLinks(ref Node[] nodes, ScenarioAssets assets)
         {
             if (nodes == null) return;
-            foreach (ScenarioNode node in nodes)
+            foreach (Node node in nodes)
             {
                 FillLinks(ref node.links, nodes);
                 // Store complete links (with nodes) in assets to save
@@ -237,19 +248,19 @@ namespace TwineryScenario.Editor.Scripts.ScenarioJSONParser
             }
         }
 
-        private static Scenario ConvertReadModel(ScenarioReadModel readModel, ScenarioAssets assets)
+        private static Scenario ConvertReadModel(ScenarioReadModel<GlobalPropsReadModel> readModel, ScenarioAssets assets)
         {
             // Scenario Nodes : passages
             // Initialized with no reference to other nodes in the links
-            ScenarioNode[] nodes = ConvertReadModels(readModel.passages, assets);
+            Node[] nodes = ConvertReadModels(readModel.passages, assets);
             // Fill the links with the associated reference to a ScenarioNode
             FillLinks(ref nodes, assets);
             
             // Find the starting node
-            ScenarioNode startNode = ScenarioNode.FindInArray(int.Parse(readModel.startnode), nodes);
+            Node startNode = Node.FindInArray(int.Parse(readModel.startnode), nodes);
             
             // Store nodes in assets to save
-            assets.nodes = new List<ScenarioNode>(nodes);
+            assets.nodes = new List<Node>(nodes);
             
             // Create the scenario
             Scenario scenario = Scenario.CreateScenario(

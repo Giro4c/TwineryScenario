@@ -9,7 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a565db7838aa44e1845dd1cae889ab0e, type: 3}
-  m_Name: neutre
+  m_Script: {fileID: 11500000, guid: dd169309c6754619a2a2a2c6a41f2b8d, type: 3}
+  m_Name: Link-Scenario Test-3
   m_EditorClassIdentifier: 
-  emotionName: neutre
+  name: Go somewhere
+  pidNode: 4
+  node: {fileID: 0}

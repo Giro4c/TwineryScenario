@@ -58,9 +58,11 @@ namespace TwineryScenario.Editor.Scripts.ScenarioJSONParser
 
             if (GUILayout.Button("Parse JSON"))
             {
+                Debug.Log("Try get text asset");
                 TextAsset scenarioTextAsset = Resources.Load<TextAsset>(scenarioFile);
                 if (scenarioTextAsset != null)
                 {
+                    Debug.Log("Parse JSON");
                     ScenarioJSONParser.ParseScenario(scenarioTextAsset, directoryScenario, directoryNodes, directoryProps,
                         directoryLinks, directoryPerson, directoryPersons, directoryEmotion, directoryEmotions);
                 }

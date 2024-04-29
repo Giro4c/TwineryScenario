@@ -29,7 +29,7 @@ namespace TwineryScenario.Runtime.Scripts.Services
         /// Change the current node to the scenario node given and update the player progress.
         /// </summary>
         /// <param name="newCurrentNode">The new current scenario node.</param>
-        public void GoToNode(ScenarioNode newCurrentNode);
+        public void GoToNode(Node newCurrentNode);
         
         /// <summary>
         /// Checks if the player has reached the end of the scenario. An end is reached when the current node doesn't have any link/option available.
@@ -49,27 +49,10 @@ namespace TwineryScenario.Runtime.Scripts.Services
         /// Retrieve the current scenario node based on player progress.
         /// </summary>
         /// <returns>The current scenario node</returns>
-        public ScenarioNode GetCurrentNode();
+        public Node GetCurrentNode();
         
-        /// <summary>
-        /// Retrieve the current state of the props based on the player progress and the current node
-        /// </summary>
-        /// <returns>The current state of the props</returns>
-        public BaseDialogProps GetPropsState();
         
-        /// <summary>
-        /// Retrieve the list of persons in current scenario
-        /// </summary>
-        /// <returns>The list of persons in the scenario</returns>
-        public Persons GetPersonList();
-        
-        /// <summary>
-        /// Retrieve the list of available emotions in the current scenario
-        /// </summary>
-        /// <returns>The list of available emotions in the scenario.</returns>
-        public Emotions GetEmotionList();
-        
-        // Setters
+        // Setters ----------------------------
         // public void SetScenario(Scenario scenario);
 
     }

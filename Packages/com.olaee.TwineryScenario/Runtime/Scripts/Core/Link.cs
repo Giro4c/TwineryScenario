@@ -23,7 +23,7 @@ namespace TwineryScenario.Runtime.Scripts.Core
         /// <summary>
         /// The node the link points to
         /// </summary>
-        public ScenarioNode node;
+        public Node node;
 
         /// <summary>
         /// Initialize a link with the name and pointed-at node passed in the parameters
@@ -31,7 +31,7 @@ namespace TwineryScenario.Runtime.Scripts.Core
         /// <param name="name">The display name for the link</param>
         /// <param name="pidNode">The pid of the node the link points to</param>
         /// <param name="node">The node the link points to</param>
-        public void Init(string name, int pidNode, ScenarioNode node)
+        public void Init(string name, int pidNode, Node node)
         {
             this.name = name;
             this.pidNode = pidNode;
@@ -45,7 +45,7 @@ namespace TwineryScenario.Runtime.Scripts.Core
         /// <param name="pidNode">The pid of the node the link points to</param>
         /// <param name="node">The node the link points to</param>
         /// <returns>A new Link instance initialized with the values in the parameters</returns>
-        public static Link CreateLink(string name, int pidNode, ScenarioNode node)
+        public static Link CreateLink(string name, int pidNode, Node node)
         {
             Link link = ScriptableObject.CreateInstance<Link>();
             link.Init(name, pidNode, node);

@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e49a35012bac4c9f839bd55eda6ca63d, type: 3}
+  m_Name: Hello-5-Scenario Test
+  m_EditorClassIdentifier: 
+  pid: 5
+  name: Hello
+  position:
+    x: 375
+    y: 100
+  text: 'Hello
+
+    --
+
+    [[Go to End->End 1]]
+
+    [[Go somewhere->End 3]]
+
+    {{emotion}}confus{{/emotion}}
+
+    {{speaker}}Bastien{{/speaker}}'
+  links:
+  - {fileID: 11400000, guid: 9e1c81537ebcec643bfc85e26d3388ef, type: 2}
+  - {fileID: 11400000, guid: 8477b529db6590241b25ba6b58a7f159, type: 2}
+  props: {fileID: 11400000, guid: 0dae5ef803ce39040b7b138f72603abd, type: 2}

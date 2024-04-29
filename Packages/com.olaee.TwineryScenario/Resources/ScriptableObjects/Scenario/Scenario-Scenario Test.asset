@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29c492975423d424eaf20c5307ce4bef, type: 3}
+  m_Name: Scenario-Scenario Test
+  m_EditorClassIdentifier: 
+  name: Scenario Test
+  startNode: {fileID: 11400000, guid: fc18eed11b7504943a719c5af7e190e3, type: 2}
+  creator: Camille
+  ifid: 58A2A34B-4BC0-4937-8100-5694F2FA79B5
+  passages:
+  - {fileID: 11400000, guid: fc18eed11b7504943a719c5af7e190e3, type: 2}
+  - {fileID: 11400000, guid: f9a38701bad8d0c4ebbfcb6c6bc519c8, type: 2}
+  - {fileID: 11400000, guid: 3c6f031be613a4f498fa0ed231f61f31, type: 2}
+  - {fileID: 11400000, guid: 82a5075d637f64944990b8e1b99465e6, type: 2}
+  - {fileID: 11400000, guid: d3e1d9296b479ed4189b03226f2337f3, type: 2}
+  - {fileID: 11400000, guid: 749dbe798012181428f4037d50049ecc, type: 2}

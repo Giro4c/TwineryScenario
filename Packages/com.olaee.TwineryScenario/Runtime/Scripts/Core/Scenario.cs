@@ -19,7 +19,7 @@ namespace TwineryScenario.Runtime.Scripts.Core
         /// <summary>
         /// The node at which the scenario starts.
         /// </summary>
-        public ScenarioNode startNode;
+        public Node startNode;
         
         /// <summary>
         /// The name of the scenario's creator.
@@ -34,7 +34,7 @@ namespace TwineryScenario.Runtime.Scripts.Core
         /// <summary>
         /// The list of nodes representing all the possibilities and "events" in the scenario.
         /// </summary>
-        public ScenarioNode[] passages;
+        public Node[] passages;
 
         /// <summary>
         /// Initialize the scenario with the parameters
@@ -44,7 +44,7 @@ namespace TwineryScenario.Runtime.Scripts.Core
         /// <param name="creator">The name of the scenario's creator</param>
         /// <param name="ifid">The id of the scenario in twinery</param>
         /// <param name="passages">The list of nodes representing all the possibilities and "events" in the scenario</param>
-        public void Init(string name, ScenarioNode startNode, string creator, string ifid, ScenarioNode[] passages)
+        public void Init(string name, Node startNode, string creator, string ifid, Node[] passages)
         {
             this.name = name;
             this.startNode = startNode;
@@ -62,8 +62,8 @@ namespace TwineryScenario.Runtime.Scripts.Core
         /// <param name="ifid">The id of the scenario in twinery</param>
         /// <param name="passages">The list of nodes representing all the possibilities and "events" in the scenario</param>
         /// <returns>A new Scenario instance initialized with the values in the parameters</returns>
-        public static Scenario CreateScenario(string name, ScenarioNode startNode, string creator, string ifid,
-            ScenarioNode[] passages)
+        public static Scenario CreateScenario(string name, Node startNode, string creator, string ifid,
+            Node[] passages)
         {
             Scenario scenario = ScriptableObject.CreateInstance<Scenario>();
             scenario.Init(name, startNode, creator, ifid, passages);
