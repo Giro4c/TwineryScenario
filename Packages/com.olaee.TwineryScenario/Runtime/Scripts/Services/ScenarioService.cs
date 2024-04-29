@@ -25,7 +25,7 @@ namespace TwineryScenario.Runtime.Scripts.Services
         /// A NodeProps used to keep track of the progress in the scenario and the value of persistent variables
         /// such as the current emotion for example
         /// </summary>
-        public NodeProps propsState;
+        public BaseDialogProps propsState;
         
         /// <summary>
         /// The current node of the scenario. Is an indicator of the progression in a scenario.
@@ -56,7 +56,7 @@ namespace TwineryScenario.Runtime.Scripts.Services
             return currentNode;
         }
 
-        public NodeProps GetPropsState()
+        public BaseDialogProps GetPropsState()
         {
             return propsState;
         }
@@ -95,7 +95,7 @@ namespace TwineryScenario.Runtime.Scripts.Services
             // Create a NodeProps to keep track of the current state if it doesn't exist
             if (propsState == null)
             {
-                propsState = ScriptableObject.CreateInstance<NodeProps>();
+                propsState = ScriptableObject.CreateInstance<BaseDialogProps>();
             }
             // Initialize the props state marker
             propsState.Init(currentNode.props.emotion, currentNode.props.speaker);

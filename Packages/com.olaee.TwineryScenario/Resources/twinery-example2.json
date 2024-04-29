@@ -15,6 +15,7 @@
         }
       ],
       "props": {
+        "type": "Base Dialog",
         "emotion": "neutre",
         "speaker":  "Arthur"
       },
@@ -28,6 +29,7 @@
     {
       "text": "Fin 1\n--\n{{emotion}}confus{{/emotion}}\n{{speaker}}Arthur{{/speaker}}",
       "props": {
+        "type": "Base Dialog",
         "emotion": "confus",
         "speaker": "Arthur"
       },
@@ -41,6 +43,7 @@
     {
       "text": "Fin 2\n--\n{{emotion}}neutre{{/emotion}}\n{{speaker}}Arthur{{/speaker}}",
       "props": {
+        "type": "Base Dialog",
         "emotion": "neutre",
         "speaker": "Arthur"
       },
@@ -54,6 +57,7 @@
     {
       "text": "Fin commune\n--\n{{emotion}}confus{{/emotion}}\n{{speaker}}Elodie{{/speaker}}",
       "props": {
+        "type": "Base Dialog",
         "emotion": "confus",
         "speaker": "Elodie"
       },
@@ -79,6 +83,7 @@
         }
       ],
       "props": {
+        "type": "Base Dialog",
         "emotion": "confus",
         "speaker": "Bastien"
       },
@@ -104,6 +109,7 @@
         }
       ],
       "props": {
+        "type": "Base Dialog",
         "emotion": "confus",
         "speaker": "Elodie"
       },

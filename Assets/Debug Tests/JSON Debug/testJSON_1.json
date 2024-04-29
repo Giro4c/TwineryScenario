@@ -1,0 +1,5 @@
+{
+    "basic": "hello",
+    "inherit": "world",
+    "num": 5
+}

@@ -17,6 +17,8 @@ namespace TwineryScenario.Runtime.Scripts.Data
         /// </summary>
         public string filePath = "";
 
+        private PropsFactory factory = new PropsFactory();
+
         private void DebugAll()
         {
             DebugJSONScenario();
@@ -81,7 +83,7 @@ namespace TwineryScenario.Runtime.Scripts.Data
             TextAsset textAsset = Resources.Load<TextAsset>("props-example");
             
             // Create a NodeProps read model from the JSON string.
-            NodePropsReadModel readModel = JsonUtility.FromJson<NodePropsReadModel>(textAsset.text);
+            BaseDialogPropsReadModel readModel = JsonUtility.FromJson<BaseDialogPropsReadModel>(textAsset.text);
             Debug.Log(readModel);
             Debug.Log("Emotion : " + readModel.emotion);
             Debug.Log("Speaker : " + readModel.speaker);
@@ -108,6 +110,10 @@ namespace TwineryScenario.Runtime.Scripts.Data
             // Get String JSON content from file
             TextAsset scenarioTextAsset = Resources.Load<TextAsset>(filePath + fileName);
 
+            // Update the props factory
+            factory.emotionsList = emotions;
+            factory.personsList = persons;
+            
             // Create a Scenario read model from the JSON string. Will later be converted into a Scenario object
             ScenarioReadModel scenarioReadModel = JsonUtility.FromJson<ScenarioReadModel>(scenarioTextAsset.text);
             
@@ -127,9 +133,10 @@ namespace TwineryScenario.Runtime.Scripts.Data
             List<ScenarioNode> nodes = new List<ScenarioNode>();
             foreach (ScenarioNodeReadModel nodeReadModel in nodesReadModels)
             {
-                NodePropsReadModel tmpProps = nodeReadModel.props;
+                // BaseDialogPropsReadModel tmpProps = nodeReadModel.props;
+                BaseDialogProps props = (BaseDialogProps) factory.ConvertReadModel(nodeReadModel.props);
                 
-                // Verify that the person in the props exists.
+                /*// Verify that the person in the props exists.
                     // Search By ID
                 // Person person = persons.GetPerson(int.Parse(tmpProps.speaker.id));
                     // Search by name
@@ -145,8 +152,8 @@ namespace TwineryScenario.Runtime.Scripts.Data
                 }
                 
                 // Create the node props
-                NodeProps props = NodeProps.CreateNodeProps(emotions.GetEmotion(tmpProps.emotion), 
-                    person);
+                BaseDialogProps props = BaseDialogProps.CreateNodeProps(emotions.GetEmotion(tmpProps.emotion), 
+                    person);*/
                 
                 // Create the links list with no pointed nodes references
                 Link[] links = ConvertToLinksNoNodes(nodeReadModel.links);

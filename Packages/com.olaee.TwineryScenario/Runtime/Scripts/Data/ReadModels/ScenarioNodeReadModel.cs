@@ -10,6 +10,6 @@ namespace TwineryScenario.Runtime.Scripts.Data.ReadModels
         public PositionReadModel position;
         public string text;
         public LinkReadModel[] links;
-        public NodePropsReadModel props;
+        public BaseDialogPropsReadModel props;
     }
 }

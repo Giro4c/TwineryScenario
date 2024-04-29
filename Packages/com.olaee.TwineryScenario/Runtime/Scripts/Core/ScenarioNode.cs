@@ -38,7 +38,7 @@ namespace TwineryScenario.Runtime.Scripts.Core
         /// <summary>
         /// The additional data that describes the characteristics of this scenario node
         /// </summary>
-        public NodeProps props;
+        public BaseDialogProps props;
         
         /// <summary>
         /// A class representing an object's position on a two-axis plane.
@@ -67,7 +67,7 @@ namespace TwineryScenario.Runtime.Scripts.Core
         /// <param name="text">The text content of the node</param>
         /// <param name="links">The list of links pointing to all the nodes accessible through this one</param>
         /// <param name="props">The additional data that describes the characteristics of this scenario node</param>
-        public void Init(int pid, string name, int x, int y, string text, Link[] links, NodeProps props)
+        public void Init(int pid, string name, int x, int y, string text, Link[] links, BaseDialogProps props)
         {
             this.pid = pid;
             this.name = name;
@@ -89,7 +89,7 @@ namespace TwineryScenario.Runtime.Scripts.Core
         /// <param name="props">The additional data that describes the characteristics of this scenario node</param>
         /// <returns>A new ScenarioNode instance initialized with the values in the parameters</returns>
         public static ScenarioNode CreateScenarioNode(int pid, string name, int x, int y, string text, Link[] links,
-            NodeProps props)
+            BaseDialogProps props)
         {
             ScenarioNode scenarioNode = ScriptableObject.CreateInstance<ScenarioNode>();
             scenarioNode.Init(pid, name, x, y, text, links, props);

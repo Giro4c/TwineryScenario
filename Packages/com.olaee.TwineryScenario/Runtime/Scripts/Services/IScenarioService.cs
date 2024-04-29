@@ -55,7 +55,7 @@ namespace TwineryScenario.Runtime.Scripts.Services
         /// Retrieve the current state of the props based on the player progress and the current node
         /// </summary>
         /// <returns>The current state of the props</returns>
-        public NodeProps GetPropsState();
+        public BaseDialogProps GetPropsState();
         
         /// <summary>
         /// Retrieve the list of persons in current scenario

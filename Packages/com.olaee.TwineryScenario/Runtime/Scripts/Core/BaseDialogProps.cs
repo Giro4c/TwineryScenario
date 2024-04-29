@@ -6,10 +6,12 @@ namespace TwineryScenario.Runtime.Scripts.Core
     /// A class that represents all additional elements in a dialog based scenario which includes the person currently
     /// speaking and the emotion the person is displaying.
     /// </summary>
-    [CreateAssetMenu(fileName = "NodeProps", menuName = "ScriptableObjects/Scenarios/NodeProps", order = 1)]
-    public class NodeProps : ScriptableObject
+    [CreateAssetMenu(fileName = "BaseDialogProps", menuName = "ScriptableObjects/Scenarios/Props/Dialog/Base", order = 1)]
+    public class BaseDialogProps : Props
     {
 
+        public static string TYPE = "Base Dialog";
+        
         /// <summary>
         /// The emotion the speaker is displaying
         /// </summary>
@@ -27,6 +29,7 @@ namespace TwineryScenario.Runtime.Scripts.Core
         /// <param name="speaker">The person that is currently communicating</param>
         public void Init(Emotion emotion, Person speaker)
         {
+            base.Init(TYPE);
             this.emotion = emotion;
             this.speaker = speaker;
         }
@@ -37,12 +40,12 @@ namespace TwineryScenario.Runtime.Scripts.Core
         /// <param name="emotion">The emotion the speaker is displaying</param>
         /// <param name="speaker">The person that is currently communicating</param>
         /// <returns></returns>
-        public static NodeProps CreateNodeProps(Emotion emotion, Person speaker)
+        public static BaseDialogProps CreateNodeProps(Emotion emotion, Person speaker)
         {
-            NodeProps nodeProps = ScriptableObject.CreateInstance<NodeProps>();
-            nodeProps.Init(emotion, speaker);
+            BaseDialogProps baseDialogProps = ScriptableObject.CreateInstance<BaseDialogProps>();
+            baseDialogProps.Init(emotion, speaker);
             
-            return nodeProps;
+            return baseDialogProps;
         }
 
     }

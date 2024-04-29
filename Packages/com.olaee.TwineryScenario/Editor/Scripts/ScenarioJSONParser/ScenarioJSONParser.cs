@@ -19,7 +19,7 @@ namespace TwineryScenario.Editor.Scripts.ScenarioJSONParser
             public List<ScenarioNode> nodes;
             public string directoryNodes;
 
-            public List<NodeProps> nodesProps;
+            public List<BaseDialogProps> nodesProps;
             public string directoryProps;
 
             public List<Link> links;
@@ -49,7 +49,7 @@ namespace TwineryScenario.Editor.Scripts.ScenarioJSONParser
                 
                 scenario = null;
                 nodes = new List<ScenarioNode>();
-                nodesProps = new List<NodeProps>();
+                nodesProps = new List<BaseDialogProps>();
                 links = new List<Link>();
                 persons = Persons.CreatePersonsList();
                 emotions = Emotions.CreateEmotionsList();
@@ -140,7 +140,7 @@ namespace TwineryScenario.Editor.Scripts.ScenarioJSONParser
             List<ScenarioNode> nodes = new List<ScenarioNode>();
             foreach (ScenarioNodeReadModel nodeReadModel in nodesReadModels)
             {
-                NodePropsReadModel tmpProps = nodeReadModel.props;
+                BaseDialogPropsReadModel tmpProps = nodeReadModel.props;
                 
                 // Verify that the person in the props exists.
                     // Search By ID
@@ -169,7 +169,7 @@ namespace TwineryScenario.Editor.Scripts.ScenarioJSONParser
                 }
                 
                 // Create the node props
-                NodeProps props = NodeProps.CreateNodeProps(emotion, 
+                BaseDialogProps props = BaseDialogProps.CreateNodeProps(emotion, 
                     person);
                 // Store node props in assets to save
                 assets.nodesProps.Add(props);
