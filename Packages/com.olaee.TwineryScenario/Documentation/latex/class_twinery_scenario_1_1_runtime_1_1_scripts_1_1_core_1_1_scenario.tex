@@ -1,0 +1,149 @@
+\doxysection{Twinery\+Scenario.\+Runtime.\+Scripts.\+Core.\+Scenario Class Reference}
+\hypertarget{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario}{}\label{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario}\index{TwineryScenario.Runtime.Scripts.Core.Scenario@{TwineryScenario.Runtime.Scripts.Core.Scenario}}
+
+
+A class representing a scenario with a name, a creator and a list of nodes representing events/choices in the scenario.  
+
+
+Inheritance diagram for Twinery\+Scenario.\+Runtime.\+Scripts.\+Core.\+Scenario\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario_aeeacf12db33c5f07c822b8a9226de9a9}{Init}} (string \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario_aa04b6b5133b5a9d1e33eb674abec3163}{name}}, \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario_node}{Scenario\+Node}} \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario_aa308deced812222e21adf410ca72196d}{start\+Node}}, string \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario_a72cec6e116c0b764e69e27f24e8f0cba}{creator}}, string \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario_a62e9856b0a76bb2691edfceeb427123a}{ifid}}, \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario_node}{Scenario\+Node}}\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario_aaf7b7b6ece8cd730083db4e8a189b4ab}{passages}})
+\begin{DoxyCompactList}\small\item\em Initialize the scenario with the parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario}{Scenario}} \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario_a4098a50dbf4d35ae25117538961496ba}{Create\+Scenario}} (string \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario_aa04b6b5133b5a9d1e33eb674abec3163}{name}}, \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario_node}{Scenario\+Node}} \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario_aa308deced812222e21adf410ca72196d}{start\+Node}}, string \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario_a72cec6e116c0b764e69e27f24e8f0cba}{creator}}, string \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario_a62e9856b0a76bb2691edfceeb427123a}{ifid}}, \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario_node}{Scenario\+Node}}\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario_aaf7b7b6ece8cd730083db4e8a189b4ab}{passages}})
+\begin{DoxyCompactList}\small\item\em Creates a new Scriptable\+Object instance of a Scenario and initializes it with the values in the parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario_aa04b6b5133b5a9d1e33eb674abec3163}{name}}
+\begin{DoxyCompactList}\small\item\em The name of the scenario. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario_node}{Scenario\+Node}} \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario_aa308deced812222e21adf410ca72196d}{start\+Node}}
+\begin{DoxyCompactList}\small\item\em The node at which the scenario starts. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario_a72cec6e116c0b764e69e27f24e8f0cba}{creator}}
+\begin{DoxyCompactList}\small\item\em The name of the scenario\textquotesingle{}s creator. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario_a62e9856b0a76bb2691edfceeb427123a}{ifid}}
+\begin{DoxyCompactList}\small\item\em The id of the scenario in twinery. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario_node}{Scenario\+Node}}\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario_aaf7b7b6ece8cd730083db4e8a189b4ab}{passages}}
+\begin{DoxyCompactList}\small\item\em The list of nodes representing all the possibilities and "{}events"{} in the scenario. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class representing a scenario with a name, a creator and a list of nodes representing events/choices in the scenario. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario_a4098a50dbf4d35ae25117538961496ba}\label{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario_a4098a50dbf4d35ae25117538961496ba} 
+\index{TwineryScenario.Runtime.Scripts.Core.Scenario@{TwineryScenario.Runtime.Scripts.Core.Scenario}!CreateScenario@{CreateScenario}}
+\index{CreateScenario@{CreateScenario}!TwineryScenario.Runtime.Scripts.Core.Scenario@{TwineryScenario.Runtime.Scripts.Core.Scenario}}
+\doxysubsubsection{\texorpdfstring{CreateScenario()}{CreateScenario()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario}{Scenario}} Twinery\+Scenario.\+Runtime.\+Scripts.\+Core.\+Scenario.\+Create\+Scenario (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{\mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario_node}{Scenario\+Node}}}]{start\+Node,  }\item[{string}]{creator,  }\item[{string}]{ifid,  }\item[{\mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario_node}{Scenario\+Node}}\mbox{[}$\,$\mbox{]}}]{passages }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates a new Scriptable\+Object instance of a Scenario and initializes it with the values in the parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the scenario\\
+\hline
+{\em start\+Node} & The node at which the scenario starts\\
+\hline
+{\em creator} & The name of the scenario\textquotesingle{}s creator\\
+\hline
+{\em ifid} & The id of the scenario in twinery\\
+\hline
+{\em passages} & The list of nodes representing all the possibilities and "{}events"{} in the scenario\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new Scenario instance initialized with the values in the parameters
+\end{DoxyReturn}
+\Hypertarget{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario_aeeacf12db33c5f07c822b8a9226de9a9}\label{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario_aeeacf12db33c5f07c822b8a9226de9a9} 
+\index{TwineryScenario.Runtime.Scripts.Core.Scenario@{TwineryScenario.Runtime.Scripts.Core.Scenario}!Init@{Init}}
+\index{Init@{Init}!TwineryScenario.Runtime.Scripts.Core.Scenario@{TwineryScenario.Runtime.Scripts.Core.Scenario}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void Twinery\+Scenario.\+Runtime.\+Scripts.\+Core.\+Scenario.\+Init (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{\mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario_node}{Scenario\+Node}}}]{start\+Node,  }\item[{string}]{creator,  }\item[{string}]{ifid,  }\item[{\mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario_node}{Scenario\+Node}}\mbox{[}$\,$\mbox{]}}]{passages }\end{DoxyParamCaption})}
+
+
+
+Initialize the scenario with the parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the scenario\\
+\hline
+{\em start\+Node} & The node at which the scenario starts\\
+\hline
+{\em creator} & The name of the scenario\textquotesingle{}s creator\\
+\hline
+{\em ifid} & The id of the scenario in twinery\\
+\hline
+{\em passages} & The list of nodes representing all the possibilities and "{}events"{} in the scenario\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario_a72cec6e116c0b764e69e27f24e8f0cba}\label{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario_a72cec6e116c0b764e69e27f24e8f0cba} 
+\index{TwineryScenario.Runtime.Scripts.Core.Scenario@{TwineryScenario.Runtime.Scripts.Core.Scenario}!creator@{creator}}
+\index{creator@{creator}!TwineryScenario.Runtime.Scripts.Core.Scenario@{TwineryScenario.Runtime.Scripts.Core.Scenario}}
+\doxysubsubsection{\texorpdfstring{creator}{creator}}
+{\footnotesize\ttfamily string Twinery\+Scenario.\+Runtime.\+Scripts.\+Core.\+Scenario.\+creator}
+
+
+
+The name of the scenario\textquotesingle{}s creator. 
+
+\Hypertarget{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario_a62e9856b0a76bb2691edfceeb427123a}\label{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario_a62e9856b0a76bb2691edfceeb427123a} 
+\index{TwineryScenario.Runtime.Scripts.Core.Scenario@{TwineryScenario.Runtime.Scripts.Core.Scenario}!ifid@{ifid}}
+\index{ifid@{ifid}!TwineryScenario.Runtime.Scripts.Core.Scenario@{TwineryScenario.Runtime.Scripts.Core.Scenario}}
+\doxysubsubsection{\texorpdfstring{ifid}{ifid}}
+{\footnotesize\ttfamily string Twinery\+Scenario.\+Runtime.\+Scripts.\+Core.\+Scenario.\+ifid}
+
+
+
+The id of the scenario in twinery. 
+
+\Hypertarget{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario_aa04b6b5133b5a9d1e33eb674abec3163}\label{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario_aa04b6b5133b5a9d1e33eb674abec3163} 
+\index{TwineryScenario.Runtime.Scripts.Core.Scenario@{TwineryScenario.Runtime.Scripts.Core.Scenario}!name@{name}}
+\index{name@{name}!TwineryScenario.Runtime.Scripts.Core.Scenario@{TwineryScenario.Runtime.Scripts.Core.Scenario}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily string Twinery\+Scenario.\+Runtime.\+Scripts.\+Core.\+Scenario.\+name}
+
+
+
+The name of the scenario. 
+
+\Hypertarget{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario_aaf7b7b6ece8cd730083db4e8a189b4ab}\label{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario_aaf7b7b6ece8cd730083db4e8a189b4ab} 
+\index{TwineryScenario.Runtime.Scripts.Core.Scenario@{TwineryScenario.Runtime.Scripts.Core.Scenario}!passages@{passages}}
+\index{passages@{passages}!TwineryScenario.Runtime.Scripts.Core.Scenario@{TwineryScenario.Runtime.Scripts.Core.Scenario}}
+\doxysubsubsection{\texorpdfstring{passages}{passages}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario_node}{Scenario\+Node}} \mbox{[}$\,$\mbox{]} Twinery\+Scenario.\+Runtime.\+Scripts.\+Core.\+Scenario.\+passages}
+
+
+
+The list of nodes representing all the possibilities and "{}events"{} in the scenario. 
+
+\Hypertarget{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario_aa308deced812222e21adf410ca72196d}\label{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario_aa308deced812222e21adf410ca72196d} 
+\index{TwineryScenario.Runtime.Scripts.Core.Scenario@{TwineryScenario.Runtime.Scripts.Core.Scenario}!startNode@{startNode}}
+\index{startNode@{startNode}!TwineryScenario.Runtime.Scripts.Core.Scenario@{TwineryScenario.Runtime.Scripts.Core.Scenario}}
+\doxysubsubsection{\texorpdfstring{startNode}{startNode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario_node}{Scenario\+Node}} Twinery\+Scenario.\+Runtime.\+Scripts.\+Core.\+Scenario.\+start\+Node}
+
+
+
+The node at which the scenario starts. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Runtime/\+Scripts/\+Core/\mbox{\hyperlink{_scenario_8cs}{Scenario.\+cs}}\end{DoxyCompactItemize}

@@ -1,0 +1,254 @@
+\doxysection{Twinery\+Scenario.\+Runtime.\+Scripts.\+Control.\+Scenario\+Controller Class Reference}
+\hypertarget{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_control_1_1_scenario_controller}{}\label{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_control_1_1_scenario_controller}\index{TwineryScenario.Runtime.Scripts.Control.ScenarioController@{TwineryScenario.Runtime.Scripts.Control.ScenarioController}}
+
+
+An example of a scenario controller with basic actions.  
+
+
+Inheritance diagram for Twinery\+Scenario.\+Runtime.\+Scripts.\+Control.\+Scenario\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_control_1_1_scenario_controller}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_control_1_1_scenario_controller_a676f1dc5f08c5cbba4ea558817085ff0}{Launch\+Scenario}} ()
+\begin{DoxyCompactList}\small\item\em Trigger the initialisation of the player progress in the current scenario of the service and display the current node \+: text content and options. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_control_1_1_scenario_controller_ab6881ad8c7bc8ba316baa0a754560151}{New\+Scenario}} (string file\+Name)
+\begin{DoxyCompactList}\small\item\em Trigger the creation of a new scenario in the service based on the name of the file that contains the scenario data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_control_1_1_scenario_controller_abb156de03db703e924dde8057b42293f}{Create\+And\+Launch\+Scenario}} (string file\+Name)
+\begin{DoxyCompactList}\small\item\em Trigger the creation of a new scenario in the service based on the name of the file that contains the scenario data and launches it. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_control_1_1_scenario_controller_a1010fc041b10b60c002027e6dc3c5104}{General\+Launch\+Scenario\+Action}} ()
+\begin{DoxyCompactList}\small\item\em Verifies if the service already has a scenario. If it does, launches the current scenario. If not, create a new scenario using the file name in the controllers attributes and launches it. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_control_1_1_scenario_controller_a9357488ea6ad6f261e6bcd1f01dfeb01}{Show\+Options}} ()
+\begin{DoxyCompactList}\small\item\em Show all possible choices available for the current scenario node. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_control_1_1_scenario_controller_a4a05d9d60dab8569ee8a4995126e7c7e}{Show\+Current\+Node}} ()
+\begin{DoxyCompactList}\small\item\em Show the text and the options of the current scenario node. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_control_1_1_scenario_controller_a0a56a090ead934420c96553d3b0ba1da}{Trigger\+Link}} (string link\+Name, \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario_node}{Scenario\+Node}} target\+Node)
+\begin{DoxyCompactList}\small\item\em The method that should be called when a link is activated. It displays the option selected as a speak bubble from the player then navigates to the target scenario node of the link before triggering its display at last. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_control_1_1_scenario_controller_a279078307a55840191d17c355f17a502}{Clear\+Speak\+Bubbles}} ()
+\begin{DoxyCompactList}\small\item\em Remove all speak bubbles connected to the current speak bubble displayer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_control_1_1_scenario_controller_ac23321285959b6a899b69b6fb6fb6560}{Clear\+Options}} ()
+\begin{DoxyCompactList}\small\item\em Remove all options connected to the current option displayer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_control_1_1_scenario_controller_a19b406b69dd39e3acfc740dfca8f5d08}{Clear\+All}} ()
+\begin{DoxyCompactList}\small\item\em Remove all speak bubbles and options connected to the current speak bubble and option displayers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_control_1_1_scenario_controller_aad6408247262b5d095701739291ce9f4}{Clear}} (int option)
+\begin{DoxyCompactList}\small\item\em A general function the remove the visual elements connected to the displayers depending on the option value \+: \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{interface_twinery_scenario_1_1_runtime_1_1_scripts_1_1_services_1_1_i_scenario_service}{IScenario\+Service}} \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_control_1_1_scenario_controller_ad89a0e0a83485e0d3c0398152e9d698c}{scenario\+Service}}
+\begin{DoxyCompactList}\small\item\em An object implementing the interface IScenario\+Service that contains all use cases for a scenario. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_visuals_1_1_speaker_text_displayer}{Speaker\+Text\+Displayer}} \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_control_1_1_scenario_controller_a526456752bd83216743634851eb3b083}{speaker\+Text\+Displayer}}
+\begin{DoxyCompactList}\small\item\em The Displayer related to the display of speak bubbles. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_visuals_1_1_option_displayer}{Option\+Displayer}} \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_control_1_1_scenario_controller_a2e4a1bb7d6867ee524789ad2a2ea6ffd}{option\+Displayer}}
+\begin{DoxyCompactList}\small\item\em The Displayer related to the display of the options available in a node. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_control_1_1_scenario_controller_af49192fa102e626c4379cf220961653b}{scenario\+File\+Name}} = "{}twinery-\/example"{}
+\begin{DoxyCompactList}\small\item\em The name of the file containing the json of a scenario. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_control_1_1_scenario_controller_a748f2d652881dd9c7c802247d6d59230}{player\+Name}} = "{}Player"{}
+\begin{DoxyCompactList}\small\item\em The name of the player. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An example of a scenario controller with basic actions. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_control_1_1_scenario_controller_aad6408247262b5d095701739291ce9f4}\label{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_control_1_1_scenario_controller_aad6408247262b5d095701739291ce9f4} 
+\index{TwineryScenario.Runtime.Scripts.Control.ScenarioController@{TwineryScenario.Runtime.Scripts.Control.ScenarioController}!Clear@{Clear}}
+\index{Clear@{Clear}!TwineryScenario.Runtime.Scripts.Control.ScenarioController@{TwineryScenario.Runtime.Scripts.Control.ScenarioController}}
+\doxysubsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily void Twinery\+Scenario.\+Runtime.\+Scripts.\+Control.\+Scenario\+Controller.\+Clear (\begin{DoxyParamCaption}\item[{int}]{option }\end{DoxyParamCaption})}
+
+
+
+A general function the remove the visual elements connected to the displayers depending on the option value \+: 
+
+
+\begin{DoxyItemize}
+\item 0 \+: Clear All
+\item 1 \+: Clear Speak Bubbles
+\item 2 \+: Clear Options
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em option} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_control_1_1_scenario_controller_a19b406b69dd39e3acfc740dfca8f5d08}\label{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_control_1_1_scenario_controller_a19b406b69dd39e3acfc740dfca8f5d08} 
+\index{TwineryScenario.Runtime.Scripts.Control.ScenarioController@{TwineryScenario.Runtime.Scripts.Control.ScenarioController}!ClearAll@{ClearAll}}
+\index{ClearAll@{ClearAll}!TwineryScenario.Runtime.Scripts.Control.ScenarioController@{TwineryScenario.Runtime.Scripts.Control.ScenarioController}}
+\doxysubsubsection{\texorpdfstring{ClearAll()}{ClearAll()}}
+{\footnotesize\ttfamily void Twinery\+Scenario.\+Runtime.\+Scripts.\+Control.\+Scenario\+Controller.\+Clear\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Remove all speak bubbles and options connected to the current speak bubble and option displayers. 
+
+\Hypertarget{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_control_1_1_scenario_controller_ac23321285959b6a899b69b6fb6fb6560}\label{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_control_1_1_scenario_controller_ac23321285959b6a899b69b6fb6fb6560} 
+\index{TwineryScenario.Runtime.Scripts.Control.ScenarioController@{TwineryScenario.Runtime.Scripts.Control.ScenarioController}!ClearOptions@{ClearOptions}}
+\index{ClearOptions@{ClearOptions}!TwineryScenario.Runtime.Scripts.Control.ScenarioController@{TwineryScenario.Runtime.Scripts.Control.ScenarioController}}
+\doxysubsubsection{\texorpdfstring{ClearOptions()}{ClearOptions()}}
+{\footnotesize\ttfamily void Twinery\+Scenario.\+Runtime.\+Scripts.\+Control.\+Scenario\+Controller.\+Clear\+Options (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Remove all options connected to the current option displayer. 
+
+\Hypertarget{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_control_1_1_scenario_controller_a279078307a55840191d17c355f17a502}\label{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_control_1_1_scenario_controller_a279078307a55840191d17c355f17a502} 
+\index{TwineryScenario.Runtime.Scripts.Control.ScenarioController@{TwineryScenario.Runtime.Scripts.Control.ScenarioController}!ClearSpeakBubbles@{ClearSpeakBubbles}}
+\index{ClearSpeakBubbles@{ClearSpeakBubbles}!TwineryScenario.Runtime.Scripts.Control.ScenarioController@{TwineryScenario.Runtime.Scripts.Control.ScenarioController}}
+\doxysubsubsection{\texorpdfstring{ClearSpeakBubbles()}{ClearSpeakBubbles()}}
+{\footnotesize\ttfamily void Twinery\+Scenario.\+Runtime.\+Scripts.\+Control.\+Scenario\+Controller.\+Clear\+Speak\+Bubbles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Remove all speak bubbles connected to the current speak bubble displayer. 
+
+\Hypertarget{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_control_1_1_scenario_controller_abb156de03db703e924dde8057b42293f}\label{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_control_1_1_scenario_controller_abb156de03db703e924dde8057b42293f} 
+\index{TwineryScenario.Runtime.Scripts.Control.ScenarioController@{TwineryScenario.Runtime.Scripts.Control.ScenarioController}!CreateAndLaunchScenario@{CreateAndLaunchScenario}}
+\index{CreateAndLaunchScenario@{CreateAndLaunchScenario}!TwineryScenario.Runtime.Scripts.Control.ScenarioController@{TwineryScenario.Runtime.Scripts.Control.ScenarioController}}
+\doxysubsubsection{\texorpdfstring{CreateAndLaunchScenario()}{CreateAndLaunchScenario()}}
+{\footnotesize\ttfamily void Twinery\+Scenario.\+Runtime.\+Scripts.\+Control.\+Scenario\+Controller.\+Create\+And\+Launch\+Scenario (\begin{DoxyParamCaption}\item[{string}]{file\+Name }\end{DoxyParamCaption})}
+
+
+
+Trigger the creation of a new scenario in the service based on the name of the file that contains the scenario data and launches it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_control_1_1_scenario_controller_a1010fc041b10b60c002027e6dc3c5104}\label{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_control_1_1_scenario_controller_a1010fc041b10b60c002027e6dc3c5104} 
+\index{TwineryScenario.Runtime.Scripts.Control.ScenarioController@{TwineryScenario.Runtime.Scripts.Control.ScenarioController}!GeneralLaunchScenarioAction@{GeneralLaunchScenarioAction}}
+\index{GeneralLaunchScenarioAction@{GeneralLaunchScenarioAction}!TwineryScenario.Runtime.Scripts.Control.ScenarioController@{TwineryScenario.Runtime.Scripts.Control.ScenarioController}}
+\doxysubsubsection{\texorpdfstring{GeneralLaunchScenarioAction()}{GeneralLaunchScenarioAction()}}
+{\footnotesize\ttfamily void Twinery\+Scenario.\+Runtime.\+Scripts.\+Control.\+Scenario\+Controller.\+General\+Launch\+Scenario\+Action (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Verifies if the service already has a scenario. If it does, launches the current scenario. If not, create a new scenario using the file name in the controllers attributes and launches it. 
+
+\Hypertarget{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_control_1_1_scenario_controller_a676f1dc5f08c5cbba4ea558817085ff0}\label{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_control_1_1_scenario_controller_a676f1dc5f08c5cbba4ea558817085ff0} 
+\index{TwineryScenario.Runtime.Scripts.Control.ScenarioController@{TwineryScenario.Runtime.Scripts.Control.ScenarioController}!LaunchScenario@{LaunchScenario}}
+\index{LaunchScenario@{LaunchScenario}!TwineryScenario.Runtime.Scripts.Control.ScenarioController@{TwineryScenario.Runtime.Scripts.Control.ScenarioController}}
+\doxysubsubsection{\texorpdfstring{LaunchScenario()}{LaunchScenario()}}
+{\footnotesize\ttfamily void Twinery\+Scenario.\+Runtime.\+Scripts.\+Control.\+Scenario\+Controller.\+Launch\+Scenario (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Trigger the initialisation of the player progress in the current scenario of the service and display the current node \+: text content and options. 
+
+\Hypertarget{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_control_1_1_scenario_controller_ab6881ad8c7bc8ba316baa0a754560151}\label{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_control_1_1_scenario_controller_ab6881ad8c7bc8ba316baa0a754560151} 
+\index{TwineryScenario.Runtime.Scripts.Control.ScenarioController@{TwineryScenario.Runtime.Scripts.Control.ScenarioController}!NewScenario@{NewScenario}}
+\index{NewScenario@{NewScenario}!TwineryScenario.Runtime.Scripts.Control.ScenarioController@{TwineryScenario.Runtime.Scripts.Control.ScenarioController}}
+\doxysubsubsection{\texorpdfstring{NewScenario()}{NewScenario()}}
+{\footnotesize\ttfamily void Twinery\+Scenario.\+Runtime.\+Scripts.\+Control.\+Scenario\+Controller.\+New\+Scenario (\begin{DoxyParamCaption}\item[{string}]{file\+Name }\end{DoxyParamCaption})}
+
+
+
+Trigger the creation of a new scenario in the service based on the name of the file that contains the scenario data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & The name of the file that contains the data of the new scenario\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_control_1_1_scenario_controller_a4a05d9d60dab8569ee8a4995126e7c7e}\label{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_control_1_1_scenario_controller_a4a05d9d60dab8569ee8a4995126e7c7e} 
+\index{TwineryScenario.Runtime.Scripts.Control.ScenarioController@{TwineryScenario.Runtime.Scripts.Control.ScenarioController}!ShowCurrentNode@{ShowCurrentNode}}
+\index{ShowCurrentNode@{ShowCurrentNode}!TwineryScenario.Runtime.Scripts.Control.ScenarioController@{TwineryScenario.Runtime.Scripts.Control.ScenarioController}}
+\doxysubsubsection{\texorpdfstring{ShowCurrentNode()}{ShowCurrentNode()}}
+{\footnotesize\ttfamily void Twinery\+Scenario.\+Runtime.\+Scripts.\+Control.\+Scenario\+Controller.\+Show\+Current\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Show the text and the options of the current scenario node. 
+
+\Hypertarget{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_control_1_1_scenario_controller_a9357488ea6ad6f261e6bcd1f01dfeb01}\label{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_control_1_1_scenario_controller_a9357488ea6ad6f261e6bcd1f01dfeb01} 
+\index{TwineryScenario.Runtime.Scripts.Control.ScenarioController@{TwineryScenario.Runtime.Scripts.Control.ScenarioController}!ShowOptions@{ShowOptions}}
+\index{ShowOptions@{ShowOptions}!TwineryScenario.Runtime.Scripts.Control.ScenarioController@{TwineryScenario.Runtime.Scripts.Control.ScenarioController}}
+\doxysubsubsection{\texorpdfstring{ShowOptions()}{ShowOptions()}}
+{\footnotesize\ttfamily void Twinery\+Scenario.\+Runtime.\+Scripts.\+Control.\+Scenario\+Controller.\+Show\+Options (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Show all possible choices available for the current scenario node. 
+
+\Hypertarget{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_control_1_1_scenario_controller_a0a56a090ead934420c96553d3b0ba1da}\label{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_control_1_1_scenario_controller_a0a56a090ead934420c96553d3b0ba1da} 
+\index{TwineryScenario.Runtime.Scripts.Control.ScenarioController@{TwineryScenario.Runtime.Scripts.Control.ScenarioController}!TriggerLink@{TriggerLink}}
+\index{TriggerLink@{TriggerLink}!TwineryScenario.Runtime.Scripts.Control.ScenarioController@{TwineryScenario.Runtime.Scripts.Control.ScenarioController}}
+\doxysubsubsection{\texorpdfstring{TriggerLink()}{TriggerLink()}}
+{\footnotesize\ttfamily void Twinery\+Scenario.\+Runtime.\+Scripts.\+Control.\+Scenario\+Controller.\+Trigger\+Link (\begin{DoxyParamCaption}\item[{string}]{link\+Name,  }\item[{\mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario_node}{Scenario\+Node}}}]{target\+Node }\end{DoxyParamCaption})}
+
+
+
+The method that should be called when a link is activated. It displays the option selected as a speak bubble from the player then navigates to the target scenario node of the link before triggering its display at last. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em link\+Name} & The name of the link triggered / option selected.\\
+\hline
+{\em target\+Node} & The target node of the link. Will become the new current scenario node.\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_control_1_1_scenario_controller_a2e4a1bb7d6867ee524789ad2a2ea6ffd}\label{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_control_1_1_scenario_controller_a2e4a1bb7d6867ee524789ad2a2ea6ffd} 
+\index{TwineryScenario.Runtime.Scripts.Control.ScenarioController@{TwineryScenario.Runtime.Scripts.Control.ScenarioController}!optionDisplayer@{optionDisplayer}}
+\index{optionDisplayer@{optionDisplayer}!TwineryScenario.Runtime.Scripts.Control.ScenarioController@{TwineryScenario.Runtime.Scripts.Control.ScenarioController}}
+\doxysubsubsection{\texorpdfstring{optionDisplayer}{optionDisplayer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_visuals_1_1_option_displayer}{Option\+Displayer}} Twinery\+Scenario.\+Runtime.\+Scripts.\+Control.\+Scenario\+Controller.\+option\+Displayer}
+
+
+
+The Displayer related to the display of the options available in a node. 
+
+\Hypertarget{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_control_1_1_scenario_controller_a748f2d652881dd9c7c802247d6d59230}\label{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_control_1_1_scenario_controller_a748f2d652881dd9c7c802247d6d59230} 
+\index{TwineryScenario.Runtime.Scripts.Control.ScenarioController@{TwineryScenario.Runtime.Scripts.Control.ScenarioController}!playerName@{playerName}}
+\index{playerName@{playerName}!TwineryScenario.Runtime.Scripts.Control.ScenarioController@{TwineryScenario.Runtime.Scripts.Control.ScenarioController}}
+\doxysubsubsection{\texorpdfstring{playerName}{playerName}}
+{\footnotesize\ttfamily string Twinery\+Scenario.\+Runtime.\+Scripts.\+Control.\+Scenario\+Controller.\+player\+Name = "{}Player"{}}
+
+
+
+The name of the player. 
+
+\Hypertarget{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_control_1_1_scenario_controller_af49192fa102e626c4379cf220961653b}\label{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_control_1_1_scenario_controller_af49192fa102e626c4379cf220961653b} 
+\index{TwineryScenario.Runtime.Scripts.Control.ScenarioController@{TwineryScenario.Runtime.Scripts.Control.ScenarioController}!scenarioFileName@{scenarioFileName}}
+\index{scenarioFileName@{scenarioFileName}!TwineryScenario.Runtime.Scripts.Control.ScenarioController@{TwineryScenario.Runtime.Scripts.Control.ScenarioController}}
+\doxysubsubsection{\texorpdfstring{scenarioFileName}{scenarioFileName}}
+{\footnotesize\ttfamily string Twinery\+Scenario.\+Runtime.\+Scripts.\+Control.\+Scenario\+Controller.\+scenario\+File\+Name = "{}twinery-\/example"{}}
+
+
+
+The name of the file containing the json of a scenario. 
+
+\Hypertarget{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_control_1_1_scenario_controller_ad89a0e0a83485e0d3c0398152e9d698c}\label{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_control_1_1_scenario_controller_ad89a0e0a83485e0d3c0398152e9d698c} 
+\index{TwineryScenario.Runtime.Scripts.Control.ScenarioController@{TwineryScenario.Runtime.Scripts.Control.ScenarioController}!scenarioService@{scenarioService}}
+\index{scenarioService@{scenarioService}!TwineryScenario.Runtime.Scripts.Control.ScenarioController@{TwineryScenario.Runtime.Scripts.Control.ScenarioController}}
+\doxysubsubsection{\texorpdfstring{scenarioService}{scenarioService}}
+{\footnotesize\ttfamily \mbox{\hyperlink{interface_twinery_scenario_1_1_runtime_1_1_scripts_1_1_services_1_1_i_scenario_service}{IScenario\+Service}} Twinery\+Scenario.\+Runtime.\+Scripts.\+Control.\+Scenario\+Controller.\+scenario\+Service}
+
+
+
+An object implementing the interface IScenario\+Service that contains all use cases for a scenario. 
+
+\Hypertarget{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_control_1_1_scenario_controller_a526456752bd83216743634851eb3b083}\label{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_control_1_1_scenario_controller_a526456752bd83216743634851eb3b083} 
+\index{TwineryScenario.Runtime.Scripts.Control.ScenarioController@{TwineryScenario.Runtime.Scripts.Control.ScenarioController}!speakerTextDisplayer@{speakerTextDisplayer}}
+\index{speakerTextDisplayer@{speakerTextDisplayer}!TwineryScenario.Runtime.Scripts.Control.ScenarioController@{TwineryScenario.Runtime.Scripts.Control.ScenarioController}}
+\doxysubsubsection{\texorpdfstring{speakerTextDisplayer}{speakerTextDisplayer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_visuals_1_1_speaker_text_displayer}{Speaker\+Text\+Displayer}} Twinery\+Scenario.\+Runtime.\+Scripts.\+Control.\+Scenario\+Controller.\+speaker\+Text\+Displayer}
+
+
+
+The Displayer related to the display of speak bubbles. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Runtime/\+Scripts/\+Control/\mbox{\hyperlink{_scenario_controller_8cs}{Scenario\+Controller.\+cs}}\end{DoxyCompactItemize}

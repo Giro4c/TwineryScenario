@@ -1,0 +1,97 @@
+\doxysection{Twinery\+Scenario.\+Runtime.\+Scripts.\+Data.\+Scenario\+File\+Data\+Access Class Reference}
+\hypertarget{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_data_1_1_scenario_file_data_access}{}\label{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_data_1_1_scenario_file_data_access}\index{TwineryScenario.Runtime.Scripts.Data.ScenarioFileDataAccess@{TwineryScenario.Runtime.Scripts.Data.ScenarioFileDataAccess}}
+
+
+A class that allows to access and process scenario data in files based on the JSON data format.  
+
+
+Inheritance diagram for Twinery\+Scenario.\+Runtime.\+Scripts.\+Data.\+Scenario\+File\+Data\+Access\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.447028cm]{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_data_1_1_scenario_file_data_access}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario}{Scenario}} \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_data_1_1_scenario_file_data_access_a44ddec95d5742a93c1f2946dcbfef8af}{Get\+Scenario}} (string file\+Name, \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_emotions}{Emotions}} emotions, ref \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_persons}{Persons}} persons)
+\begin{DoxyCompactList}\small\item\em Retrieve a scenario in a file and fills the list of characters (persons) and emotions available. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario}{Scenario}} \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_data_1_1_scenario_file_data_access_a89881c3161a59a26a5f22c898a4eeea4}{Convert\+Read\+Model}} (\mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_data_1_1_read_models_1_1_scenario_read_model}{Scenario\+Read\+Model}} read\+Model, \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_emotions}{Emotions}} emotions, ref \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_persons}{Persons}} persons)
+\begin{DoxyCompactList}\small\item\em Converts a scenario read model into a scenario and fills accordingly the list of persons and emotions available in this scenario. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_data_1_1_scenario_file_data_access_a34d036e9293f6656f8a0577d722b4e9b}{file\+Path}} = "{}"{}
+\begin{DoxyCompactList}\small\item\em The relative path of the folder containing the files. The root of this path is the Resources folder. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class that allows to access and process scenario data in files based on the JSON data format. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_data_1_1_scenario_file_data_access_a89881c3161a59a26a5f22c898a4eeea4}\label{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_data_1_1_scenario_file_data_access_a89881c3161a59a26a5f22c898a4eeea4} 
+\index{TwineryScenario.Runtime.Scripts.Data.ScenarioFileDataAccess@{TwineryScenario.Runtime.Scripts.Data.ScenarioFileDataAccess}!ConvertReadModel@{ConvertReadModel}}
+\index{ConvertReadModel@{ConvertReadModel}!TwineryScenario.Runtime.Scripts.Data.ScenarioFileDataAccess@{TwineryScenario.Runtime.Scripts.Data.ScenarioFileDataAccess}}
+\doxysubsubsection{\texorpdfstring{ConvertReadModel()}{ConvertReadModel()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario}{Scenario}} Twinery\+Scenario.\+Runtime.\+Scripts.\+Data.\+Scenario\+File\+Data\+Access.\+Convert\+Read\+Model (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_data_1_1_read_models_1_1_scenario_read_model}{Scenario\+Read\+Model}}}]{read\+Model,  }\item[{\mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_emotions}{Emotions}}}]{emotions,  }\item[{ref \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_persons}{Persons}}}]{persons }\end{DoxyParamCaption})}
+
+
+
+Converts a scenario read model into a scenario and fills accordingly the list of persons and emotions available in this scenario. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em read\+Model} & The scenario read model used for the conversion.\\
+\hline
+{\em emotions} & The list of available emotions to be filled.\\
+\hline
+{\em persons} & The list of persons to be filled.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An initialized instance of a scenario created through this conversion.
+\end{DoxyReturn}
+\Hypertarget{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_data_1_1_scenario_file_data_access_a44ddec95d5742a93c1f2946dcbfef8af}\label{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_data_1_1_scenario_file_data_access_a44ddec95d5742a93c1f2946dcbfef8af} 
+\index{TwineryScenario.Runtime.Scripts.Data.ScenarioFileDataAccess@{TwineryScenario.Runtime.Scripts.Data.ScenarioFileDataAccess}!GetScenario@{GetScenario}}
+\index{GetScenario@{GetScenario}!TwineryScenario.Runtime.Scripts.Data.ScenarioFileDataAccess@{TwineryScenario.Runtime.Scripts.Data.ScenarioFileDataAccess}}
+\doxysubsubsection{\texorpdfstring{GetScenario()}{GetScenario()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario}{Scenario}} Twinery\+Scenario.\+Runtime.\+Scripts.\+Data.\+Scenario\+File\+Data\+Access.\+Get\+Scenario (\begin{DoxyParamCaption}\item[{string}]{file\+Name,  }\item[{\mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_emotions}{Emotions}}}]{emotions,  }\item[{ref \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_persons}{Persons}}}]{persons }\end{DoxyParamCaption})}
+
+
+
+Retrieve a scenario in a file and fills the list of characters (persons) and emotions available. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & The name of the fila containing the scenario data\\
+\hline
+{\em emotions} & The scriptable object that will contain the list of available emotions\\
+\hline
+{\em persons} & The scriptable object that will contain the list of characters/persons.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The scenario retrieved or created based on the data in the file.
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_twinery_scenario_1_1_runtime_1_1_scripts_1_1_services_1_1_i_scenario_data_access_ad69c37428e35eb309d856ec320a03790}{Twinery\+Scenario.\+Runtime.\+Scripts.\+Services.\+IScenario\+Data\+Access}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_data_1_1_scenario_file_data_access_a34d036e9293f6656f8a0577d722b4e9b}\label{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_data_1_1_scenario_file_data_access_a34d036e9293f6656f8a0577d722b4e9b} 
+\index{TwineryScenario.Runtime.Scripts.Data.ScenarioFileDataAccess@{TwineryScenario.Runtime.Scripts.Data.ScenarioFileDataAccess}!filePath@{filePath}}
+\index{filePath@{filePath}!TwineryScenario.Runtime.Scripts.Data.ScenarioFileDataAccess@{TwineryScenario.Runtime.Scripts.Data.ScenarioFileDataAccess}}
+\doxysubsubsection{\texorpdfstring{filePath}{filePath}}
+{\footnotesize\ttfamily string Twinery\+Scenario.\+Runtime.\+Scripts.\+Data.\+Scenario\+File\+Data\+Access.\+file\+Path = "{}"{}}
+
+
+
+The relative path of the folder containing the files. The root of this path is the Resources folder. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Runtime/\+Scripts/\+Data/\mbox{\hyperlink{_scenario_file_data_access_8cs}{Scenario\+File\+Data\+Access.\+cs}}\end{DoxyCompactItemize}

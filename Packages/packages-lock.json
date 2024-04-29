@@ -1,7 +1,7 @@
 {
   "dependencies": {
-    "com.crvm.twineryscenario": {
-      "version": "file:com.crvm.TwineryScenario",
+    "com.olaee.twineryscenario": {
+      "version": "file:com.olaee.TwineryScenario",
       "depth": 0,
       "source": "embedded",
       "dependencies": {}

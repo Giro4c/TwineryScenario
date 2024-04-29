@@ -1,0 +1,55 @@
+\doxysection{Twinery\+Scenario.\+Runtime.\+Scripts.\+Services.\+IScenario\+Data\+Access Interface Reference}
+\hypertarget{interface_twinery_scenario_1_1_runtime_1_1_scripts_1_1_services_1_1_i_scenario_data_access}{}\label{interface_twinery_scenario_1_1_runtime_1_1_scripts_1_1_services_1_1_i_scenario_data_access}\index{TwineryScenario.Runtime.Scripts.Services.IScenarioDataAccess@{TwineryScenario.Runtime.Scripts.Services.IScenarioDataAccess}}
+
+
+An interface determining the different interactions with a scenario data source.  
+
+
+Inheritance diagram for Twinery\+Scenario.\+Runtime.\+Scripts.\+Services.\+IScenario\+Data\+Access\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interface_twinery_scenario_1_1_runtime_1_1_scripts_1_1_services_1_1_i_scenario_data_access}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario}{Scenario}} \mbox{\hyperlink{interface_twinery_scenario_1_1_runtime_1_1_scripts_1_1_services_1_1_i_scenario_data_access_ad69c37428e35eb309d856ec320a03790}{Get\+Scenario}} (string file\+Name, \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_emotions}{Emotions}} emotions, ref \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_persons}{Persons}} persons)
+\begin{DoxyCompactList}\small\item\em Retrieve a scenario in a file and fills the list of characters (persons) and emotions available. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An interface determining the different interactions with a scenario data source. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{interface_twinery_scenario_1_1_runtime_1_1_scripts_1_1_services_1_1_i_scenario_data_access_ad69c37428e35eb309d856ec320a03790}\label{interface_twinery_scenario_1_1_runtime_1_1_scripts_1_1_services_1_1_i_scenario_data_access_ad69c37428e35eb309d856ec320a03790} 
+\index{TwineryScenario.Runtime.Scripts.Services.IScenarioDataAccess@{TwineryScenario.Runtime.Scripts.Services.IScenarioDataAccess}!GetScenario@{GetScenario}}
+\index{GetScenario@{GetScenario}!TwineryScenario.Runtime.Scripts.Services.IScenarioDataAccess@{TwineryScenario.Runtime.Scripts.Services.IScenarioDataAccess}}
+\doxysubsubsection{\texorpdfstring{GetScenario()}{GetScenario()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario}{Scenario}} Twinery\+Scenario.\+Runtime.\+Scripts.\+Services.\+IScenario\+Data\+Access.\+Get\+Scenario (\begin{DoxyParamCaption}\item[{string}]{file\+Name,  }\item[{\mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_emotions}{Emotions}}}]{emotions,  }\item[{ref \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_persons}{Persons}}}]{persons }\end{DoxyParamCaption})}
+
+
+
+Retrieve a scenario in a file and fills the list of characters (persons) and emotions available. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & The name of the fila containing the scenario data\\
+\hline
+{\em emotions} & The scriptable object that will contain the list of available emotions\\
+\hline
+{\em persons} & The scriptable object that will contain the list of characters/persons.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The scenario retrieved or created based on the data in the file.
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_data_1_1_scenario_file_data_access_a44ddec95d5742a93c1f2946dcbfef8af}{Twinery\+Scenario.\+Runtime.\+Scripts.\+Data.\+Scenario\+File\+Data\+Access}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Runtime/\+Scripts/\+Services/\mbox{\hyperlink{_i_scenario_data_access_8cs}{IScenario\+Data\+Access.\+cs}}\end{DoxyCompactItemize}

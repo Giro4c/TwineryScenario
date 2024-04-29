@@ -1,0 +1,117 @@
+\doxysection{Twinery\+Scenario.\+Runtime.\+Scripts.\+Core.\+Link Class Reference}
+\hypertarget{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_link}{}\label{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_link}\index{TwineryScenario.Runtime.Scripts.Core.Link@{TwineryScenario.Runtime.Scripts.Core.Link}}
+
+
+A class that represents a link pointing to a scenario node. Most commonly, it is used as a representation of the different choices/actions available at a point / node in the scenario.  
+
+
+Inheritance diagram for Twinery\+Scenario.\+Runtime.\+Scripts.\+Core.\+Link\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_link}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_link_a3e914c22b689217f5b2c878376a7521f}{Init}} (string \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_link_aef32d0d89386847e535572a5f128ed69}{name}}, int \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_link_a990dc347520bc799b686cc2b32279596}{pid\+Node}}, \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario_node}{Scenario\+Node}} \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_link_a2e7f8322f4dc5ac9156c42345316b3af}{node}})
+\begin{DoxyCompactList}\small\item\em Initialize a link with the name and pointed-\/at node passed in the parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_link}{Link}} \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_link_aa4976d40fe00ea11d6c3a1c1d11d032a}{Create\+Link}} (string \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_link_aef32d0d89386847e535572a5f128ed69}{name}}, int \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_link_a990dc347520bc799b686cc2b32279596}{pid\+Node}}, \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario_node}{Scenario\+Node}} \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_link_a2e7f8322f4dc5ac9156c42345316b3af}{node}})
+\begin{DoxyCompactList}\small\item\em Create a Scriptable\+Object instance of a Link and initializes it with the name and the node passed in the parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_link_aef32d0d89386847e535572a5f128ed69}{name}}
+\begin{DoxyCompactList}\small\item\em The name of the link. Used for display, cannot be used independently for identification of a link. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_link_a990dc347520bc799b686cc2b32279596}{pid\+Node}}
+\begin{DoxyCompactList}\small\item\em The pid of the node the link points to. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario_node}{Scenario\+Node}} \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_link_a2e7f8322f4dc5ac9156c42345316b3af}{node}}
+\begin{DoxyCompactList}\small\item\em The node the link points to. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class that represents a link pointing to a scenario node. Most commonly, it is used as a representation of the different choices/actions available at a point / node in the scenario. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_link_aa4976d40fe00ea11d6c3a1c1d11d032a}\label{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_link_aa4976d40fe00ea11d6c3a1c1d11d032a} 
+\index{TwineryScenario.Runtime.Scripts.Core.Link@{TwineryScenario.Runtime.Scripts.Core.Link}!CreateLink@{CreateLink}}
+\index{CreateLink@{CreateLink}!TwineryScenario.Runtime.Scripts.Core.Link@{TwineryScenario.Runtime.Scripts.Core.Link}}
+\doxysubsubsection{\texorpdfstring{CreateLink()}{CreateLink()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_link}{Link}} Twinery\+Scenario.\+Runtime.\+Scripts.\+Core.\+Link.\+Create\+Link (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{int}]{pid\+Node,  }\item[{\mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario_node}{Scenario\+Node}}}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create a Scriptable\+Object instance of a Link and initializes it with the name and the node passed in the parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The display name for the link\\
+\hline
+{\em pid\+Node} & The pid of the node the link points to\\
+\hline
+{\em node} & The node the link points to\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new Link instance initialized with the values in the parameters
+\end{DoxyReturn}
+\Hypertarget{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_link_a3e914c22b689217f5b2c878376a7521f}\label{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_link_a3e914c22b689217f5b2c878376a7521f} 
+\index{TwineryScenario.Runtime.Scripts.Core.Link@{TwineryScenario.Runtime.Scripts.Core.Link}!Init@{Init}}
+\index{Init@{Init}!TwineryScenario.Runtime.Scripts.Core.Link@{TwineryScenario.Runtime.Scripts.Core.Link}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void Twinery\+Scenario.\+Runtime.\+Scripts.\+Core.\+Link.\+Init (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{int}]{pid\+Node,  }\item[{\mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario_node}{Scenario\+Node}}}]{node }\end{DoxyParamCaption})}
+
+
+
+Initialize a link with the name and pointed-\/at node passed in the parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The display name for the link\\
+\hline
+{\em pid\+Node} & The pid of the node the link points to\\
+\hline
+{\em node} & The node the link points to\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_link_aef32d0d89386847e535572a5f128ed69}\label{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_link_aef32d0d89386847e535572a5f128ed69} 
+\index{TwineryScenario.Runtime.Scripts.Core.Link@{TwineryScenario.Runtime.Scripts.Core.Link}!name@{name}}
+\index{name@{name}!TwineryScenario.Runtime.Scripts.Core.Link@{TwineryScenario.Runtime.Scripts.Core.Link}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily string Twinery\+Scenario.\+Runtime.\+Scripts.\+Core.\+Link.\+name}
+
+
+
+The name of the link. Used for display, cannot be used independently for identification of a link. 
+
+\Hypertarget{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_link_a2e7f8322f4dc5ac9156c42345316b3af}\label{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_link_a2e7f8322f4dc5ac9156c42345316b3af} 
+\index{TwineryScenario.Runtime.Scripts.Core.Link@{TwineryScenario.Runtime.Scripts.Core.Link}!node@{node}}
+\index{node@{node}!TwineryScenario.Runtime.Scripts.Core.Link@{TwineryScenario.Runtime.Scripts.Core.Link}}
+\doxysubsubsection{\texorpdfstring{node}{node}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_scenario_node}{Scenario\+Node}} Twinery\+Scenario.\+Runtime.\+Scripts.\+Core.\+Link.\+node}
+
+
+
+The node the link points to. 
+
+\Hypertarget{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_link_a990dc347520bc799b686cc2b32279596}\label{class_twinery_scenario_1_1_runtime_1_1_scripts_1_1_core_1_1_link_a990dc347520bc799b686cc2b32279596} 
+\index{TwineryScenario.Runtime.Scripts.Core.Link@{TwineryScenario.Runtime.Scripts.Core.Link}!pidNode@{pidNode}}
+\index{pidNode@{pidNode}!TwineryScenario.Runtime.Scripts.Core.Link@{TwineryScenario.Runtime.Scripts.Core.Link}}
+\doxysubsubsection{\texorpdfstring{pidNode}{pidNode}}
+{\footnotesize\ttfamily int Twinery\+Scenario.\+Runtime.\+Scripts.\+Core.\+Link.\+pid\+Node}
+
+
+
+The pid of the node the link points to. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Runtime/\+Scripts/\+Core/\mbox{\hyperlink{_link_8cs}{Link.\+cs}}\end{DoxyCompactItemize}
