@@ -577,6 +577,18 @@ PrefabInstance:
       propertyPath: scenarioFileName
       value: twinery-example2
       objectReference: {fileID: 0}
+    - target: {fileID: 6136174874753466355, guid: 25d267ce0e03ad345b1271feb46161fd, type: 3}
+      propertyPath: persons
+      value: 
+      objectReference: {fileID: 11400000, guid: 9d2cd2e11b0c1934caf889e6c5e1706e, type: 2}
+    - target: {fileID: 6136174874753466355, guid: 25d267ce0e03ad345b1271feb46161fd, type: 3}
+      propertyPath: emotions
+      value: 
+      objectReference: {fileID: 11400000, guid: 5a8cfa17428ab1e41993d396726a8a87, type: 2}
+    - target: {fileID: 6136174874753466355, guid: 25d267ce0e03ad345b1271feb46161fd, type: 3}
+      propertyPath: scenario
+      value: 
+      objectReference: {fileID: 11400000, guid: 6d7aa17785d46a848baf40120d588bae, type: 2}
     - target: {fileID: 7528305668680860011, guid: 25d267ce0e03ad345b1271feb46161fd, type: 3}
       propertyPath: m_Name
       value: ScenarioManager

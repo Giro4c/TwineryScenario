@@ -44,7 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9afe81a9e5904937aa857714301d1fd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  filePath: 
 --- !u!1 &410257709068698772
 GameObject:
   m_ObjectHideFlags: 0
@@ -153,9 +152,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scenario: {fileID: 11400000, guid: c565706dc8289824190a56c9dcd42bcd, type: 2}
-  propsState: {fileID: 0}
   currentNode: {fileID: 0}
-  emotions: {fileID: 11400000, guid: 921712913c102a340a9cff983360eb40, type: 2}
+  emotions: {fileID: 11400000, guid: 55060effa02f5b3459c203151cd3b863, type: 2}
   persons: {fileID: 11400000, guid: 29a1041258a6cba468d84882bfe82bc1, type: 2}
 --- !u!1 &4544965027470068793
 GameObject:
@@ -201,10 +199,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 671ffede54d74a7ea5faf10682682040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scenarioService: {fileID: 6136174874753466355}
   speakerTextDisplayer: {fileID: 1354241433665777191}
   optionDisplayer: {fileID: 1234863749739203949}
-  scenarioFileName: twinery-example
+  scenarioFolder: 
+  scenarioFileName: twinery-example2
   playerName: Player
 --- !u!1 &7528305668680860011
 GameObject:

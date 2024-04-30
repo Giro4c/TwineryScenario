@@ -12,23 +12,23 @@ namespace TwineryScenario.Runtime.Scripts.Visuals
         /// <summary>
         /// The container of the displayed elements
         /// </summary>
-        public GameObject container;
+        [SerializeField] protected GameObject container;
         
         /// <summary>
         /// The GameObject prefab that defines the base structure and visual of the display
         /// </summary>
-        public GameObject prefab;
+        [SerializeReference] protected GameObject prefab;
         
         /// <summary>
         /// The list of GameObjects contained in the container that were added using this script
         /// </summary>
-        private List<GameObject> m_GameObjects = new List<GameObject>();
+        protected readonly List<GameObject> m_GameObjects = new List<GameObject>();
 
         /// <summary>
         /// Adds a GameObject in the container and also adds it to the list to keep track of the visual elements.
         /// </summary>
         /// <param name="obj">The GameObject to be added in the container and the list.</param>
-        public void AddGameObject(GameObject obj)
+        protected void AddGameObject(GameObject obj)
         {
             m_GameObjects.Add(obj);
             obj.transform.SetParent(container.transform);

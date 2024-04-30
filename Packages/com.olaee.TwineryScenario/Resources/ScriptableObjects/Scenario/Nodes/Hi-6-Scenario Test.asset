@@ -17,17 +17,7 @@ MonoBehaviour:
   position:
     x: 375
     y: 350
-  text: 'Hi ?
-
-    --
-
-    [[Go to End->End 2]]
-
-    [[Go somewhere->End 3]]
-
-    {{emotion}}confus{{/emotion}}
-
-    {{speaker}}Elodie{{/speaker}}'
+  text: Hi ?
   links:
   - {fileID: 11400000, guid: d99991930af475f40b0e8a53772ce6cc, type: 2}
   - {fileID: 11400000, guid: 8a139a27a5303ea4f9b46f17c3c0fd66, type: 2}

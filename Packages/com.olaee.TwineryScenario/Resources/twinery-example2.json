@@ -1,7 +1,7 @@
 {
   "passages": [
     {
-      "text": "Hello world.\n--\n[[Say Hello->Hello]] [[Say Hi->Hi]]\n{{emotion}}neutre{{/emotion}}\n{{speaker}}Arthur{{/speaker}}",
+      "text": "Hello world.\n--\n[[Say Hello->Hello]] [[Say Hi->Hi]]\n{{emotion}}Neutre{{/emotion}}\n{{speaker}}Arthur{{/speaker}}",
       "links": [
         {
           "name": "Say Hello",
@@ -16,7 +16,7 @@
       ],
       "props": {
         "type": "Base Dialog",
-        "emotion": "neutre",
+        "emotion": "Neutre",
         "speaker":  "Arthur"
       },
       "name": "Start",
@@ -27,10 +27,10 @@
       }
     },
     {
-      "text": "Fin 1\n--\n{{emotion}}confus{{/emotion}}\n{{speaker}}Arthur{{/speaker}}",
+      "text": "Fin 1\n--\n{{emotion}}Confus{{/emotion}}\n{{speaker}}Arthur{{/speaker}}",
       "props": {
         "type": "Base Dialog",
-        "emotion": "confus",
+        "emotion": "Confus",
         "speaker": "Arthur"
       },
       "name": "End 1",
@@ -41,10 +41,10 @@
       }
     },
     {
-      "text": "Fin 2\n--\n{{emotion}}neutre{{/emotion}}\n{{speaker}}Arthur{{/speaker}}",
+      "text": "Fin 2\n--\n{{emotion}}Neutre{{/emotion}}\n{{speaker}}Arthur{{/speaker}}",
       "props": {
         "type": "Base Dialog",
-        "emotion": "neutre",
+        "emotion": "Neutre",
         "speaker": "Arthur"
       },
       "name": "End 2",
@@ -55,10 +55,10 @@
       }
     },
     {
-      "text": "Fin commune\n--\n{{emotion}}confus{{/emotion}}\n{{speaker}}Elodie{{/speaker}}",
+      "text": "Fin commune\n--\n{{emotion}}Confus{{/emotion}}\n{{speaker}}Elodie{{/speaker}}",
       "props": {
         "type": "Base Dialog",
-        "emotion": "confus",
+        "emotion": "Confus",
         "speaker": "Elodie"
       },
       "name": "End 3",
@@ -69,7 +69,7 @@
       }
     },
     {
-      "text": "Hello\n--\n[[Go to End->End 1]]\n[[Go somewhere->End 3]]\n{{emotion}}confus{{/emotion}}\n{{speaker}}Bastien{{/speaker}}",
+      "text": "Hello\n--\n[[Go to End->End 1]]\n[[Go somewhere->End 3]]\n{{emotion}}Confus{{/emotion}}\n{{speaker}}Bastien{{/speaker}}",
       "links": [
         {
           "name": "Go to End",
@@ -84,7 +84,7 @@
       ],
       "props": {
         "type": "Base Dialog",
-        "emotion": "confus",
+        "emotion": "Confus",
         "speaker": "Bastien"
       },
       "name": "Hello",
@@ -95,7 +95,7 @@
       }
     },
     {
-      "text": "Hi ?\n--\n[[Go to End->End 2]]\n[[Go somewhere->End 3]]\n{{emotion}}confus{{/emotion}}\n{{speaker}}Elodie{{/speaker}}",
+      "text": "Hi ?\n--\n[[Go to End->End 2]]\n[[Go somewhere->End 3]]\n{{emotion}}Confus{{/emotion}}\n{{speaker}}Elodie{{/speaker}}",
       "links": [
         {
           "name": "Go to End",
@@ -110,7 +110,7 @@
       ],
       "props": {
         "type": "Base Dialog",
-        "emotion": "confus",
+        "emotion": "Confus",
         "speaker": "Elodie"
       },
       "name": "Hi",

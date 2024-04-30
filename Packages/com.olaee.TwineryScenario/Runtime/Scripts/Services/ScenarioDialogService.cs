@@ -14,27 +14,27 @@ namespace TwineryScenario.Runtime.Scripts.Services
         /// <summary>
         /// The object that allows to retrieve the data of a Scenario
         /// </summary>
-        public IScenarioDialogDataAccess scenarioDataAccess;
+        private IScenarioDialogDataAccess scenarioDataAccess;
         
         /// <summary>
         /// The current scenario that is managed
         /// </summary>
-        public Scenario scenario;
+        [SerializeReference] private Scenario scenario;
         
         /// <summary>
         /// The current node of the scenario. Is an indicator of the progression in a scenario.
         /// </summary>
-        public Node currentNode;
+        [SerializeReference] private Node currentNode;
         
         /// <summary>
         /// The list of available emotions for the current scenario
         /// </summary>
-        public Emotions emotions;
+        [SerializeReference] private Emotions emotions;
         
         /// <summary>
         /// The list of persons that intervene in the scenario
         /// </summary>
-        public Persons persons;
+        [SerializeReference] private Persons persons;
 
         // ------------------------------------------------
         //                    GETTERS

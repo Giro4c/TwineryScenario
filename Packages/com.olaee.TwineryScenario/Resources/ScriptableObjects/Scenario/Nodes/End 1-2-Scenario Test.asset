@@ -17,12 +17,6 @@ MonoBehaviour:
   position:
     x: 600
     y: 25
-  text: 'Fin 1
-
-    --
-
-    {{emotion}}confus{{/emotion}}
-
-    {{speaker}}Arthur{{/speaker}}'
+  text: Fin 1
   links: []
   props: {fileID: 11400000, guid: eaff77af521d63c4bb97c696c42bebb0, type: 2}

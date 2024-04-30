@@ -10,7 +10,7 @@ namespace TwineryScenario.Runtime.Scripts.Data
     /// <summary>
     /// A class that allows to access and process scenario data in files based on the JSON data format.
     /// </summary>
-    public class GlobalScenarioJSONDataAccess : MonoBehaviour, IScenarioDialogDataAccess
+    public class GlobalScenarioJSONDataAccess : MonoBehaviour, IScenarioGlobalDataAccess
     {
 
         private PropsFactory factory = new PropsFactory();

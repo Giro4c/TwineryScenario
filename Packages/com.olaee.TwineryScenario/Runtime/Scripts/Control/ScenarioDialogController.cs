@@ -22,27 +22,27 @@ namespace TwineryScenario.Runtime.Scripts.Control
         /// <summary>
         /// The Displayer related to the display of speak bubbles
         /// </summary>
-        public SpeakerTextDisplayer speakerTextDisplayer;
+        [SerializeField] private SpeakerTextDisplayer speakerTextDisplayer;
         
         /// <summary>
         /// The Displayer related to the display of the options available in a node
         /// </summary>
-        public OptionDisplayer optionDisplayer;
+        [SerializeField] private OptionDisplayer optionDisplayer;
 
         /// <summary>
         /// The relative path of the folder containing the files. The root of this path is the Resources folder.
         /// </summary>
-        public string scenarioFolder = ".";
+        [SerializeField] private string scenarioFolder = "";
         
         /// <summary>
         /// The name of the file containing the json of a scenario
         /// </summary>
-        public string scenarioFileName = "twinery-example";
+        [SerializeField] private string scenarioFileName = "twinery-example";
         
         /// <summary>
         /// The name of the player
         /// </summary>
-        public string playerName = "Player";
+        [SerializeField] private string playerName = "Player";
 
         private void Start()
         {
@@ -201,9 +201,9 @@ namespace TwineryScenario.Runtime.Scripts.Control
         /// A general function the remove the visual elements connected to the displayers depending on the option value :
         /// - 0 : Clear All
         /// - 1 : Clear Speak Bubbles
-        /// - 2 : Clear Options
+        /// - 2 : Clear Options.
         /// </summary>
-        /// <param name="option"></param>
+        /// <param name="option">Indicates which clear method to call.</param>
         public void Clear(int option)
         {
             // Clear All

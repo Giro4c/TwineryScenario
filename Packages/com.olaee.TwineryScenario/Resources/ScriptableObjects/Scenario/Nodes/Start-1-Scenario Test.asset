@@ -17,15 +17,7 @@ MonoBehaviour:
   position:
     x: 150
     y: 250
-  text: 'Hello world.
-
-    --
-
-    [[Say Hello->Hello]] [[Say Hi->Hi]]
-
-    {{emotion}}neutre{{/emotion}}
-
-    {{speaker}}Arthur{{/speaker}}'
+  text: Hello world.
   links:
   - {fileID: 11400000, guid: 5f45e4d69823eb74fa1b3a3f2423ce42, type: 2}
   - {fileID: 11400000, guid: 4b400a389fa6e494aa8867d304864da1, type: 2}

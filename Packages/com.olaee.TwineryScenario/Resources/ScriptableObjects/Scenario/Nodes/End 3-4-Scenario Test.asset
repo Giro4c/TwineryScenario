@@ -17,12 +17,6 @@ MonoBehaviour:
   position:
     x: 600
     y: 250
-  text: 'Fin commune
-
-    --
-
-    {{emotion}}confus{{/emotion}}
-
-    {{speaker}}Elodie{{/speaker}}'
+  text: Fin commune
   links: []
   props: {fileID: 11400000, guid: 0021b23b6ee44e1449cc35a8c69d8a1f, type: 2}
