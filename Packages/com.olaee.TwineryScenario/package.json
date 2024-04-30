@@ -1,6 +1,6 @@
 {
     "name": "com.olaee.twineryscenario",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "displayName": "Twinery Scenario",
     "description": "A package to parse, create and go through scenarios made with Twinery.",
     "unity": "2022.3",
