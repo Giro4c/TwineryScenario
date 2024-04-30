@@ -10,10 +10,10 @@ namespace TwineryScenario.Runtime.Scripts.Data
     /// <summary>
     /// A class that allows to access and process scenario data in files based on the JSON data format.
     /// </summary>
-    public class GlobalScenarioJSONDataAccess : MonoBehaviour, IScenarioGlobalDataAccess
+    public class GlobalScenarioJSONDataAccess : IScenarioGlobalDataAccess
     {
 
-        private PropsFactory factory = new PropsFactory();
+        private readonly PropsFactory m_Factory = new PropsFactory();
 
         private void DebugAll()
         {
@@ -108,8 +108,8 @@ namespace TwineryScenario.Runtime.Scripts.Data
             if (scenarioTextAsset == null) throw new Exception("File not found at path : " + path);
 
             // Clear lists in props factory
-            factory.emotionsList.emotions.Clear();
-            factory.personsList.persons.Clear();
+            m_Factory.emotionsList.emotions.Clear();
+            m_Factory.personsList.persons.Clear();
             
             // Create a Scenario read model from the JSON string. Will later be converted into a Scenario object
             ScenarioReadModel<GlobalPropsReadModel> scenarioReadModel = JsonUtility.FromJson<ScenarioReadModel<GlobalPropsReadModel>>(scenarioTextAsset.text);
@@ -178,7 +178,7 @@ namespace TwineryScenario.Runtime.Scripts.Data
         /// <returns>A props that contains additional data of a scenario node.</returns>
         protected Props ConvertToProps(GlobalPropsReadModel propsReadModel)
         {
-            return factory.ConvertReadModel(propsReadModel);
+            return m_Factory.ConvertReadModel(propsReadModel);
         }
 
         /// <summary>
@@ -264,22 +264,22 @@ namespace TwineryScenario.Runtime.Scripts.Data
 
         public Emotions GetEmotions()
         {
-            return factory.emotionsList;
+            return m_Factory.emotionsList;
         }
 
         public void SetEmotionsReference(Emotions emotions)
         {
-            factory.emotionsList = emotions;
+            m_Factory.emotionsList = emotions;
         }
 
         public Persons GetPersons()
         {
-            return factory.personsList;
+            return m_Factory.personsList;
         }
 
         public void SetPersonsReferences(Persons persons)
         {
-            factory.personsList = persons;
+            m_Factory.personsList = persons;
         }
     }
     
