@@ -240,7 +240,7 @@ namespace TwineryScenario.Runtime.Scripts.Data
         /// </summary>
         /// <param name="readModel">The scenario read model used for the conversion.</param>
         /// <returns>An initialized instance of a scenario created through this conversion.</returns>
-        protected Scenario ConvertReadModel(ScenarioReadModel<GlobalPropsReadModel> readModel)
+        public Scenario ConvertReadModel(ScenarioReadModel<GlobalPropsReadModel> readModel)
         {
             // Scenario Nodes : passages
             // Initialized with no reference to other nodes in the links
@@ -281,6 +281,12 @@ namespace TwineryScenario.Runtime.Scripts.Data
         {
             m_Factory.personsList = persons;
         }
+
+        public PropsFactory GetPropsFactory()
+        {
+            return m_Factory;
+        }
+        
     }
     
 }
