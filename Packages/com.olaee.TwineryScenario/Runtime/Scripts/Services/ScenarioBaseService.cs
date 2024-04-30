@@ -69,30 +69,16 @@ namespace TwineryScenario.Runtime.Scripts.Services
             }
         }
 
-        public void InitScenario(string fileName)
+        public void InitScenario(string folder, string fileName)
         {
-            // Update References to Lists
-            scenarioDataAccess.GetPropsFactory().emotionsList = emotions;
-            scenarioDataAccess.GetPropsFactory().personsList = persons;
-            
             // Retrieve Scenario
-            scenario = scenarioDataAccess.GetScenario(fileName);
+            scenario = scenarioDataAccess.GetScenario(folder, fileName);
         }
         
         public void LaunchScenario()
         {
             // Init player progress
             currentNode = scenario.startNode;
-            
-            // // Create a NodeProps to keep track of the current state if it doesn't exist
-            // if (propsState == null)
-            // {
-            //     propsState = ScriptableObject.CreateInstance<BaseDialogProps>();
-            // }
-            //
-            // // Get Casted Node Props of current Node and set current prop state
-            // propsState = currentNode.props as BaseDialogProps;
-            
         }
 
         public void GoToNode(int pidNode)
@@ -106,10 +92,6 @@ namespace TwineryScenario.Runtime.Scripts.Services
         {
             // Update the current scenario node
             currentNode = newCurrentNode;
-            
-            // Get Casted Node Props of current Node and set current prop state
-            // propsState = currentNode.props as BaseDialogProps;
-            
         }
 
         public bool HasReachedEnd()

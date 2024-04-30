@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using TwineryScenario.Runtime.Scripts.Core;
-using TwineryScenario.Runtime.Scripts.Core.ReadModels;
-using TwineryScenario.Runtime.Scripts.Services;
+using TwineryScenario.Runtime.Scripts.Data;
+using TwineryScenario.Runtime.Scripts.Data.ReadModels;
 using UnityEditor;
 using UnityEngine;
 

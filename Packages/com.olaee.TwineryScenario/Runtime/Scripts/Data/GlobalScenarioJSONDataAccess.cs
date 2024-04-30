@@ -1,6 +1,7 @@
+using System;
 using System.Collections.Generic;
 using TwineryScenario.Runtime.Scripts.Core;
-using TwineryScenario.Runtime.Scripts.Core.ReadModels;
+using TwineryScenario.Runtime.Scripts.Data.ReadModels;
 using TwineryScenario.Runtime.Scripts.Services;
 using UnityEngine;
 
@@ -9,13 +10,8 @@ namespace TwineryScenario.Runtime.Scripts.Data
     /// <summary>
     /// A class that allows to access and process scenario data in files based on the JSON data format.
     /// </summary>
-    public class ScenarioJSONDataAccess : MonoBehaviour, IScenarioDataAccess
+    public class GlobalScenarioJSONDataAccess : MonoBehaviour, IScenarioDialogDataAccess
     {
-
-        /// <summary>
-        /// The relative path of the folder containing the files. The root of this path is the Resources folder.
-        /// </summary>
-        public string filePath = "";
 
         private PropsFactory factory = new PropsFactory();
 
@@ -31,7 +27,7 @@ namespace TwineryScenario.Runtime.Scripts.Data
         {
             Debug.Log("Debug Scenario -------------------");
             // Get String JSON content from file
-            TextAsset textAsset = Resources.Load<TextAsset>("twinery-example");
+            TextAsset textAsset = Resources.Load<TextAsset>("twinery-example2");
             
             // Create a Scenario read model from the JSON string. Will later be converted into a Scenario object
             ScenarioReadModel<BaseDialogPropsReadModel> readModel = JsonUtility.FromJson<ScenarioReadModel<BaseDialogPropsReadModel>>(textAsset.text);
@@ -102,17 +98,14 @@ namespace TwineryScenario.Runtime.Scripts.Data
             Debug.Log("Node Name : " + readModel.link);
             Debug.Log("Node PID : " + readModel.pid);
         }
-
-
-        public PropsFactory GetPropsFactory()
-        {
-            return factory;
-        }
         
-        public Scenario GetScenario(string fileName)
+        public Scenario GetScenario(string folder, string fileName)
         {
             // Get String JSON content from file
-            TextAsset scenarioTextAsset = Resources.Load<TextAsset>(filePath + fileName);
+            string path = GetCorrectPath(folder, fileName);
+            TextAsset scenarioTextAsset = Resources.Load<TextAsset>(path);
+
+            if (scenarioTextAsset == null) throw new Exception("File not found at path : " + path);
 
             // Clear lists in props factory
             factory.emotionsList.emotions.Clear();
@@ -122,6 +115,26 @@ namespace TwineryScenario.Runtime.Scripts.Data
             ScenarioReadModel<GlobalPropsReadModel> scenarioReadModel = JsonUtility.FromJson<ScenarioReadModel<GlobalPropsReadModel>>(scenarioTextAsset.text);
             
             return ConvertReadModel(scenarioReadModel);
+        }
+
+        /// <summary>
+        /// Verify that location variables are correct and change the initial path in case of wrong value
+        /// </summary>
+        /// <param name="folder">The path to the folder containing the file with the data.</param>
+        /// <param name="fileName">The name of the file containing the scenario data.</param>
+        /// <returns>The formatted path to the scenario file</returns>
+        private string GetCorrectPath(string folder, string fileName)
+        {
+            string path = "";
+            // Verify that root folder name is not empty
+            if (!String.IsNullOrEmpty(folder))
+            {
+                path += folder + "/";
+            }
+            // Add file name to the path
+            path += fileName;
+            
+            return path;
         }
 
         /// <summary>
@@ -248,7 +261,26 @@ namespace TwineryScenario.Runtime.Scripts.Data
             );
             return scenario;
         }
-        
+
+        public Emotions GetEmotions()
+        {
+            return factory.emotionsList;
+        }
+
+        public void SetEmotionsReference(Emotions emotions)
+        {
+            factory.emotionsList = emotions;
+        }
+
+        public Persons GetPersons()
+        {
+            return factory.personsList;
+        }
+
+        public void SetPersonsReferences(Persons persons)
+        {
+            factory.personsList = persons;
+        }
     }
     
 }

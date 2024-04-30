@@ -1,7 +1,7 @@
 using TwineryScenario.Runtime.Scripts.Core;
-using TwineryScenario.Runtime.Scripts.Core.ReadModels;
+using TwineryScenario.Runtime.Scripts.Data.ReadModels;
 
-namespace TwineryScenario.Runtime.Scripts.Services
+namespace TwineryScenario.Runtime.Scripts.Data
 {
     public class PropsFactory
     {
@@ -40,6 +40,7 @@ namespace TwineryScenario.Runtime.Scripts.Services
                     if (!person)
                     {
                         person = Person.CreatePerson(personsList.persons.Count, readModel.speaker);
+                        personsList.persons.Add(person);
                     }
                 
                     // Verify that the emotion in the props exists.
@@ -48,6 +49,7 @@ namespace TwineryScenario.Runtime.Scripts.Services
                     if (!emotion)
                     {
                         emotion = Emotion.CreateEmotion(readModel.emotion);
+                        emotionsList.emotions.Add(emotion);
                     }
                 
                     // Create the node props

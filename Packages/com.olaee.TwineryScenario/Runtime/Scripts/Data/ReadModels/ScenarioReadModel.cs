@@ -1,6 +1,6 @@
 using System;
 
-namespace TwineryScenario.Runtime.Scripts.Core.ReadModels
+namespace TwineryScenario.Runtime.Scripts.Data.ReadModels
 {
     [Serializable]
     public class ScenarioReadModel<T> where T : PropsReadModel

@@ -14,7 +14,7 @@ namespace TwineryScenario.Runtime.Scripts.Services
         /// <summary>
         /// The object that allows to retrieve the data of a Scenario
         /// </summary>
-        public IScenarioDataAccess scenarioDataAccess;
+        public IScenarioDialogDataAccess scenarioDataAccess;
         
         /// <summary>
         /// The current scenario that is managed
@@ -65,18 +65,18 @@ namespace TwineryScenario.Runtime.Scripts.Services
             // In case the data access object is not initialized in the class, search the scene for a IScenarioDataAccess object
             if (scenarioDataAccess == null)
             {
-                scenarioDataAccess = ObjectFinder.FindObjectInScene<IScenarioDataAccess>(SceneManager.GetActiveScene());
+                scenarioDataAccess = ObjectFinder.FindObjectInScene<IScenarioDialogDataAccess>(SceneManager.GetActiveScene());
             }
         }
 
-        public void InitScenario(string fileName)
+        public void InitScenario(string folder, string fileName)
         {
             // Update References to Lists
-            scenarioDataAccess.GetPropsFactory().emotionsList = emotions;
-            scenarioDataAccess.GetPropsFactory().personsList = persons;
+            scenarioDataAccess.SetEmotionsReference(emotions);
+            scenarioDataAccess.SetPersonsReferences(persons);
             
             // Retrieve Scenario
-            scenario = scenarioDataAccess.GetScenario(fileName);
+            scenario = scenarioDataAccess.GetScenario(folder, fileName);
         }
         
         public void LaunchScenario()

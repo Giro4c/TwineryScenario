@@ -11,8 +11,9 @@ namespace TwineryScenario.Runtime.Scripts.Services
         /// <summary>
         /// Initialize the managed scenario (nodes, links, name, etc...) with the content of the file whose name is given
         /// </summary>
+        /// <param name="folder">The path to the folder containing the file with scenario data.</param>
         /// <param name="fileName">The name of the file that contains the data of a scenario. Warning : Do not give the file extension (.txt, .json, etc...)</param>
-        public void InitScenario(string fileName);
+        public void InitScenario(string folder, string fileName);
         
         /// <summary>
         /// Start the current scenario and initialize the player progress for this scenario

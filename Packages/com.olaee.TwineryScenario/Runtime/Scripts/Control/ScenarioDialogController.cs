@@ -17,7 +17,7 @@ namespace TwineryScenario.Runtime.Scripts.Control
         /// <summary>
         /// An object implementing the interface IScenarioService that contains all use cases for a scenario.
         /// </summary>
-        private IScenarioService scenarioService;
+        private IScenarioDialogService scenarioService;
         
         /// <summary>
         /// The Displayer related to the display of speak bubbles
@@ -30,6 +30,11 @@ namespace TwineryScenario.Runtime.Scripts.Control
         public OptionDisplayer optionDisplayer;
 
         /// <summary>
+        /// The relative path of the folder containing the files. The root of this path is the Resources folder.
+        /// </summary>
+        public string scenarioFolder = ".";
+        
+        /// <summary>
         /// The name of the file containing the json of a scenario
         /// </summary>
         public string scenarioFileName = "twinery-example";
@@ -41,14 +46,14 @@ namespace TwineryScenario.Runtime.Scripts.Control
 
         private void Start()
         {
-            scenarioService = ObjectFinder.FindObjectInScene<IScenarioService>(SceneManager.GetActiveScene());
+            scenarioService = ObjectFinder.FindObjectInScene<IScenarioDialogService>(SceneManager.GetActiveScene());
         }
 
         private void Awake()
         {
             if (scenarioService == null)
             {
-                scenarioService = ObjectFinder.FindObjectInScene<IScenarioService>(SceneManager.GetActiveScene());
+                scenarioService = ObjectFinder.FindObjectInScene<IScenarioDialogService>(SceneManager.GetActiveScene());
             }
         }
 
@@ -67,19 +72,21 @@ namespace TwineryScenario.Runtime.Scripts.Control
         /// <summary>
         /// Trigger the creation of a new scenario in the service based on the name of the file that contains the scenario data
         /// </summary>
+        /// <param name="folder">The path to the folder containing the file with scenario data.</param>
         /// <param name="fileName">The name of the file that contains the data of the new scenario</param>
-        public void NewScenario(string fileName)
+        public void NewScenario(string folder, string fileName)
         {
-            scenarioService.InitScenario(fileName);
+            scenarioService.InitScenario(folder, fileName);
         }
 
         /// <summary>
         /// Trigger the creation of a new scenario in the service based on the name of the file that contains the scenario data and launches it.
         /// </summary>
-        /// <param name="fileName"></param>
-        public void CreateAndLaunchScenario(string fileName)
+        /// <param name="folder">The path to the folder containing the file with scenario data.</param>
+        /// <param name="fileName">The name of the file that contains the data of the new scenario</param>
+        public void CreateAndLaunchScenario(string folder, string fileName)
         {
-            NewScenario(fileName);
+            NewScenario(folder, fileName);
             LaunchScenario();
         }
 
@@ -94,7 +101,7 @@ namespace TwineryScenario.Runtime.Scripts.Control
             if (scenarioService.GetScenario() == null)
             {
                 Debug.Log("No scenario, starting research");
-                CreateAndLaunchScenario(scenarioFileName);
+                CreateAndLaunchScenario(scenarioFolder, scenarioFileName);
             }
             // Start or Restart the current scenario
             else
