@@ -27,7 +27,7 @@ namespace TwineryScenario.Runtime.Tests.Core
 
             // Assert values are changed
             Assert.NotNull(personsTest.persons);
-            Assert.Equals(personsTest.persons.Count, 2);
+            Assert.IsTrue(personsTest.persons.Count == 2);
             Assert.Contains(testPerson1, personsTest.persons);
             Assert.Contains(testPerson2, personsTest.persons);
 
@@ -62,7 +62,7 @@ namespace TwineryScenario.Runtime.Tests.Core
 
             // Assert values are initialised
             Assert.NotNull(personsTest.persons);
-            Assert.Equals(personsTest.persons.Count, 2);
+            Assert.IsTrue(personsTest.persons.Count == 2);
             Assert.Contains(testPerson1, personsTest.persons);
             Assert.Contains(testPerson2, personsTest.persons);
 
@@ -79,7 +79,7 @@ namespace TwineryScenario.Runtime.Tests.Core
 
             // Assert values are initialised
             Assert.NotNull(personsTest.persons);
-            Assert.Equals(personsTest.persons.Count, 0);
+            Assert.IsTrue(personsTest.persons.Count == 0);
 
         }
 
@@ -99,8 +99,8 @@ namespace TwineryScenario.Runtime.Tests.Core
             Persons personsTest = Persons.CreatePersonsList(testPersonsList);
 
             // Assert values are found
-            Assert.Equals(personsTest.GetPerson(testPerson1.id), testPerson1);
-            Assert.Equals(personsTest.GetPerson(testPerson2.id), testPerson2);
+            Assert.IsTrue(personsTest.GetPerson(testPerson1.id) == testPerson1);
+            Assert.IsTrue(personsTest.GetPerson(testPerson2.id) == testPerson2);
 
             // Assert value is not found
             Assert.Null(personsTest.GetPerson(testPerson3.id));
@@ -123,8 +123,8 @@ namespace TwineryScenario.Runtime.Tests.Core
             Persons personsTest = Persons.CreatePersonsList(testPersonsList);
 
             // Assert values are found
-            Assert.Equals(personsTest.GetPerson(testPerson1.name), testPerson1);
-            Assert.Equals(personsTest.GetPerson(testPerson2.name), testPerson2);
+            Assert.IsTrue(personsTest.GetPerson(testPerson1.name) == testPerson1);
+            Assert.IsTrue(personsTest.GetPerson(testPerson2.name) == testPerson2);
 
             // Assert value is not found
             Assert.Null(personsTest.GetPerson(testPerson3.name));

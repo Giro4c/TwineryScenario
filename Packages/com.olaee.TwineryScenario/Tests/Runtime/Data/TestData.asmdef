@@ -1,5 +1,5 @@
 {
-    "name": "TestData",
+    "name": "com.olaee.twineryscenario.runtime.tests.data",
     "rootNamespace": "",
     "references": [
         "UnityEngine.TestRunner",

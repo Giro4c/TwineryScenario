@@ -27,7 +27,7 @@ namespace TwineryScenario.Runtime.Tests.Core
 
             // Assert values are changed
             Assert.NotNull(emotionsTest.emotions);
-            Assert.Equals(emotionsTest.emotions.Count, 2);
+            Assert.IsTrue(emotionsTest.emotions.Count == 2);
             Assert.Contains(testEmotion1, emotionsTest.emotions);
             Assert.Contains(testEmotion2, emotionsTest.emotions);
 
@@ -62,7 +62,7 @@ namespace TwineryScenario.Runtime.Tests.Core
 
             // Assert values are initialised
             Assert.NotNull(emotionsTest.emotions);
-            Assert.Equals(emotionsTest.emotions.Count, 2);
+            Assert.IsTrue(emotionsTest.emotions.Count == 2);
             Assert.Contains(testEmotion1, emotionsTest.emotions);
             Assert.Contains(testEmotion2, emotionsTest.emotions);
 
@@ -79,7 +79,7 @@ namespace TwineryScenario.Runtime.Tests.Core
 
             // Assert values are initialised
             Assert.NotNull(emotionsTest.emotions);
-            Assert.Equals(emotionsTest.emotions.Count, 0);
+            Assert.IsTrue(emotionsTest.emotions.Count == 0);
 
         }
 
@@ -99,8 +99,8 @@ namespace TwineryScenario.Runtime.Tests.Core
             Emotions emotionsTest = Emotions.CreateEmotionsList(testEmotionsList);
 
             // Assert values are found
-            Assert.Equals(emotionsTest.GetEmotion(testEmotion1.emotionName), testEmotion1);
-            Assert.Equals(emotionsTest.GetEmotion(testEmotion2.emotionName), testEmotion2);
+            Assert.IsTrue(emotionsTest.GetEmotion(testEmotion1.emotionName) == testEmotion1);
+            Assert.IsTrue(emotionsTest.GetEmotion(testEmotion2.emotionName) == testEmotion2);
 
             // Assert value is not found
             Assert.Null(emotionsTest.GetEmotion(testEmotion3.emotionName));

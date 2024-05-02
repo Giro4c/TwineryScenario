@@ -38,16 +38,16 @@ namespace TwineryScenario.Runtime.Tests.Core
             nodeTest.Init(testPid, testName, testXPos, testYPos, testText, testLinks, testProps);
 
             // Assert values are changed
-            Assert.Equals(nodeTest.pid, testPid);
-            Assert.Equals(nodeTest.name, testName);
+            Assert.IsTrue(nodeTest.pid == testPid);
+            Assert.IsTrue(nodeTest.name == testName);
             Assert.NotNull(nodeTest.position);
-            Assert.Equals(nodeTest.position.x, testXPos);
-            Assert.Equals(nodeTest.position.y, testYPos);
-            Assert.Equals(nodeTest.text, testText);
-            Assert.Equals(nodeTest.links.Length, 1);
+            Assert.IsTrue(nodeTest.position.x == testXPos);
+            Assert.IsTrue(nodeTest.position.y == testYPos);
+            Assert.IsTrue(nodeTest.text == testText);
+            Assert.IsTrue(nodeTest.links.Length == 1);
             Assert.Contains(testLink, testLinks);
-            Assert.Equals(nodeTest.links, testLinks);
-            Assert.Equals(nodeTest.props, testProps);
+            Assert.IsTrue(nodeTest.links == testLinks);
+            Assert.IsTrue(nodeTest.props == testProps);
 
         }
 
@@ -58,11 +58,11 @@ namespace TwineryScenario.Runtime.Tests.Core
             Node nodeTest = ScriptableObject.CreateInstance<Node>();
 
             // Assert values are initialised (or not) with the correct values
-            Assert.Equals(nodeTest.pid, 0);
-            Assert.Equals(nodeTest.name, "None");
+            Assert.IsTrue(nodeTest.pid == 0);
+            Assert.IsTrue(nodeTest.name == "None");
             Assert.NotNull(nodeTest.position);
-            Assert.Equals(nodeTest.position.x, 0);
-            Assert.Equals(nodeTest.position.y, 0);
+            Assert.IsTrue(nodeTest.position.x == 0);
+            Assert.IsTrue(nodeTest.position.y == 0);
             Assert.IsEmpty(nodeTest.text);
             Assert.Null(nodeTest.links);
             Assert.Null(nodeTest.props);
@@ -97,16 +97,16 @@ namespace TwineryScenario.Runtime.Tests.Core
             Assert.NotNull(nodeTest);
 
             // Assert values are initialised
-            Assert.Equals(nodeTest.pid, testPid);
-            Assert.Equals(nodeTest.name, testName);
+            Assert.IsTrue(nodeTest.pid == testPid);
+            Assert.IsTrue(nodeTest.name == testName);
             Assert.NotNull(nodeTest.position);
-            Assert.Equals(nodeTest.position.x, testXPos);
-            Assert.Equals(nodeTest.position.y, testYPos);
-            Assert.Equals(nodeTest.text, testText);
-            Assert.Equals(nodeTest.links.Length, 1);
+            Assert.IsTrue(nodeTest.position.x == testXPos);
+            Assert.IsTrue(nodeTest.position.y == testYPos);
+            Assert.IsTrue(nodeTest.text == testText);
+            Assert.IsTrue(nodeTest.links.Length == 1);
             Assert.Contains(testLink, testLinks);
-            Assert.Equals(nodeTest.links, testLinks);
-            Assert.Equals(nodeTest.props, testProps);
+            Assert.IsTrue(nodeTest.links == testLinks);
+            Assert.IsTrue(nodeTest.props == testProps);
 
         }
 
@@ -122,8 +122,8 @@ namespace TwineryScenario.Runtime.Tests.Core
             Node[] testNodes = new[] { testNode1, testNode2 };
 
             // Assert values in array
-            Assert.Equals(testNode1, Node.FindInArray(testNode1.pid, testNodes));
-            Assert.Equals(testNode2, Node.FindInArray(testNode2.pid, testNodes));
+            Assert.IsTrue(testNode1 == Node.FindInArray(testNode1.pid, testNodes));
+            Assert.IsTrue(testNode2 == Node.FindInArray(testNode2.pid, testNodes));
 
             // Assert value not in array
             Assert.Null(Node.FindInArray(testNode3.pid, testNodes));

@@ -25,8 +25,8 @@ namespace TwineryScenario.Runtime.Tests.Core
             propsTest.Init(testEmotion, testPerson);
 
             // Assert values are changed
-            Assert.Equals(propsTest.emotion, testEmotion);
-            Assert.Equals(propsTest.speaker, testPerson);
+            Assert.IsTrue(propsTest.emotion == testEmotion);
+            Assert.IsTrue(propsTest.speaker == testPerson);
 
         }
 
@@ -58,8 +58,8 @@ namespace TwineryScenario.Runtime.Tests.Core
             Assert.NotNull(propsTest);
 
             // Assert values are initialised
-            Assert.Equals(propsTest.emotion, testEmotion);
-            Assert.Equals(propsTest.speaker, testPerson);
+            Assert.IsTrue(propsTest.emotion == testEmotion);
+            Assert.IsTrue(propsTest.speaker == testPerson);
 
         }
 

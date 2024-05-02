@@ -1,5 +1,5 @@
 {
-    "name": "TestVisuals",
+    "name": "com.olaee.twineryscenario.runtime.tests.visuals",
     "rootNamespace": "",
     "references": [
         "UnityEngine.TestRunner",

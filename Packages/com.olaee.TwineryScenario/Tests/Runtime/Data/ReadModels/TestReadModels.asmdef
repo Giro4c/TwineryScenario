@@ -1,5 +1,5 @@
 {
-    "name": "TestReadModels",
+    "name": "com.olaee.twineryscenario.runtime.tests.data.readmodels",
     "rootNamespace": "",
     "references": [
         "UnityEngine.TestRunner",

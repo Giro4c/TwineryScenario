@@ -25,9 +25,9 @@ namespace TwineryScenario.Runtime.Tests.Core
             linkTest.Init(testName, testPidNode, testNode);
 
             // Assert values are changed
-            Assert.Equals(linkTest.name, testName);
-            Assert.Equals(linkTest.pidNode, testPidNode);
-            Assert.Equals(linkTest.node, testNode);
+            Assert.IsTrue(linkTest.name == testName);
+            Assert.IsTrue(linkTest.pidNode == testPidNode);
+            Assert.IsTrue(linkTest.node == testNode);
 
         }
 
@@ -38,8 +38,8 @@ namespace TwineryScenario.Runtime.Tests.Core
             Link linkTest = ScriptableObject.CreateInstance<Link>();
 
             // Assert values are initialised (or not) with the correct values
-            Assert.Equals(linkTest.name, "None");
-            Assert.Equals(linkTest.pidNode, 0);
+            Assert.IsTrue(linkTest.name == "None");
+            Assert.IsTrue(linkTest.pidNode == 0);
             Assert.Null(linkTest.node);
         }
 
@@ -59,9 +59,9 @@ namespace TwineryScenario.Runtime.Tests.Core
             Assert.NotNull(linkTest);
 
             // Assert values are initialised
-            Assert.Equals(linkTest.name, testName);
-            Assert.Equals(linkTest.pidNode, testPidNode);
-            Assert.Equals(linkTest.node, testNode);
+            Assert.IsTrue(linkTest.name == testName);
+            Assert.IsTrue(linkTest.pidNode == testPidNode);
+            Assert.IsTrue(linkTest.node == testNode);
 
         }
     }

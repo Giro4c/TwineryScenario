@@ -20,7 +20,7 @@ namespace TwineryScenario.Runtime.Tests.Core
             propsTest.Init(testType);
 
             // Assert values are changed
-            Assert.Equals(propsTest.type, testType);
+            Assert.IsTrue(propsTest.type == testType);
 
         }
 
@@ -31,7 +31,7 @@ namespace TwineryScenario.Runtime.Tests.Core
             Props propsTest = ScriptableObject.CreateInstance<Props>();
 
             // Assert values are initialised (or not) with the correct values
-            Assert.Equals(propsTest.type, "Base");
+            Assert.IsTrue(propsTest.type == "Base");
         }
 
         [Test]
@@ -47,7 +47,7 @@ namespace TwineryScenario.Runtime.Tests.Core
             Assert.NotNull(propsTest);
 
             // Assert values are initialised
-            Assert.Equals(propsTest.type, testType);
+            Assert.IsTrue(propsTest.type == testType);
 
         }
 

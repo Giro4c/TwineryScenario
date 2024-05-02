@@ -22,7 +22,7 @@ namespace TwineryScenario.Runtime.Tests.Core
             emotionTest.Init(testEmotionName);
 
             // Assert values are changed
-            Assert.Equals(emotionTest.emotionName, testEmotionName);
+            Assert.IsTrue(emotionTest.emotionName == testEmotionName);
 
         }
 
@@ -33,7 +33,7 @@ namespace TwineryScenario.Runtime.Tests.Core
             Emotion emotionTest = ScriptableObject.CreateInstance<Emotion>();
 
             // Assert values are initialised (or not) with the correct values
-            Assert.Equals(emotionTest.emotionName, "None");
+            Assert.IsTrue(emotionTest.emotionName == "None");
 
         }
 
@@ -50,7 +50,7 @@ namespace TwineryScenario.Runtime.Tests.Core
             Assert.NotNull(emotionTest);
 
             // Assert values are initialised
-            Assert.Equals(emotionTest.emotionName, testEmotionName);
+            Assert.IsTrue(emotionTest.emotionName == testEmotionName);
 
         }
 

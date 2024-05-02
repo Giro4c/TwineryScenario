@@ -23,8 +23,8 @@ namespace TwineryScenario.Runtime.Tests.Core
             personTest.Init(testId, testName);
 
             // Assert values are changed
-            Assert.Equals(personTest.id, testId);
-            Assert.Equals(personTest.name, testName);
+            Assert.IsTrue(personTest.id == testId);
+            Assert.IsTrue(personTest.name == testName);
 
         }
 
@@ -35,8 +35,8 @@ namespace TwineryScenario.Runtime.Tests.Core
             Person personTest = ScriptableObject.CreateInstance<Person>();
 
             // Assert values are initialised (or not) with the correct values
-            Assert.Equals(personTest.id, 0);
-            Assert.Equals(personTest.name, "None");
+            Assert.IsTrue(personTest.id == 0);
+            Assert.IsTrue(personTest.name == "None");
         }
 
         [Test]
@@ -53,8 +53,8 @@ namespace TwineryScenario.Runtime.Tests.Core
             Assert.NotNull(personTest);
 
             // Assert values are initialised
-            Assert.Equals(personTest.id, testId);
-            Assert.Equals(personTest.name, testName);
+            Assert.IsTrue(personTest.id == testId);
+            Assert.IsTrue(personTest.name == testName);
 
         }
 

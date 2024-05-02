@@ -33,12 +33,12 @@ namespace TwineryScenario.Runtime.Tests.Core
             scenarioTest.Init(testName, testNode1, testCreator, testIfid, testNodes);
 
             // Assert values are changed
-            Assert.Equals(scenarioTest.name, testName);
-            Assert.Equals(scenarioTest.startNode, testNode1);
-            Assert.Equals(scenarioTest.creator, testCreator);
-            Assert.Equals(scenarioTest.ifid, testIfid);
-            Assert.Equals(scenarioTest.passages, testNodes);
-            Assert.Equals(scenarioTest.passages.Length, 2);
+            Assert.IsTrue(scenarioTest.name == testName);
+            Assert.IsTrue(scenarioTest.startNode == testNode1);
+            Assert.IsTrue(scenarioTest.creator == testCreator);
+            Assert.IsTrue(scenarioTest.ifid == testIfid);
+            Assert.IsTrue(scenarioTest.passages == testNodes);
+            Assert.IsTrue(scenarioTest.passages.Length == 2);
             Assert.Contains(testNode1, scenarioTest.passages);
             Assert.Contains(testNode2, scenarioTest.passages);
 
@@ -51,12 +51,12 @@ namespace TwineryScenario.Runtime.Tests.Core
             Scenario scenarioTest = ScriptableObject.CreateInstance<Scenario>();
 
             // Assert values are initialised (or not) with the correct values
-            Assert.Equals(scenarioTest.name, "None");
+            Assert.IsTrue(scenarioTest.name == "None");
             Assert.Null(scenarioTest.startNode);
             Assert.Null(scenarioTest.creator);
             Assert.Null(scenarioTest.ifid);
             Assert.Null(scenarioTest.passages);
-
+            
         }
 
         [Test]
@@ -83,12 +83,12 @@ namespace TwineryScenario.Runtime.Tests.Core
             Assert.NotNull(scenarioTest);
 
             // Assert values are initialised
-            Assert.Equals(scenarioTest.name, testName);
-            Assert.Equals(scenarioTest.startNode, testNode1);
-            Assert.Equals(scenarioTest.creator, testCreator);
-            Assert.Equals(scenarioTest.ifid, testIfid);
-            Assert.Equals(scenarioTest.passages, testNodes);
-            Assert.Equals(scenarioTest.passages.Length, 2);
+            Assert.IsTrue(scenarioTest.name == testName);
+            Assert.IsTrue(scenarioTest.startNode == testNode1);
+            Assert.IsTrue(scenarioTest.creator == testCreator);
+            Assert.IsTrue(scenarioTest.ifid == testIfid);
+            Assert.IsTrue(scenarioTest.passages == testNodes);
+            Assert.IsTrue(scenarioTest.passages.Length == 2);
             Assert.Contains(testNode1, scenarioTest.passages);
             Assert.Contains(testNode2, scenarioTest.passages);
 

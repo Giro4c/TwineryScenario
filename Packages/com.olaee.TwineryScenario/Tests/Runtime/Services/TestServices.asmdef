@@ -1,5 +1,5 @@
 {
-    "name": "TestServices",
+    "name": "com.olaee.twineryscenario.runtime.tests.services",
     "rootNamespace": "",
     "references": [
         "UnityEngine.TestRunner",
