@@ -11,12 +11,12 @@ namespace TwineryScenario.Runtime.Scripts.Core
         /// <summary>
         /// The identifier that allows to recognize a person within a scenario
         /// </summary>
-        public int id;
+        public int id = 0;
         
         /// <summary>
         /// The full name of the person
         /// </summary>
-        public string name;
+        public string name = "None";
 
         /// <summary>
         /// Initialize the person's characteristics with the values in the parameters

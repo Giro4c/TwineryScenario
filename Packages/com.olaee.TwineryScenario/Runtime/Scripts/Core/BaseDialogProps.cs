@@ -35,12 +35,12 @@ namespace TwineryScenario.Runtime.Scripts.Core
         }
 
         /// <summary>
-        /// Creates a ScriptableObject instance of a NodeProps and initializes it with the values in the parameters
+        /// Creates a ScriptableObject instance of a dialog based Props and initializes it with the values in the parameters
         /// </summary>
         /// <param name="emotion">The emotion the speaker is displaying</param>
         /// <param name="speaker">The person that is currently communicating</param>
-        /// <returns></returns>
-        public static BaseDialogProps CreateNodeProps(Emotion emotion, Person speaker)
+        /// <returns>An instance of a dialog based Props with the speaker and emotion initialized</returns>
+        public static BaseDialogProps CreateBaseDialogProps(Emotion emotion, Person speaker)
         {
             BaseDialogProps baseDialogProps = ScriptableObject.CreateInstance<BaseDialogProps>();
             baseDialogProps.Init(emotion, speaker);

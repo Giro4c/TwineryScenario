@@ -14,7 +14,7 @@ namespace TwineryScenario.Runtime.Scripts.Core
         /// <summary>
         /// The name of the scenario
         /// </summary>
-        public string name;
+        public string name = "None";
         
         /// <summary>
         /// The node at which the scenario starts.

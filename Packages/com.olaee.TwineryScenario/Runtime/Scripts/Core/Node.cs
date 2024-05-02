@@ -13,22 +13,22 @@ namespace TwineryScenario.Runtime.Scripts.Core
         /// <summary>
         /// The identifier of the node within a scenario
         /// </summary>
-        public int pid;
+        public int pid = 0;
         
         /// <summary>
         /// The name of the node
         /// </summary>
-        public string name;
+        public string name = "None";
         
         /// <summary>
         /// The position of the node on a 2D plane should the scenario be visualized
         /// </summary>
-        public Position position;
+        public Position position = new Position(0, 0);
         
         /// <summary>
         /// The text content of the node. Can be a "spoken" sentence, a notification, a description, etc...
         /// </summary>
-        public string text;
+        public string text = "";
         
         /// <summary>
         /// The list of links pointing to all the nodes accessible through this one
@@ -46,8 +46,8 @@ namespace TwineryScenario.Runtime.Scripts.Core
         [Serializable]
         public class Position
         {
-            public int x;
-            public int y;
+            public int x = 0;
+            public int y = 0;
 
             public Position(int x, int y)
             {

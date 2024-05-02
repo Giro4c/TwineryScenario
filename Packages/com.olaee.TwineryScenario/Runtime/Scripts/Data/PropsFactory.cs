@@ -53,7 +53,7 @@ namespace TwineryScenario.Runtime.Scripts.Data
                     }
                 
                     // Create the node props
-                    BaseDialogProps baseDialogProps = BaseDialogProps.CreateNodeProps(emotion, 
+                    BaseDialogProps baseDialogProps = BaseDialogProps.CreateBaseDialogProps(emotion, 
                         person);
                     return baseDialogProps;
                 

@@ -14,7 +14,7 @@ namespace TwineryScenario.Runtime.Scripts.Core
         /// The type of props. Allow to determine which additional data must be stored and can be accessed through casting
         /// the object to another Props class.
         /// </summary>
-        public string type;
+        public string type = "Base";
 
         /// <summary>
         /// Initialize the props with the value of its type.

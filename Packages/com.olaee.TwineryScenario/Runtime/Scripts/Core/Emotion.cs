@@ -12,7 +12,7 @@ namespace TwineryScenario.Runtime.Scripts.Core
         /// <summary>
         /// The name of the emotion
         /// </summary>
-        public string emotionName;
+        public string emotionName = "None";
 
         /// <summary>
         /// Initialize the emotion with its name passed in the parameters

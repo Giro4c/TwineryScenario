@@ -13,12 +13,12 @@ namespace TwineryScenario.Runtime.Scripts.Core
         /// <summary>
         /// The name of the link. Used for display, cannot be used independently for identification of a link.
         /// </summary>
-        public string name;
+        public string name = "None";
 
         /// <summary>
         /// The pid of the node the link points to
         /// </summary>
-        public int pidNode;
+        public int pidNode = 0;
         
         /// <summary>
         /// The node the link points to
