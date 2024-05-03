@@ -54,7 +54,12 @@ namespace TwineryScenario.Runtime.Scripts.Services
         
         
         // Setters ----------------------------
-        // public void SetScenario(Scenario scenario);
+        
+        /// <summary>
+        /// Set the current scenario used by the service to a new value.
+        /// </summary>
+        /// <param name="scenario">The new ScriptableObject scenario</param>
+        public void SetScenario(Scenario scenario);
 
     }
 }

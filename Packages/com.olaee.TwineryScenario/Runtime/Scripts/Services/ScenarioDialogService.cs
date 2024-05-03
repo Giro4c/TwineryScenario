@@ -60,6 +60,40 @@ namespace TwineryScenario.Runtime.Scripts.Services
             return emotions;
         }
         
+        // ------------------------------------------------
+        //                    SETTERS
+        // ------------------------------------------------
+
+        public void SetScenario(Scenario scenario)
+        {
+            if (this.scenario != scenario)
+            {
+                this.scenario = scenario;
+                // Get rid of player progress from the old scenario
+                currentNode = null;
+            }
+        }
+
+        public void SetEmotions(Emotions emotions)
+        {
+            this.emotions = emotions;
+        }
+
+        public void SetPersons(Persons persons)
+        {
+            this.persons = persons;
+        }
+        
+        public void InitDataAccess(IScenarioDialogDataAccess dataAccess)
+        {
+            scenarioDataAccess = dataAccess;
+        }
+        
+        // ------------------------------------------------
+        //                    METHODS
+        // ------------------------------------------------
+
+        
         private void Awake()
         {
             // In case the data access object is not initialized in the class, search the scene for a IScenarioDataAccess object
@@ -76,7 +110,7 @@ namespace TwineryScenario.Runtime.Scripts.Services
             scenarioDataAccess.SetPersonsReferences(persons);
             
             // Retrieve Scenario
-            scenario = scenarioDataAccess.GetScenario(folder, fileName);
+            SetScenario(scenarioDataAccess.GetScenario(folder, fileName));
         }
         
         public void LaunchScenario()
@@ -100,9 +134,8 @@ namespace TwineryScenario.Runtime.Scripts.Services
 
         public bool HasReachedEnd()
         {
-            return currentNode.links == null || currentNode.links.Length == 0;
+            return currentNode != null && (currentNode.links == null || currentNode.links.Length == 0);
         }
-
         
     }
 }

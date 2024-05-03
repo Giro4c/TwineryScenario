@@ -37,7 +37,7 @@ namespace TwineryScenario.Runtime.Scripts.Control
         /// <summary>
         /// The name of the file containing the json of a scenario
         /// </summary>
-        [SerializeField] private string scenarioFileName = "twinery-example";
+        [SerializeField] private string scenarioFileName = "twinery-example2";
         
         /// <summary>
         /// The name of the player
@@ -221,6 +221,40 @@ namespace TwineryScenario.Runtime.Scripts.Control
             {
                 ClearOptions();
             }
+        }
+
+        /// <summary>
+        /// Set the service that regroups all possible operations on a scenario
+        /// </summary>
+        /// <param name="service">The new service for the management of a scenario</param>
+        public void SetScenarioService(IScenarioDialogService service)
+        {
+            scenarioService = service;
+        }
+
+        public void ChangeOptionDisplayer(OptionDisplayer optionDisplayer)
+        {
+            this.optionDisplayer = optionDisplayer;
+        }
+
+        public void ChangeSpeakBubbleDisplayer(SpeakerTextDisplayer speakerTextDisplayer)
+        {
+            this.speakerTextDisplayer = speakerTextDisplayer;
+        }
+
+        public void SetFolderSource(string folder)
+        {
+            scenarioFolder = folder;
+        }
+
+        public void SetFileSource(string file)
+        {
+            scenarioFileName = file;
+        }
+
+        public void SetPlayerName(string playerName)
+        {
+            this.playerName = playerName;
         }
 
     }

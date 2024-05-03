@@ -19,23 +19,13 @@ namespace TwineryScenario.Runtime.Scripts.Services
         /// <summary>
         /// The current scenario that is managed
         /// </summary>
-        public Scenario scenario;
+        [SerializeReference] private Scenario scenario;
         
         /// <summary>
         /// The current node of the scenario. Is an indicator of the progression in a scenario.
         /// </summary>
-        public Node currentNode;
+        [SerializeReference] private Node currentNode;
         
-        /// <summary>
-        /// The list of available emotions for the current scenario
-        /// </summary>
-        public Emotions emotions;
-        
-        /// <summary>
-        /// The list of persons that intervene in the scenario
-        /// </summary>
-        public Persons persons;
-
         // ------------------------------------------------
         //                    GETTERS
         // ------------------------------------------------
@@ -49,16 +39,29 @@ namespace TwineryScenario.Runtime.Scripts.Services
         {
             return currentNode;
         }
+        
+        // ------------------------------------------------
+        //                    SETTERS
+        // ------------------------------------------------
 
-        public Persons GetPersonList()
+        public void SetScenario(Scenario scenario)
         {
-            return persons;
+            if (this.scenario != scenario)
+            {
+                this.scenario = scenario;
+                // Get rid of player progress from the old scenario
+                currentNode = null;
+            }
         }
-
-        public Emotions GetEmotionList()
+        
+        public void InitDataAccess(IScenarioDialogDataAccess dataAccess)
         {
-            return emotions;
+            scenarioDataAccess = dataAccess;
         }
+        
+        // ------------------------------------------------
+        //                    METHODS
+        // ------------------------------------------------
         
         private void Awake()
         {
@@ -72,7 +75,7 @@ namespace TwineryScenario.Runtime.Scripts.Services
         public void InitScenario(string folder, string fileName)
         {
             // Retrieve Scenario
-            scenario = scenarioDataAccess.GetScenario(folder, fileName);
+            SetScenario(scenarioDataAccess.GetScenario(folder, fileName));
         }
         
         public void LaunchScenario()
@@ -96,9 +99,8 @@ namespace TwineryScenario.Runtime.Scripts.Services
 
         public bool HasReachedEnd()
         {
-            return currentNode.links == null || currentNode.links.Length == 0;
+            return currentNode != null && (currentNode.links == null || currentNode.links.Length == 0);
         }
-
         
     }
 }

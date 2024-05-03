@@ -23,7 +23,18 @@ namespace TwineryScenario.Runtime.Scripts.Services
         public Emotions GetEmotionList();
         
         // Setters ----------------------------
-        // public void SetScenario(Scenario scenario);
+        
+        /// <summary>
+        /// Set the list of emotions available in the current scenario
+        /// </summary>
+        /// <param name="emotions">A ScriptableObject list of emotions</param>
+        public void SetEmotions(Emotions emotions);
+
+        /// <summary>
+        /// Set the list of persons available in the current scenario
+        /// </summary>
+        /// <param name="persons">A ScriptableObject list of persons</param>
+        public void SetPersons(Persons persons);
 
     }
 }
