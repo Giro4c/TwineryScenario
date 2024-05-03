@@ -1,0 +1,12 @@
+{
+  "text": "Hello world !",
+  "props": {
+    "type": "Base"
+  },
+  "name": "Start",
+  "pid": "1",
+  "position": {
+    "x": "2",
+    "y": "1"
+  }
+}

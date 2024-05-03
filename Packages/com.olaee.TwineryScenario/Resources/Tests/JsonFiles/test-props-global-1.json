@@ -1,0 +1,9 @@
+{
+  "type": "Global",
+  "emotion": "Neutral",
+  "speaker": "Arthur",
+  "person": {
+    "id": "0",
+    "name": "Arthur"
+  }
+}

@@ -9,7 +9,7 @@ namespace TwineryScenario.Runtime.Scripts.Data.ReadModels
 
         public PropsReadModel()
         {
-            
+            type = "Base";
         }
 
         public PropsReadModel(string type)

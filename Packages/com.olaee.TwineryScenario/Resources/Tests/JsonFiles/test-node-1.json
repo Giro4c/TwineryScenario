@@ -1,0 +1,24 @@
+{
+  "text": "Hello world !",
+  "links": [
+    {
+      "name": "Say Hello",
+      "link": "Branch 1",
+      "pid": "2"
+    },
+    {
+      "name": "Say Hi",
+      "link": "Branch 2",
+      "pid": "3"
+    }
+  ],
+  "props": {
+    "type": "Base"
+  },
+  "name": "Start",
+  "pid": "1",
+  "position": {
+    "x": "2",
+    "y": "1"
+  }
+}

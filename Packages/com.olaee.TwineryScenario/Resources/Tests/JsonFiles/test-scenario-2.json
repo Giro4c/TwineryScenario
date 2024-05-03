@@ -1,0 +1,23 @@
+{
+  "passages": [
+    {
+      "text": "Node text",
+      "props": {
+        "type": "Base Dialog",
+        "emotion": "Happy",
+        "speaker": "Bastien"
+      },
+      "name": "Node name",
+      "pid": "1",
+      "position": {
+        "x": "1",
+        "y": "1"
+      }
+    }
+  ],
+  "name": "Test name",
+  "startnode": "1",
+  "creator": "Creator test",
+  "creatorversion": "1.0",
+  "ifid": "ifid"
+}
