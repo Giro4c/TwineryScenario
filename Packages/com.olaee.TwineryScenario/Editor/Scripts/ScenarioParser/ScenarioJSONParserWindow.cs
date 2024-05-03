@@ -1,7 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace TwineryScenario.Editor.Scripts.ScenarioJSONParser
+namespace TwineryScenario.Editor.Scripts.ScenarioParser
 {
     public class ScenarioJSONParserWindow : EditorWindow
     {

@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Test Scenario 2
   startNode: {fileID: 11400000, guid: a472d32b48cbcef4e9547a424a59b707, type: 2}
   creator: Olaee
-  ifid: aaaa-aaaa-aaaa
+  ifid: bbbb-bbbb
   passages:
   - {fileID: 11400000, guid: a472d32b48cbcef4e9547a424a59b707, type: 2}
   - {fileID: 11400000, guid: 424d8879182845842a2d3cc26c0affbf, type: 2}

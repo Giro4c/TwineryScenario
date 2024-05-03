@@ -5,14 +5,14 @@ using TwineryScenario.Runtime.Scripts.Data.ReadModels;
 using UnityEditor;
 using UnityEngine;
 
-namespace TwineryScenario.Editor.Scripts.ScenarioJSONParser
+namespace TwineryScenario.Editor.Scripts.ScenarioParser
 {
     public class ScenarioJSONParser : UnityEditor.Editor
     {
 
         private static GlobalScenarioJSONDataAccess _dataAccess = new GlobalScenarioJSONDataAccess();
 
-        private class ScenarioDirectories
+        public class ScenarioDirectories
         {
             public string directoryScenario;
             public string directoryNodes;
@@ -65,35 +65,41 @@ namespace TwineryScenario.Editor.Scripts.ScenarioJSONParser
             return scenario;
         }
 
-        private static void StoreInAssetDatabase(Scenario scenario, ScenarioDirectories directories)
+        public static void StoreInAssetDatabase(Scenario scenario, ScenarioDirectories directories)
         {
             string assetName = "";
-            // Person
-            foreach (Person person in _dataAccess.GetPersons().persons)
+            if (_dataAccess.GetPersons() != null)
             {
-                assetName = person.name + "-" + person.id;
-                StoreInAssetDatabase(person, directories.directoryPerson, assetName);
-            }
+                // Person
+                foreach (Person person in _dataAccess.GetPersons().persons)
+                {
+                    assetName = person.name + "-" + person.id;
+                    StoreInAssetDatabase(person, directories.directoryPerson, assetName);
+                }
             
-            // Persons
-            if (_dataAccess.GetPersons().persons.Count != 0)
-            {
-                assetName = "PersonsList-" + scenario.name;
-                StoreInAssetDatabase(_dataAccess.GetPersons(), directories.directoryPersons, assetName);
+                // Persons
+                if (_dataAccess.GetPersons() != null && _dataAccess.GetPersons().persons.Count != 0)
+                {
+                    assetName = "PersonsList-" + scenario.name;
+                    StoreInAssetDatabase(_dataAccess.GetPersons(), directories.directoryPersons, assetName);
+                }
             }
-            
-            // Emotion
-            foreach (Emotion emotion in _dataAccess.GetEmotions().emotions)
+
+            if (_dataAccess.GetEmotions() != null)
             {
-                assetName = emotion.emotionName;
-                StoreInAssetDatabase(emotion, directories.directoryEmotion, assetName);
-            }
+                // Emotion
+                foreach (Emotion emotion in _dataAccess.GetEmotions().emotions)
+                {
+                    assetName = emotion.emotionName;
+                    StoreInAssetDatabase(emotion, directories.directoryEmotion, assetName);
+                }
             
-            // Emotions
-            if (_dataAccess.GetEmotions().emotions.Count != 0)
-            {
-                assetName = "EmotionsList-" + scenario.name;
-                StoreInAssetDatabase(_dataAccess.GetEmotions(), directories.directoryEmotions, assetName);
+                // Emotions
+                if (_dataAccess.GetEmotions() != null && _dataAccess.GetEmotions().emotions.Count != 0)
+                {
+                    assetName = "EmotionsList-" + scenario.name;
+                    StoreInAssetDatabase(_dataAccess.GetEmotions(), directories.directoryEmotions, assetName);
+                }
             }
             
             // Initialize list for all props and links since they must be numbered to be identifiable
@@ -125,8 +131,6 @@ namespace TwineryScenario.Editor.Scripts.ScenarioJSONParser
                 assetName = "Link-" + scenario.name + "-" + i;
                 StoreInAssetDatabase(linksList[i], directories.directoryLinks, assetName);
             }
-            
-            
             
             // Scenario
             assetName = "Scenario-" + scenario.name;
