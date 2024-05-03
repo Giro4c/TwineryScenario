@@ -18,5 +18,7 @@ MonoBehaviour:
     x: 0
     y: 0
   text: Text 1
-  links: []
+  links:
+  - {fileID: 11400000, guid: 62952cbc67ef71d4f85b84f49e2e0e0d, type: 2}
+  - {fileID: 11400000, guid: f622d9d9efdd85a4ea75e9e74a1abfa1, type: 2}
   props: {fileID: 0}

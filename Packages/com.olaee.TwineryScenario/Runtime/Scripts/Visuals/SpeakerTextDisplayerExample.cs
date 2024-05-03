@@ -54,7 +54,7 @@ namespace TwineryScenario.Runtime.Scripts.Visuals
             }
             
             // Change the main text : Speaker name
-            texts[indexSpeakerName].text = name;
+            texts[indexSpeakerName].text = name + " (" + emotion + ")";
             // Change the secondary text : Speaker text
             texts[indexText].text = text;
             

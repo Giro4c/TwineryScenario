@@ -1,12 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace TwineryScenario.Runtime.Scripts.Visuals
 {
     /// <summary>
-    /// An abstract class that defines the basic behavior for any scenario-element related displays.
+    /// An class that defines the basic behavior for any GameObject spawning related displays.
     /// </summary>
-    public abstract class Displayer : MonoBehaviour
+    public class Displayer : MonoBehaviour
     {
 
         /// <summary>
@@ -24,11 +25,12 @@ namespace TwineryScenario.Runtime.Scripts.Visuals
         /// </summary>
         protected readonly List<GameObject> m_GameObjects = new List<GameObject>();
 
+        
         /// <summary>
         /// Adds a GameObject in the container and also adds it to the list to keep track of the visual elements.
         /// </summary>
         /// <param name="obj">The GameObject to be added in the container and the list.</param>
-        protected void AddGameObject(GameObject obj)
+        public void AddGameObject(GameObject obj)
         {
             m_GameObjects.Add(obj);
             obj.transform.SetParent(container.transform);
@@ -39,7 +41,6 @@ namespace TwineryScenario.Runtime.Scripts.Visuals
         /// </summary>
         public void Clear()
         {
-            // int i = 0;
             while (m_GameObjects.Count > 0)
             {
                 // Retrieve the object to keep the reference for the different method calls
@@ -48,13 +49,35 @@ namespace TwineryScenario.Runtime.Scripts.Visuals
                 m_GameObjects.Remove(tmp);
                 // Destroy the object to remove it from the scene
                 Destroy(tmp);
-                
-                // Debug.Log(m_GameObjects.Count);
-                // ++i;
-                // if (i > 5) break;
             }
             
         }
-        
+
+        public GameObject GetContainer()
+        {
+            return container;
+        }
+
+        public void SetContainer(GameObject container)
+        {
+            this.container = container;
+        }
+
+        public void SetPrefab(GameObject prefab)
+        {
+            this.prefab = prefab;
+        }
+
+        public int GetCountGameObjects()
+        {
+            return m_GameObjects.Count;
+        }
+
+        public GameObject GetLatestDisplay()
+        {
+            if (m_GameObjects.Count == 0) return null;
+            return m_GameObjects[^1];
+        }
+
     }
 }
