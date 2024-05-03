@@ -19,6 +19,21 @@ namespace TwineryScenario.Runtime.Scripts.Data
             this.emotionsList = emotionsList;
             this.personsList = personsList;
         }
+
+        /// <summary>
+        /// Reset value of all attributes in the class. Lists are cleared, singular class objects are changed to null.
+        /// </summary>
+        public void Clear()
+        {
+            if (personsList != null)
+            {
+                personsList.persons.Clear();
+            }
+            if (emotionsList != null)
+            {
+                emotionsList.emotions.Clear();
+            }
+        }
         
         /// <summary>
         /// Converts a GlobalPropsReadModel which can contain any data from any props type into the Props of type
@@ -28,40 +43,43 @@ namespace TwineryScenario.Runtime.Scripts.Data
         /// <returns>A Props object with the node characteristics related to its type.</returns>
         public Props ConvertReadModel(GlobalPropsReadModel readModel)
         {
-            switch (readModel.type)
+            if (readModel != null)
             {
-                // Base Dialog
-                case "Base Dialog":
-                    // Verify that the person in the props exists.
+                switch (readModel.type)
+                {
+                    // Base Dialog
+                    case "Base Dialog":
+                        // Verify that the person in the props exists.
                         // Search by name
-                    Person person = personsList.GetPerson(readModel.speaker);
+                        Person person = personsList.GetPerson(readModel.speaker);
                 
-                    // If it does not exist in the list, creates a new person and adds it to the list
-                    if (!person)
-                    {
-                        person = Person.CreatePerson(personsList.persons.Count, readModel.speaker);
-                        personsList.persons.Add(person);
-                    }
+                        // If it does not exist in the list, creates a new person and adds it to the list
+                        if (!person)
+                        {
+                            person = Person.CreatePerson(personsList.persons.Count, readModel.speaker);
+                            personsList.persons.Add(person);
+                        }
                 
-                    // Verify that the emotion in the props exists.
-                    Emotion emotion = emotionsList.GetEmotion(readModel.emotion);
-                    // If it does not exist in the list, creates a new emotion and adds it to the list
-                    if (!emotion)
-                    {
-                        emotion = Emotion.CreateEmotion(readModel.emotion);
-                        emotionsList.emotions.Add(emotion);
-                    }
+                        // Verify that the emotion in the props exists.
+                        Emotion emotion = emotionsList.GetEmotion(readModel.emotion);
+                        // If it does not exist in the list, creates a new emotion and adds it to the list
+                        if (!emotion)
+                        {
+                            emotion = Emotion.CreateEmotion(readModel.emotion);
+                            emotionsList.emotions.Add(emotion);
+                        }
                 
-                    // Create the node props
-                    BaseDialogProps baseDialogProps = BaseDialogProps.CreateBaseDialogProps(emotion, 
-                        person);
-                    return baseDialogProps;
+                        // Create the node props
+                        BaseDialogProps baseDialogProps = BaseDialogProps.CreateBaseDialogProps(emotion, 
+                            person);
+                        return baseDialogProps;
                 
-                case "Other":
-                    break;
+                    case "Other":
+                        break;
+                }
             }
 
-            Props props = Props.CreateProps(readModel.type);
+            Props props = Props.CreateProps("Base");
             return props;
         }
         

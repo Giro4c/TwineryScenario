@@ -6,7 +6,17 @@ namespace TwineryScenario.Runtime.Scripts.Data.ReadModels
     public class BaseDialogPropsReadModel : PropsReadModel
     {
         public string emotion;
-        // public PersonReadModel speaker;
         public string speaker;
+
+        public BaseDialogPropsReadModel()
+        {
+            
+        }
+
+        public BaseDialogPropsReadModel(string type, string emotion, string speaker) : base(type)
+        {
+            this.emotion = emotion;
+            this.speaker = speaker;
+        }
     }
 }

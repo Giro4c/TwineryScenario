@@ -108,8 +108,7 @@ namespace TwineryScenario.Runtime.Scripts.Data
             if (scenarioTextAsset == null) throw new Exception("File not found at path : " + path);
 
             // Clear lists in props factory
-            m_Factory.emotionsList.emotions.Clear();
-            m_Factory.personsList.persons.Clear();
+            m_Factory.Clear();
             
             // Create a Scenario read model from the JSON string. Will later be converted into a Scenario object
             ScenarioReadModel<GlobalPropsReadModel> scenarioReadModel = JsonUtility.FromJson<ScenarioReadModel<GlobalPropsReadModel>>(scenarioTextAsset.text);
@@ -123,7 +122,7 @@ namespace TwineryScenario.Runtime.Scripts.Data
         /// <param name="folder">The path to the folder containing the file with the data.</param>
         /// <param name="fileName">The name of the file containing the scenario data.</param>
         /// <returns>The formatted path to the scenario file</returns>
-        private string GetCorrectPath(string folder, string fileName)
+        public static string GetCorrectPath(string folder, string fileName)
         {
             string path = "";
             // Verify that root folder name is not empty
@@ -143,7 +142,7 @@ namespace TwineryScenario.Runtime.Scripts.Data
         /// </summary>
         /// <param name="nodesReadModels">The array of nodes read models used for the conversion</param>
         /// <returns>An array of scenario nodes whose links don't point to other nodes yet.</returns>
-        protected Node[] ConvertToNodesNoLinks(NodeReadModel<GlobalPropsReadModel>[] nodesReadModels)
+        public Node[] ConvertToNodesNoLinks(NodeReadModel<GlobalPropsReadModel>[] nodesReadModels)
         {
             List<Node> nodes = new List<Node>();
             foreach (NodeReadModel<GlobalPropsReadModel> nodeReadModel in nodesReadModels)
@@ -176,7 +175,7 @@ namespace TwineryScenario.Runtime.Scripts.Data
         /// </summary>
         /// <param name="propsReadModel">The props read model used for the conversion</param>
         /// <returns>A props that contains additional data of a scenario node.</returns>
-        protected Props ConvertToProps(GlobalPropsReadModel propsReadModel)
+        public Props ConvertToProps(GlobalPropsReadModel propsReadModel)
         {
             return m_Factory.ConvertReadModel(propsReadModel);
         }
@@ -186,7 +185,7 @@ namespace TwineryScenario.Runtime.Scripts.Data
         /// </summary>
         /// <param name="linksReadModels">The array of link read model used for the conversion.</param>
         /// <returns>An array of links that don't point to any node reference yet.</returns>
-        protected Link[] ConvertToLinksNoNodes(LinkReadModel[] linksReadModels)
+        public Link[] ConvertToLinksNoNodes(LinkReadModel[] linksReadModels)
         {
             List<Link> links = new List<Link>();
             if (linksReadModels != null)
@@ -213,7 +212,7 @@ namespace TwineryScenario.Runtime.Scripts.Data
         /// </summary>
         /// <param name="links">The array containing the links whose pointed nodes will be attributed.</param>
         /// <param name="nodes">The array of nodes available for references.</param>
-        protected void FillLinks(ref Link[] links, Node[] nodes)
+        public void FillLinks(ref Link[] links, Node[] nodes)
         {
             if (links == null) return;
             for (int index = 0; index < links.Length; ++index)
@@ -226,13 +225,28 @@ namespace TwineryScenario.Runtime.Scripts.Data
         /// For each node in the given array, fill the links' node pointers using said array as the list of reference nodes.
         /// </summary>
         /// <param name="nodes">The array of nodes whose links must be completed. Also used as a reference to complete said links.</param>
-        protected void FillLinks(ref Node[] nodes)
+        public void FillLinks(ref Node[] nodes)
         {
             if (nodes == null) return;
             foreach (Node node in nodes)
             {
                 FillLinks(ref node.links, nodes);
             }
+        }
+        
+        /// <summary>
+        /// Convert an array of scenario nodes read models into an array of scenario nodes with complete links.
+        /// </summary>
+        /// <param name="nodesReadModels">The array of nodes read models used for the conversion</param>
+        /// <returns>An array of scenario nodes whose links are complte.</returns>
+        public Node[] ConvertToNodes(NodeReadModel<GlobalPropsReadModel>[] nodesReadModels)
+        {
+            // Initialized with no reference to other nodes in the links
+            Node[] nodes = ConvertToNodesNoLinks(nodesReadModels);
+            // Fill the links with the associated reference to a ScenarioNode
+            FillLinks(ref nodes);
+
+            return nodes;
         }
 
         /// <summary>
@@ -243,10 +257,7 @@ namespace TwineryScenario.Runtime.Scripts.Data
         public Scenario ConvertReadModel(ScenarioReadModel<GlobalPropsReadModel> readModel)
         {
             // Scenario Nodes : passages
-            // Initialized with no reference to other nodes in the links
-            Node[] nodes = ConvertToNodesNoLinks(readModel.passages);
-            // Fill the links with the associated reference to a ScenarioNode
-            FillLinks(ref nodes);
+            Node[] nodes = ConvertToNodes(readModel.passages);
             
             // Find the starting node
             Node startNode = Node.FindInArray(int.Parse(readModel.startnode), nodes);

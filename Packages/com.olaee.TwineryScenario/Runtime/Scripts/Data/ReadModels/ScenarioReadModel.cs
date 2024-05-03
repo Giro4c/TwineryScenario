@@ -11,5 +11,20 @@ namespace TwineryScenario.Runtime.Scripts.Data.ReadModels
         public string creatorversion;
         public string ifid;
         public NodeReadModel<T>[] passages;
+
+        public ScenarioReadModel()
+        {
+            
+        }
+
+        public ScenarioReadModel(string name, string startnode, string creator, string creatorversion, string ifid, NodeReadModel<T>[] passages)
+        {
+            this.name = name;
+            this.startnode = startnode;
+            this.creator = creator;
+            this.creatorversion = creatorversion;
+            this.ifid = ifid;
+            this.passages = passages;
+        }
     }
 }

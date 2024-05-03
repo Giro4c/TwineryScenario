@@ -19,5 +19,17 @@ namespace TwineryScenario.Runtime.Scripts.Data.ReadModels
         /// The pid/identifier of the node the links points to
         /// </summary>
         public string pid;
+
+        public LinkReadModel()
+        {
+            
+        }
+
+        public LinkReadModel(string name, string link, string pid)
+        {
+            this.name = name;
+            this.link = link;
+            this.pid = pid;
+        }
     }
 }

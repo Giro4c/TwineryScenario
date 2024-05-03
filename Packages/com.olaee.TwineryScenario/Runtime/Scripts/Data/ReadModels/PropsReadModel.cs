@@ -6,5 +6,15 @@ namespace TwineryScenario.Runtime.Scripts.Data.ReadModels
     public class PropsReadModel
     {
         public string type;
+
+        public PropsReadModel()
+        {
+            
+        }
+
+        public PropsReadModel(string type)
+        {
+            this.type = type;
+        }
     }
 }

@@ -9,9 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd169309c6754619a2a2a2c6a41f2b8d, type: 3}
-  m_Name: LinkTest_2
+  m_Script: {fileID: 11500000, guid: e49a35012bac4c9f839bd55eda6ca63d, type: 3}
+  m_Name: Node 2
   m_EditorClassIdentifier: 
-  name: Link Test 2
-  pidNode: 3
-  node: {fileID: 11400000, guid: e7519d171eaa46442a4649ae4a8b0183, type: 2}
+  pid: 2
+  name: Node 2
+  position:
+    x: 0
+    y: 0
+  text: Text 2
+  links: []
+  props: {fileID: 0}

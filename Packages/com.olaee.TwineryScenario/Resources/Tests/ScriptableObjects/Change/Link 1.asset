@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd169309c6754619a2a2a2c6a41f2b8d, type: 3}
-  m_Name: LinkTest_2
+  m_Name: Link 1
   m_EditorClassIdentifier: 
-  name: Link Test 2
-  pidNode: 3
-  node: {fileID: 11400000, guid: e7519d171eaa46442a4649ae4a8b0183, type: 2}
+  name: Link 1
+  pidNode: 2
+  node: {fileID: 0}

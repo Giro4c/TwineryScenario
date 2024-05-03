@@ -1,0 +1,42 @@
+{
+  "passages": [
+    {
+      "text": "Hello world.",
+      "links": [
+        {
+          "name": "Ending",
+          "link": "End",
+          "pid": "2"
+        }
+      ],
+      "props": {
+        "type": "Base Dialog",
+        "emotion": "Happy",
+        "speaker":  "Arthur"
+      },
+      "name": "Start",
+      "pid": "1",
+      "position": {
+        "x": "1",
+        "y": "2"
+      }
+    },
+    {
+      "text": "Fin",
+      "props": {
+        "type": "Base"
+      },
+      "name": "End",
+      "pid": "2",
+      "position": {
+        "x": "3",
+        "y": "4"
+      }
+    }
+  ],
+  "name": "Scenario Test",
+  "startnode": "1",
+  "creator": "Olaee",
+  "creator-version": "1.2.1",
+  "ifid": "aaaa-aaaa"
+}

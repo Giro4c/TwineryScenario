@@ -4,7 +4,7 @@ using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
 
-namespace TwineryScenario.Runtime.Tests.Core
+namespace TwineryScenario.Runtime.Tests.Control
 {
     public class Test
     {

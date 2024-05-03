@@ -11,6 +11,18 @@ namespace TwineryScenario.Runtime.Scripts.Data.ReadModels
         public string speaker;
         
         // Other
-        
+        public PersonReadModel person;
+
+        public GlobalPropsReadModel()
+        {
+            
+        }
+
+        public GlobalPropsReadModel(string type, string emotion, string speaker, PersonReadModel person) : base(type)
+        {
+            this.emotion = emotion;
+            this.speaker = speaker;
+            this.person = person;
+        }
     }
 }
